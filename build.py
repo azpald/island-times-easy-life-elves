@@ -25,6 +25,9 @@ for d in ["css", "img"]:
         # instead of throwing an error.
         shutil.copytree(src_dir, dst_dir, dirs_exist_ok=True)
 
+# Redirect 404 to home
+with open(dist / "404.html", "w", encoding="utf-8") as f:
+    f.write('<script>location.href="/";</script>')
 
 def render_skill (skill_name):
     skill = json_data["skills"][skill_name]
@@ -59,7 +62,10 @@ page_content = page_content.replace("{{post_title}}", "Home")
 text_content = ""
 text_content += '<div class="card two-column article container-multicolumns">'
 text_content += f"""
-<a href="elves/">Elves</a>
+    <div class="mugshot"><a href="/elves/"><img class="icon-medium" src="{1}"/><div>Elves</div></a></div>
+    <div class="mugshot"><a href="/elements/"><img class="icon-medium" src="{1}"/><div>Elements</div></a></div>
+    <div class="mugshot"><a href="/continents/"><img class="icon-medium" src="{1}"/><div>Continents</div></a></div>
+    <div class="mugshot"><a href="/skills/"><img class="icon-medium" src="{1}"/><div>Skills</div></a></div>
 """
 text_content += '</div>'
 page_content = page_content.replace("{{page_content}}", text_content)
