@@ -4,6 +4,10 @@ import shutil
 import glob
 from pathlib import Path
 
+# Vars
+dir_elves = "elves"
+dir_elements = "elements"
+
 # Load jsons
 folder_json = Path("json")
 json_data = {}
@@ -62,8 +66,8 @@ page_content = page_content.replace("{{post_title}}", "Home")
 text_content = ""
 text_content += '<div class="card two-column article container-multicolumns">'
 text_content += f"""
-    <div class="mugshot"><a href="/elves/"><img class="icon-medium" src="{1}"/><div>Elves</div></a></div>
-    <div class="mugshot"><a href="/elements/"><img class="icon-medium" src="{1}"/><div>Elements</div></a></div>
+    <div class="mugshot"><a href="/{dir_elves}/"><img class="icon-medium" src="{1}"/><div>Elves</div></a></div>
+    <div class="mugshot"><a href="/{dir_elements}/"><img class="icon-medium" src="{1}"/><div>Elements</div></a></div>
     <div class="mugshot"><a href="/continents/"><img class="icon-medium" src="{1}"/><div>Continents</div></a></div>
     <div class="mugshot"><a href="/skills/"><img class="icon-medium" src="{1}"/><div>Skills</div></a></div>
 """
@@ -77,7 +81,6 @@ with open(dist / "index.html", "w", encoding="utf-8") as f:
 ###################################
 # Write page for elves
 ###################################
-dir_elves = "elves"
 (dist / dir_elves).mkdir(parents=True, exist_ok=True)
 for slug, elf in json_data["elves"].items():
     page_content = page_template
@@ -94,7 +97,7 @@ for slug, elf in json_data["elves"].items():
         <nav class="breadcrumb" aria-label="Breadcrumb">
             <ol>
                 <li><a href="/">Home</a></li>
-                <li><a href="/elves/">Elves</a></li>
+                <li><a href="/{dir_elves}/">Elves</a></li>
                 <li aria-current="page">{elf["name"]}</li>
             </ol>
         </nav>
@@ -110,7 +113,7 @@ for slug, elf in json_data["elves"].items():
     # text_content += '<div class="card article">'
     text_content += f"""
         <div>
-            <div class="form-row"><b>Element</b><a href="/elements/{elf["element"]}.html">{element["text"]}</a></div>
+            <div class="form-row"><b>Element</b><a href="/{dir_elements}/{elf["element"]}.html">{element["text"]}</a></div>
             {stat_text}
         </div>
     """
@@ -168,7 +171,6 @@ with open(dist / dir_elves / "index.html", "w", encoding="utf-8") as f:
 ###################################
 # Write page for elements
 ###################################
-dir_elements = "elements"
 (dist / dir_elements).mkdir(parents=True, exist_ok=True)
 for slug, item in json_data["elements"].items():
     page_content = page_template
@@ -178,7 +180,7 @@ for slug, item in json_data["elements"].items():
         <nav class="breadcrumb" aria-label="Breadcrumb">
             <ol>
                 <li><a href="/">Home</a></li>
-                <li><a href="/elements/">Elements</a></li>
+                <li><a href="/{dir_elements}/">Elements</a></li>
                 <li aria-current="page">{item["text"]}</li>
             </ol>
         </nav>
@@ -205,7 +207,7 @@ elements.sort(key=lambda x: x['text'])
 elements_text = ""
 elements_text += '<div class="two-column container-multicolumns">'
 for element in elements:
-    elements_text += f'<div class="mugshot"><a href="/elements/{element["key"]}.html"><img class="icon-medium" src="{element["iconUrl"]}"/><div>{element["text"]}</div></a></div>'
+    elements_text += f'<div class="mugshot"><a href="/{dir_elements}/{element["key"]}.html"><img class="icon-medium" src="{element["iconUrl"]}"/><div>{element["text"]}</div></a></div>'
 elements_text += '</div>'
 
 page_content = page_template
