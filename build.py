@@ -15,6 +15,14 @@ for file in folder_json.glob("*.json"):
     with open(file, "r", encoding="utf-8") as f:
         json_data[file.stem] = json.load(f)
 
+elves = [{ "key": slug, **elf } for slug, elf in json_data["elves"].items()]
+elves.sort(key=lambda x: x['name'])
+elves_by_element = {}
+for elf in elves:
+    if elf["element"] not in elves_by_element:
+        elves_by_element[elf["element"]] = []
+    elves_by_element[elf["element"]].append(elf)
+
 # Prepare output folder
 dist = Path("dist")
 shutil.rmtree(dist, ignore_errors=True)
@@ -45,9 +53,9 @@ def render_skill (skill_name):
         i += 1
     return f'<div class="skill-row"><div><img class="icon-medium" src="{skill["iconUrl"]}"/></div><div><h3>{ skill_title }</h3><div>{ skill_subtitle }</div> <div>{ skill_description }</div></div></div>'
 
-def render_elf_item(elf):
+def render_elf_item(elf, h="h2"):
     elves_text = '<div>'
-    elves_text += f'<h2><a href="{elf["key"]}.html"><img class="inline-icon" src="{json_data["elements"][elf["element"]]["iconUrl"]}">{ elf["name"] }</a></h2>'
+    elves_text += f'<{h}><a href="/{dir_elves}/{elf["key"]}.html"><img class="inline-icon" src="{json_data["elements"][elf["element"]]["iconUrl"]}">{ elf["name"] }</a></{h}>'
     elves_text += f'<div class="skill-row"><div><img class="icon-medium" src="{elf["imgUrl"]}"/></div><div>-</div></div>'
     elves_text += '</div>'
     return elves_text
@@ -138,8 +146,6 @@ for slug, elf in json_data["elves"].items():
         f.write(page_content)
 
 # Create index page
-elves = [{ "key": slug, **elf } for slug, elf in json_data["elves"].items()]
-elves.sort(key=lambda x: x['name'])
 elves_text = ""
 elves_text += '<div class="card two-column">'
 for elf in elves:
@@ -188,10 +194,20 @@ for slug, item in json_data["elements"].items():
             <h1 class="title"><img class="inline-icon" src="{ item.get("iconUrl") }"> { item["text"] }</h1>
         </header>
     """
-    text_content += '<div class="card article">'
-    text_content += f"""
-        <div class="mugshot"><img src="{item["iconUrl"]}"/></div>
-    """
+    # text_content += '<div class="card article">'
+    # text_content += f"""
+    #     <div class="mugshot"><img src="{item["iconUrl"]}"/></div>
+    # """
+    # text_content += '</div>'
+    
+    text_content += '<div class="two-column">'
+    text_content += f'<h2>Elves</h2>'
+    e = elves_by_element.get(slug, [])
+    if len(e) == 0:
+        text_content += f'<p>No elf with {item["text"]} element.</p>'
+    else:
+        for elf in elves_by_element.get(slug, []):
+            text_content += render_elf_item(elf, "h3")
     text_content += '</div>'
 
     page_content = page_content.replace("{{page_content}}", text_content)
@@ -201,7 +217,7 @@ for slug, item in json_data["elements"].items():
 
 
 
-# Create index page
+# Create Elements index page
 elements = [{ "key": slug, **element } for slug, element in json_data["elements"].items()]
 elements.sort(key=lambda x: x['text'])
 elements_text = ""
