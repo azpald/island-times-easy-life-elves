@@ -94,7 +94,7 @@ page_content = page_content.replace("{{post_title}}", "Home")
 text_content = ""
 text_content += '<div class="card two-column article container-multicolumns">'
 text_content += f"""
-    <div class="mugshot"><a href="/{dir_elves}/"><img class="icon-medium" src="{1}"/><div>Elves</div></a></div>
+    <div class="mugshot"><a href="/{dir_elves}/"><img class="icon-medium" src="{json_data["vars"]["icon_menu_elves"]}"/><div>Elves</div></a></div>
     <div class="mugshot"><a href="/{dir_elements}/"><img class="icon-medium" src="{1}"/><div>Elements</div></a></div>
     <div class="mugshot"><a href="/continents/"><img class="icon-medium" src="{1}"/><div>Continents</div></a></div>
     <div class="mugshot"><a href="/skills/"><img class="icon-medium" src="{1}"/><div>Skills</div></a></div>

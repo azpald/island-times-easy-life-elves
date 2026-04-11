@@ -1,4 +1,6 @@
 {
+    "icon_menu_elves": "/img/icon-menu/elves.png",
+
     "style_css": "/css/style.css",
     "layout_css": "/css/layout.css"
 }
