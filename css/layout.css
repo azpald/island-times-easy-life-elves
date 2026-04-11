@@ -410,7 +410,7 @@ img.icon-medium {
 
 /* ===== MENUBAR ===== */
 .site-header {
-    margin-bottom: 1rem;
+    /* margin-bottom: 1rem; */
 }
 
 .menu-bar {
@@ -439,5 +439,41 @@ img.icon-medium {
 }
 
 .menu-right a:hover {
+    text-decoration: underline;
+}
+
+/* Breadcrumb */
+.breadcrumb {
+    margin: 0.75rem 0 1.5rem 0;
+    font-size: 0.9rem;
+    color: var(--muted);
+}
+
+.breadcrumb ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+}
+
+.breadcrumb li {
+    display: flex;
+    align-items: center;
+}
+
+.breadcrumb li+li::before {
+    content: "/";
+    margin: 0 0.4rem;
+    color: var(--muted);
+}
+
+.breadcrumb a {
+    text-decoration: none;
+    color: var(--accent);
+}
+
+.breadcrumb a:hover {
     text-decoration: underline;
 }

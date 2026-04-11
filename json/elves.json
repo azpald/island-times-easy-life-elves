@@ -23,6 +23,32 @@
                 "value": 0
             }
         },
-        "skills": ["mana-ball", "smite"]
+        "skills": ["mana-ball", "smite", "rage"]
+    },
+    "butcher-zombie": {
+        "imgUrl": "/img/elves/butcher-zombie.png",
+        "name": "Butcher Zombie",
+        "element": "darkness",
+        "stats": {
+            "speed": {
+                "value": 140
+            },
+            "defense": {
+                "value": 0
+            },
+            "accuracy": {
+                "value": 0
+            },
+            "block": {
+                "value": 5
+            },
+            "critical": {
+                "value": 0
+            },
+            "tenacity": {
+                "value": 0
+            }
+        },
+        "skills": ["full-blow", "epidemic-spreading", "calling-servant"]
     }
 }

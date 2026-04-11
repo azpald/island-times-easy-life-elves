@@ -48,8 +48,8 @@ for placeholder, value in json_data["vars"].items():
 
 # Landing page
 page_content = page_template
-page_content = page_content.replace("{{page_title}}", "Elves")
-page_content = page_content.replace("{{post_title}}", "Elves")
+# page_content = page_content.replace("{{page_title}}", "Home")
+page_content = page_content.replace("{{post_title}}", "Home")
 text_content = ""
 text_content += '<div class="card two-column article container-multicolumns">'
 text_content += f"""
@@ -61,6 +61,7 @@ with open(dist / "index.html", "w", encoding="utf-8") as f:
     f.write(page_content)
 
 
+
 ###################################
 # Write page for elves
 ###################################
@@ -68,7 +69,7 @@ dir_elves = "elves"
 (dist / dir_elves).mkdir(parents=True, exist_ok=True)
 for slug, elf in json_data["elves"].items():
     page_content = page_template
-    page_content = page_content.replace("{{page_title}}", "<img class=\"inline-icon\" src=\"" + json_data["elements"][elf["element"]]["iconUrl"] + "\"> " + elf["name"])
+    # page_content = page_content.replace("{{page_title}}", "<img class=\"inline-icon\" src=\"" + json_data["elements"][elf["element"]]["iconUrl"] + "\"> " + elf["name"])
     page_content = page_content.replace("{{post_title}}", elf["name"])
 
     stat_text = ""
@@ -77,7 +78,19 @@ for slug, elf in json_data["elves"].items():
 
 
     element = json_data["elements"][elf["element"]]
-    text_content = '<div class="card article">'
+    text_content = f"""
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <ol>
+                <li><a href="/">Home</a></li>
+                <li><a href="/elves/">Elves</a></li>
+                <li aria-current="page">{elf["name"]}</li>
+            </ol>
+        </nav>
+        <header class="post-header card two-column">
+            <h1 class="title"><img class="inline-icon" src="{ json_data["elements"][elf["element"]]["iconUrl"] }"> { elf["name"] }</h1>
+        </header>
+    """
+    text_content += '<div class="card article">'
     text_content += f"""
         <div class="mugshot"><img src="{elf["imgUrl"]}"/></div>
     """
@@ -111,9 +124,10 @@ for slug, elf in json_data["elves"].items():
 
 # Create index page
 elves = [{ "key": slug, **elf } for slug, elf in json_data["elves"].items()]
+elves.sort(key=lambda x: x['name'])
 elves_text = ""
 elves_text += '<div class="card two-column">'
-for elf in elves+elves:
+for elf in elves:
     elves_text += '<div>'
     elves_text += f'<h2><a href="{elf["key"]}.html"><img class="inline-icon" src="{json_data["elements"][elf["element"]]["iconUrl"]}">{ elf["name"] }</a></h2>'
     elves_text += f'<div class="skill-row"><div><img class="icon-medium" src="{elf["imgUrl"]}"/></div><div>-</div></div>'
@@ -121,14 +135,20 @@ for elf in elves+elves:
 elves_text += '</div>'
 
 page_content = page_template
-page_content = page_content.replace("{{page_title}}", "Elves")
+# page_content = page_content.replace("{{page_title}}", "Elves")
 page_content = page_content.replace("{{post_title}}", "Elves")
 
-text_content = ""
-# text_content += '<div class="card article two-column">'
-# text_content += f"""
-# """
-# text_content += '</div>'
+text_content = f"""
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+        <ol>
+            <li><a href="/">Home</a></li>
+            <li aria-current="page">Elves</li>
+        </ol>
+    </nav>
+    <header class="post-header card two-column">
+        <h1 class="title">Elves</h1>
+    </header>
+"""
 text_content += elves_text
 
 page_content = page_content.replace("{{page_content}}", text_content)

@@ -1,18 +1,56 @@
 {
     "mana-ball": {
         "iconUrl": "/img/icon-skills/mana-ball.png",
+        "name": "Mana Ball",
+        "description": "Launch a Mana ball that deals ({{value1}})% damage to the target and can be catapulted 5 times, adding 3 catalputs if it kills the target.",
+        "isTransferable": false,
         "levelMax": 5,
         "valuesBase": [120],
-        "valuesIncrement": [15],
-        "name": "Mana Ball",
-        "description": "Launch a Mana ball that deals ({{value1}})% damage to the target and can be catapulted 5 times, adding 3 catalputs if it kills the target."
+        "valuesIncrement": [15]
     },
     "smite": {
         "iconUrl": "/img/icon-skills/smite.png",
+        "name": "Smite",
+        "description": "Increase damage to enemies by ({{value1}})%.",
+        "isTransferable": true,
         "levelMax": 3,
         "valuesBase": [10],
-        "valuesIncrement": [5],
-        "name": "Smite",
-        "description": "Increase damage to enemies by ({{value1}})%."
+        "valuesIncrement": [5]
+    },
+    "rage": {
+        "iconUrl": "/img/icon-skills/rage.png",
+        "name": "Rage",
+        "description": "Get {{value1}} Rage for each extra action.",
+        "isTransferable": true,
+        "levelMax": 1,
+        "valuesBase": [10],
+        "valuesIncrement": [0]
+    },
+    "full-blow": {
+        "iconUrl": "/img/icon-skills/full-blow.png",
+        "name": "Full Blow",
+        "description": "Deals ({{value1}})% damage to the target while lacerating wound and inflicting [bleed] on the target",
+        "isTransferable": false,
+        "levelMax": 5,
+        "valuesBase": [180],
+        "valuesIncrement": [30]
+    },
+    "epidemic-spreading": {
+        "iconUrl": "/img/icon-skills/epidemic-spreading.png",
+        "name": "Epidemic Spreading",
+        "description": "When attacking, if the target is in an abnormal status, ({{value1}})% probability on infection to other enemies",
+        "isTransferable": true,
+        "levelMax": 3,
+        "valuesBase": [25],
+        "valuesIncrement": [10]
+    },
+    "calling-servant": {
+        "iconUrl": "/img/icon-skills/calling-servant.png",
+        "name": "Calling Servant",
+        "description": "After death, summon litle zombie to fight.",
+        "isTransferable": true,
+        "levelMax": 1,
+        "valuesBase": [0],
+        "valuesIncrement": [0]
     }
 }
