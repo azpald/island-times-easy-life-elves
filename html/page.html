@@ -4,19 +4,19 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Post Title — Minimal Blog</title>
+    <title>{{post_title}}</title>
     <meta name="description" content="A short description of the post." />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="article" />
-    <meta property="og:title" content="Post Title" />
+    <meta property="og:title" content="{{post_title}}" />
     <meta property="og:description" content="A short description of the post." />
     <meta property="og:url" content="https://example.com/posts/post-slug" />
     <meta property="og:image" content="https://example.com/assets/og-image.png" />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Post Title" />
+    <meta name="twitter:title" content="{{post_title}}" />
     <meta name="twitter:description" content="A short description of the post." />
     <meta name="twitter:image" content="https://example.com/assets/og-image.png" />
 
@@ -30,12 +30,49 @@
 
 <body>
     <main class="container">
+        <!-- ===== MENUBAR ===== -->
+        <!-- <header class="site-header">
+            <h1 class="site-title">Minimal Blog</h1>
+            <p class="site-description">
+                Notes on writing, code, design, and building things on the web.
+            </p>
+        
+            <nav aria-label="Primary navigation">
+                <a href="/">Home</a>
+                <a href="/about.html">About</a>
+                <a href="/archive.html">Archive</a>
+                <a href="/rss.xml">RSS</a>
+            </nav>
+        </header> -->
+        <header class="site-header two-column">
+            <div class="menu-bar">
+                <div class="menu-left">Minimal Blog</div>
+
+                <nav class="menu-right">
+                <a href="/">Home</a>
+                <a href="/elves/">Elves</a>
+                <!-- <a href="/tags">Tags</a> -->
+                <!-- <a href="/about">About</a> -->
+                </nav>
+            </div>
+        </header>
 
         <header class="post-header card two-column">
             <h1 class="title">{{page_title}}</h1>
         </header>
 
         {{page_content}}
+
+        <div class="card two-column article container-multicolumns">
+            <hr />
+        </div>
+
+        <!-- <div class="card two-column article container-multicolumns">
+            <div>111111</div>
+            <div>111111</div>
+            <div>111111</div>
+            <div>111111</div>
+        </div>
 
         <div class="card article">
             <p>This is a minimalist blog template. The typography and spacing are tuned to look like HTML generated from
@@ -63,17 +100,6 @@
                 a Markdown file: neutral font, comfortable line length, and subtle code/blockquote styling.</p>
         </div>
 
-        <div class="card two-column article container-multicolumns">
-            <hr />
-        </div>
-
-        <div class="card two-column article container-multicolumns">
-            <div>111111</div>
-            <div>111111</div>
-            <div>111111</div>
-            <div>111111</div>
-        </div>
-
         <div class="card two-column article">
             <p>This is a minimalist blog template. The typography and spacing are tuned to look like HTML generated from
                 a Markdown file: neutral font, comfortable line length, and subtle code/blockquote styling.</p>
@@ -81,7 +107,7 @@
             <footer class="post-footer">
                 <div>Tags: <span>minimal</span>, <span>template</span>, <span>blog</span></div>
             </footer>
-        </div>
+        </div> -->
 
     </main>
 
