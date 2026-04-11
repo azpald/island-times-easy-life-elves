@@ -38,6 +38,12 @@ def render_skill (skill_name):
         i += 1
     return f'<div class="skill-row"><div><img class="icon-medium" src="{skill["iconUrl"]}"/></div><div><h3>{ skill_title }</h3><div>{ skill_subtitle }</div> <div>{ skill_description }</div></div></div>'
 
+def render_elf_item(elf):
+    elves_text = '<div>'
+    elves_text += f'<h2><a href="{elf["key"]}.html"><img class="inline-icon" src="{json_data["elements"][elf["element"]]["iconUrl"]}">{ elf["name"] }</a></h2>'
+    elves_text += f'<div class="skill-row"><div><img class="icon-medium" src="{elf["imgUrl"]}"/></div><div>-</div></div>'
+    elves_text += '</div>'
+    return elves_text
 
 # Load page template
 page_template = ""
@@ -98,7 +104,7 @@ for slug, elf in json_data["elves"].items():
     # text_content += '<div class="card article">'
     text_content += f"""
         <div>
-            <div class="form-row"><b>Element</b><span>{element["text"]}</span></div>
+            <div class="form-row"><b>Element</b><a href="/elements/{elf["element"]}.html">{element["text"]}</a></div>
             {stat_text}
         </div>
     """
@@ -128,10 +134,7 @@ elves.sort(key=lambda x: x['name'])
 elves_text = ""
 elves_text += '<div class="card two-column">'
 for elf in elves:
-    elves_text += '<div>'
-    elves_text += f'<h2><a href="{elf["key"]}.html"><img class="inline-icon" src="{json_data["elements"][elf["element"]]["iconUrl"]}">{ elf["name"] }</a></h2>'
-    elves_text += f'<div class="skill-row"><div><img class="icon-medium" src="{elf["imgUrl"]}"/></div><div>-</div></div>'
-    elves_text += '</div>'
+    elves_text += render_elf_item(elf)
 elves_text += '</div>'
 
 page_content = page_template
@@ -154,3 +157,71 @@ text_content += elves_text
 page_content = page_content.replace("{{page_content}}", text_content)
 with open(dist / dir_elves / "index.html", "w", encoding="utf-8") as f:
     f.write(page_content)
+
+
+###################################
+# Write page for elements
+###################################
+dir_elements = "elements"
+(dist / dir_elements).mkdir(parents=True, exist_ok=True)
+for slug, item in json_data["elements"].items():
+    page_content = page_template
+    page_content = page_content.replace("{{post_title}}", item["text"])
+
+    text_content = f"""
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <ol>
+                <li><a href="/">Home</a></li>
+                <li><a href="/elements/">Elements</a></li>
+                <li aria-current="page">{item["text"]}</li>
+            </ol>
+        </nav>
+        <header class="post-header card two-column">
+            <h1 class="title"><img class="inline-icon" src="{ item.get("iconUrl") }"> { item["text"] }</h1>
+        </header>
+    """
+    text_content += '<div class="card article">'
+    text_content += f"""
+        <div class="mugshot"><img src="{item["iconUrl"]}"/></div>
+    """
+    text_content += '</div>'
+
+    page_content = page_content.replace("{{page_content}}", text_content)
+
+    with open(dist / dir_elements / f"{slug}.html", "w", encoding="utf-8") as f:
+        f.write(page_content)
+
+
+
+# Create index page
+elements = [{ "key": slug, **element } for slug, element in json_data["elements"].items()]
+elements.sort(key=lambda x: x['text'])
+elements_text = ""
+elements_text += '<div class="two-column container-multicolumns">'
+for element in elements:
+    elements_text += f'<div class="mugshot"><a href="/elements/{element["key"]}.html"><img class="icon-medium" src="{element["iconUrl"]}"/><div>{element["text"]}</div></a></div>'
+elements_text += '</div>'
+
+page_content = page_template
+page_content = page_content.replace("{{post_title}}", "Elements")
+
+text_content = f"""
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+        <ol>
+            <li><a href="/">Home</a></li>
+            <li aria-current="page">Elements</li>
+        </ol>
+    </nav>
+    <header class="post-header card two-column">
+        <h1 class="title">Elements</h1>
+    </header>
+"""
+text_content += elements_text
+
+page_content = page_content.replace("{{page_content}}", text_content)
+with open(dist / dir_elements / "index.html", "w", encoding="utf-8") as f:
+    f.write(page_content)
+
+
+
+

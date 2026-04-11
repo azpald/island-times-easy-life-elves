@@ -51,7 +51,7 @@
                 <nav class="menu-right">
                 <!-- <a href="/">Home</a> -->
                 <a href="/elves/">Elves</a>
-                <!-- <a href="/tags">Tags</a> -->
+                <a href="/elements/">Elements</a>
                 <!-- <a href="/about">About</a> -->
                 </nav>
             </div>
@@ -107,7 +107,15 @@
 
     </main>
 
+    <script>
+        document.addEventListener('error', function (event) {
+            const path = '/img/default.png';
+            if (event.target.tagName.toLowerCase() !== 'img') return;
+            if (event.target.getAttribute("src") == path) return;
+            event.target.src = path;
+        }, true); // The 'true' enables the capture phase
 
+    </script>
 </body>
 
 </html>
