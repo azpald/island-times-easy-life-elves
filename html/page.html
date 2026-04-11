@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Post Title — Minimal Blog</title>
+    <meta name="description" content="A short description of the post." />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Post Title" />
+    <meta property="og:description" content="A short description of the post." />
+    <meta property="og:url" content="https://example.com/posts/post-slug" />
+    <meta property="og:image" content="https://example.com/assets/og-image.png" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Post Title" />
+    <meta name="twitter:description" content="A short description of the post." />
+    <meta name="twitter:image" content="https://example.com/assets/og-image.png" />
+
+    <!-- Article metadata -->
+    <meta property="article:published_time" content="2026-01-28T00:00:00Z" />
+    <meta property="article:author" content="Author Name" />
+
+    <!-- Minimal, markdown-like styling + respects browser theme -->
+     <link rel="stylesheet" href="{{layout_css}}" />
+</head>
+
+<body>
+    <main class="container">
+
+        <header class="post-header card two-column">
+            <h1 class="title">{{page_title}}</h1>
+        </header>
+
+        {{page_content}}
+
+        <div class="card article">
+            <p>This is a minimalist blog template. The typography and spacing are tuned to look like HTML generated from
+                a Markdown file: neutral font, comfortable line length, and subtle code/blockquote styling.</p>
+
+            <h2>Heading level 2</h2>
+            <p>Write paragraphs as usual. Links are simple and not overly decorated. Example: <a href="#">internal
+                    link</a> and <a href="https://example.com">external link</a>.</p>
+
+            <h3>Heading level 3</h3>
+            <p>Write paragraphs as usual. Links are simple and not overly decorated. Example: <a href="#">internal
+                    link</a> and <a href="https://example.com">external link</a>.</p>
+
+            <blockquote>Short quoted text. Keep it simple.</blockquote>
+
+            <p>End of content. You can paste the HTML produced by your markdown renderer into the &lt;main&gt; element
+                above.</p>
+
+            <hr />
+
+        </div>
+
+        <div class="card article">
+            <p>This is a minimalist blog template. The typography and spacing are tuned to look like HTML generated from
+                a Markdown file: neutral font, comfortable line length, and subtle code/blockquote styling.</p>
+        </div>
+
+        <div class="card two-column article container-multicolumns">
+            <hr />
+        </div>
+
+        <div class="card two-column article container-multicolumns">
+            <div>111111</div>
+            <div>111111</div>
+            <div>111111</div>
+            <div>111111</div>
+        </div>
+
+        <div class="card two-column article">
+            <p>This is a minimalist blog template. The typography and spacing are tuned to look like HTML generated from
+                a Markdown file: neutral font, comfortable line length, and subtle code/blockquote styling.</p>
+
+            <footer class="post-footer">
+                <div>Tags: <span>minimal</span>, <span>template</span>, <span>blog</span></div>
+            </footer>
+        </div>
+
+    </main>
+
+
+</body>
+
+</html>

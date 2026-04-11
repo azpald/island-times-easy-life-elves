@@ -1,0 +1,400 @@
+/* Layout */
+:root {
+    --bg: #ffffff;
+    --text: #111111;
+    --muted: #6b7280;
+    --accent: #111111;
+    --border: #e6e6e6;
+    --code-bg: #f3f4f6;
+    --max-width: 72ch;
+    /* readable measure similar to md -> line length */
+    --radius: 8px;
+    --gap: 1.25rem;
+    font-size: 16px;
+    line-height: 1.6;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg: #0b0b0b;
+        --text: #e6eef3;
+        --muted: #9aa6b2;
+        --accent: #e6eef3;
+        --border: #1f2933;
+        --code-bg: #071018;
+    }
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    /* display: flex; */
+    /* justify-content: center; */
+    padding: 2.25rem 1rem;
+}
+
+
+/* Header */
+header.site-header {
+    margin-bottom: 2.5rem;
+}
+
+.site-title {
+    margin: 0 0 0.25rem 0;
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+}
+
+.site-description {
+    margin: 0;
+    color: var(--muted);
+    font-size: 1rem;
+}
+
+nav {
+    margin-top: 1rem;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: var(--accent);
+    text-decoration: none;
+    font-size: 0.95rem;
+}
+
+nav a:hover {
+    text-decoration: underline
+}
+
+/* Post list */
+.post-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.post-item {
+    padding: 1.25rem 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.post-item:last-child {
+    border-bottom: 0;
+}
+
+.post-title {
+    margin: 0 0 0.35rem 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+}
+
+.post-title a {
+    text-decoration: none;
+    color: var(--accent);
+}
+
+.post-title a:hover {
+    text-decoration: underline
+}
+
+.post-meta {
+    font-size: 0.9rem;
+    color: var(--muted);
+    margin-bottom: 0.5rem;
+}
+
+.post-excerpt {
+    margin: 0 0 0.5rem 0;
+}
+
+.read-more {
+    font-size: 0.9rem;
+    text-decoration: none;
+    color: var(--accent);
+}
+
+.read-more:hover {
+    text-decoration: underline
+}
+
+/* Footer */
+footer.site-footer {
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+header.post-header {
+    /* margin-bottom: calc(var(--gap) * 1.5); */
+}
+
+header .title {
+    margin: 0 0 0.35rem 0;
+    font-size: clamp(1.5rem, 3.5vw, 2.25rem);
+    font-weight: 600;
+    letter-spacing: -0.01em;
+}
+
+.meta {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    color: var(--muted);
+    font-size: 0.95rem;
+    align-items: center;
+}
+
+.meta time {
+    white-space: nowrap
+}
+
+.article {
+    margin-top: var(--gap);
+    color: var(--text);
+    text-align: justify;
+}
+
+/* Markdown-like content styles */
+.article p {
+    margin: 0 0 1em 0;
+}
+
+.article h2 {
+    font-size: 1.25rem;
+    margin: 1.25rem 0 0.5rem 0
+}
+
+.article h3 {
+    font-size: 1.05rem;
+    margin: 1rem 0 0.5rem 0
+}
+
+.article a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+.article a:hover {
+    text-decoration: underline
+}
+
+blockquote {
+    margin: 0 0 1rem 0;
+    padding: 0.6rem 1rem;
+    border-left: 4px solid var(--border);
+    color: var(--muted);
+    background: transparent;
+    border-radius: 4px;
+}
+
+pre {
+    background: var(--code-bg);
+    padding: 0.75rem 0.9rem;
+    overflow: auto;
+    border-radius: 6px;
+    margin: 0 0 1rem 0;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono", "Courier New", monospace;
+    font-size: 0.95rem;
+}
+
+code {
+    padding: 0.12rem 0.28rem;
+    border-radius: 4px;
+    background: var(--code-bg);
+    font-family: inherit
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: var(--border);
+    margin: 1.5rem 0
+}
+
+ul,
+ol {
+    margin: 0 0 1rem 1.25rem
+}
+
+/* Footer & comments */
+footer.post-footer {
+    margin-top: 2rem;
+    color: var(--muted);
+    font-size: 0.95rem
+}
+
+section#comments {
+    margin-top: 2rem
+}
+
+.comments-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1rem 0
+}
+
+.comment {
+    padding: 0.75rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    margin: 0 0 0.75rem 0;
+    background: transparent;
+}
+
+.comment .meta {
+    font-size: 0.85rem;
+    color: var(--muted)
+}
+
+form.comment-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem
+}
+
+.form-row {
+    display: flex;
+    gap: 0.5rem
+}
+
+.form-row input[type="text"],
+.form-row input[type="email"],
+textarea {
+    width: 100%;
+    padding: 0.5rem 0.6rem;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    background: transparent;
+    color: var(--text);
+    font: inherit;
+    box-sizing: border-box;
+}
+
+textarea {
+    min-height: 100px;
+    resize: vertical
+}
+
+button {
+    align-self: flex-start;
+    padding: 0.45rem 0.7rem;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--text);
+    cursor: pointer
+}
+
+button:hover {
+    opacity: 0.92
+}
+
+
+/* Centered container with max width */
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    /* Default: 1 column */
+    gap: 20px 35px;
+}
+
+/* When screen is wider, switch to 2 columns */
+@media (min-width: 800px) {
+    .container {
+        grid-template-columns: 1fr 1fr;
+        /* Max 2 columns */
+    }
+
+    /* If total number of cards is odd,
+         make the last one span both columns */
+    /*.container .card:last-child:nth-child(odd) {
+        grid-column: span 2;
+      }*/
+
+    .card.two-column {
+        grid-column: span 2;
+    }
+}
+
+.container-multicolumns {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+}
+
+img {
+    /* Standard modern browsers (Chrome, Edge, Safari) */
+    image-rendering: pixelated;
+
+    /* Firefox specific (older versions) */
+    image-rendering: crisp-edges;
+
+    /* Legacy Firefox and potential Safari support */
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -webkit-optimize-contrast;
+}
+
+img.inline-icon {
+    display: inline-block;
+    vertical-align: middle;
+
+    /* Matches font size + extra (e.g., 1.2x) */
+    height: 2em;
+    width: 2em;
+
+    /* Forces 1:1 and handles overflow */
+    aspect-ratio: 1 / 1;
+    object-fit: contain;
+
+    /* Aligns to baseline and offsets the extra size */
+    vertical-align: bottom;
+    margin-bottom: -0.15em;
+}
+
+.mugshot {
+    text-align: center;
+}
+
+.mugshot>img {
+    width: 200px;
+}
+
+
+.form-row {
+    display: grid;
+    /* First column (label) is 150px, second (input) takes the rest */
+    grid-template-columns: 150px 1fr;
+    align-items: center;
+    /* Vertically centers label with input */
+    gap: 15px;
+}
+.form-row *:nth-child(2)::before {
+    content: ": ";
+}
+
+
+.skill-row {
+    display: grid;
+    /* First column (label) is 150px, second (input) takes the rest */
+    grid-template-columns: 100px 1fr;
+    align-items: center;
+    /* Vertically centers label with input */
+    gap: 15px;
+}

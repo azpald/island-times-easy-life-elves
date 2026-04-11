@@ -1,0 +1,10 @@
+{
+    "mana-ball": {
+        "iconUrl": "/img/icon-elements/wood.png",
+        "levelMax": 5,
+        "valuesBase": [120],
+        "valuesIncrement": [15],
+        "name": "Mana Ball",
+        "description": "Launch a Mana ball that deals ({{value1}})% damage to the target and can be catapulted 5 times, adding 3 catalputs if it kills the target."
+    }
+}

@@ -1,0 +1,30 @@
+{
+    "wood": {
+        "iconUrl": "/img/icon-elements/wood.png",
+        "text": "Wood"
+    },
+    "earth": {
+        "iconUrl": "/img/icon-elements/earth.png",
+        "text": "Earth"
+    },
+    "water": {
+        "iconUrl": "/img/icon-elements/water.png",
+        "text": "Water"
+    },
+    "wind": {
+        "iconUrl": "/img/icon-elements/wind.png",
+        "text": "Wind"
+    },
+    "fire": {
+        "iconUrl": "/img/icon-elements/fire.png",
+        "text": "Fire"
+    },
+    "light": {
+        "iconUrl": "/img/icon-elements/light.png",
+        "text": "Light"
+    },
+    "darkness": {
+        "iconUrl": "/img/icon-elements/darkness.png",
+        "text": "Darkness"
+    }
+}

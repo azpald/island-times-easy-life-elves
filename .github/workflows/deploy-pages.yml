@@ -1,0 +1,80 @@
+name: Build and deploy Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      # - name: Prepare output folder
+      #   run: |
+      #     rm -rf dist
+      #     mkdir -p dist
+
+      #     rsync -av --delete \
+      #       --exclude 'dist' \
+      #       --exclude '.git' \
+      #       --exclude '.github' \
+      #       ./ dist/
+
+      #     # remove files you do not want published
+      #     rm -rf dist/.git dist/.github
+
+      - name: Run build
+        run: python3 build.py
+
+      # - name: Replace variables in HTML files
+      #   env:
+      #     API_URL: ${{ vars.API_URL }}
+      #     APP_ENV: ${{ vars.APP_ENV }}
+      #   run: |
+      #     python3 <<'PY'
+      #     from pathlib import Path
+      #     import os
+
+      #     replacements = {
+      #         "__API_URL__": os.environ.get("API_URL", ""),
+      #         "__APP_ENV__": os.environ.get("APP_ENV", ""),
+      #     }
+
+      #     for html in Path("dist").rglob("*.html"):
+      #         text = html.read_text(encoding="utf-8")
+      #         for old, new in replacements.items():
+      #             text = text.replace(old, new)
+      #         html.write_text(text, encoding="utf-8")
+      #         print(f"processed {html}")
+      #     PY
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    runs-on: ubuntu-latest
+    needs: build
+
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

@@ -1,0 +1,28 @@
+{
+    "lich": {
+        "imgUrl": "/img/elves/lich.png",
+        "name": "Lich",
+        "element": "darkness",
+        "stats": {
+            "speed": {
+                "value": 150
+            },
+            "defense": {
+                "value": 0
+            },
+            "accuracy": {
+                "value": 0
+            },
+            "block": {
+                "value": 5
+            },
+            "critical": {
+                "value": 0
+            },
+            "tenacity": {
+                "value": 0
+            }
+        },
+        "skills": ["mana-ball"]
+    }
+}

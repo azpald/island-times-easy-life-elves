@@ -1,0 +1,26 @@
+{
+    "speed": {
+        "text": "Speed"
+    },
+    "defense": {
+        "text": "Defense"
+    },
+    "accuracy": {
+        "text": "Accuracy"
+    },
+    "block": {
+        "text": "Block"
+    },
+    "critical": {
+        "text": "Critical"
+    },
+    "tenacity": {
+        "text": "Tenacity"
+    },
+    "attack": {
+        "text": "Attack"
+    },
+    "health": {
+        "text": "Health"
+    }
+}
