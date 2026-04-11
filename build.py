@@ -46,12 +46,32 @@ def render_skill (skill_name):
     skill_title = f'{skill["name"]}'
     skill_subtitle = f'Level: {skill["levelMax"]}/{skill["levelMax"]}'
     skill_description = skill["description"]
+    summon_copy = ""
+    skill_summon = skill.get("summon", [])
+    if len(skill_summon) > 0:
+        summon_copy += '<blockquote><b class="green">Summons:</b> '
+        summon_copy += ", ".join([
+            f'<a href="/{dir_elves}/{s}.html"><img class="inline-icon" src="{json_data["elves"][s]["imgUrl"]}">{ json_data["elves"][s]["name"] }</a>' for s in skill_summon
+        ])
+        # for s in skill_summon:
+        #     summon_copy += f'<img class="inline-icon" src="{json_data["elves"][s]["imgUrl"]}">{ json_data["elves"][s]["name"] }'
+        summon_copy += "</blockquote>"
     i = 0
     while i < len(skill["valuesBase"]):
         value = skill["valuesBase"][i] + (skill["levelMax"] - 1) * skill["valuesIncrement"][i]
         skill_description = skill_description.replace("{{value" + str(i + 1) + "}}", str(value))
         i += 1
-    return f'<div class="skill-row"><div><img class="icon-medium" src="{skill["iconUrl"]}"/></div><div><h3>{ skill_title }</h3><div>{ skill_subtitle }</div> <div>{ skill_description }</div></div></div>'
+    return f"""
+        <div class="skill-row">
+            <div><img class="icon-medium" src="{skill["iconUrl"]}"/></div>
+            <div>
+                <h3>{ skill_title }</h3>
+                <div>{ skill_subtitle }</div>
+                <div>{ skill_description }</div>
+                {summon_copy}
+            </div>
+        </div>
+    """
 
 def render_elf_item(elf, h="h2"):
     elves_text = '<div>'

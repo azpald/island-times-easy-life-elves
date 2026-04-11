@@ -1,0 +1,22 @@
+{
+    "land-of-chaos": {
+        "iconUrl": "/img/continents/land-of-chaos.png",
+        "text": "Land of Chaos"
+    },
+    "land-of-forest": {
+        "iconUrl": "/img/continents/land-of-forest.png",
+        "text": "Land of Forest"
+    },
+    "land-of-ice": {
+        "iconUrl": "/img/continents/land-of-ice.png",
+        "text": "Land of Ice"
+    },
+    "land-of-summer": {
+        "iconUrl": "/img/continents/land-of-summer.png",
+        "text": "Land of Summer"
+    },
+    "land-of-wind": {
+        "iconUrl": "/img/continents/land-of-wind.png",
+        "text": "Land of Wind"
+    }
+}

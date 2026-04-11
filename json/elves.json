@@ -50,5 +50,57 @@
             }
         },
         "skills": ["full-blow", "epidemic-spreading", "calling-servant"]
+    },
+    "small-flame": {
+        "imgUrl": "/img/elves/small-flame.png",
+        "name": "Small Flame",
+        "element": "fire",
+        "stats": {
+            "speed": {
+                "value": 135
+            },
+            "defense": {
+                "value": 0
+            },
+            "accuracy": {
+                "value": 5
+            },
+            "block": {
+                "value": 0
+            },
+            "critical": {
+                "value": 0
+            },
+            "tenacity": {
+                "value": 0
+            }
+        },
+        "skills": ["fire-sea", "light-up"]
+    },
+    "fire-element": {
+        "imgUrl": "/img/elves/fire-element.png",
+        "name": "Fire Element",
+        "element": "fire",
+        "stats": {
+            "speed": {
+                "value": 140
+            },
+            "defense": {
+                "value": 0
+            },
+            "accuracy": {
+                "value": 5
+            },
+            "block": {
+                "value": 0
+            },
+            "critical": {
+                "value": 0
+            },
+            "tenacity": {
+                "value": 0
+            }
+        },
+        "skills": ["anomalous-fire", "ignite", "shaping"]
     }
 }

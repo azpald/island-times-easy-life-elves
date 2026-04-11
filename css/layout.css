@@ -6,6 +6,7 @@
     --accent: #111111;
     --border: #e6e6e6;
     --code-bg: #f3f4f6;
+    --green: darkgreen;
     --max-width: 72ch;
     /* readable measure similar to md -> line length */
     --radius: 8px;
@@ -23,6 +24,7 @@
         --accent: #e6eef3;
         --border: #1f2933;
         --code-bg: #071018;
+        --green: limegreen;
     }
 }
 

@@ -52,5 +52,51 @@
         "levelMax": 1,
         "valuesBase": [0],
         "valuesIncrement": [0]
+    },
+    "fire-sea": {
+        "iconUrl": "/img/icon-skills/fire-sea.png",
+        "name": "Fire Sea",
+        "description": "Sacrifice yourself into a sea of fire, dealing ({{value1}})% damage to the front row target and [burning] the enemy.",
+        "isTransferable": false,
+        "levelMax": 5,
+        "valuesBase": [90],
+        "valuesIncrement": [30]
+    },
+    "light-up": {
+        "iconUrl": "/img/icon-skills/light-up.png",
+        "name": "Light-up",
+        "description": "When attacking, if the target is burning, it will immediately trigger a burning damage",
+        "isTransferable": true,
+        "levelMax": 1,
+        "valuesBase": [0],
+        "valuesIncrement": [0]
+    },
+    "anomalous-fire": {
+        "iconUrl": "/img/icon-skills/anomalous-fire.png",
+        "name": "Anomalous Fire",
+        "description": "Throe 8 fireballs in a row, dealing ({{value1}})% damage to random targets",
+        "isTransferable": false,
+        "levelMax": 5,
+        "valuesBase": [30],
+        "valuesIncrement": [10]
+    },
+    "ignite": {
+        "iconUrl": "/img/icon-skills/ignite.png",
+        "name": "Ignite",
+        "description": "Attack have ({{value1}})% probability of [burning] target",
+        "isTransferable": true,
+        "levelMax": 3,
+        "valuesBase": [20],
+        "valuesIncrement": [5]
+    },
+    "shaping": {
+        "iconUrl": "/img/icon-skills/shaping.png",
+        "name": "Shaping",
+        "description": "Each action loses 5% of current Health and summons a small flame.",
+        "isTransferable": true,
+        "levelMax": 1,
+        "valuesBase": [0],
+        "summon": ["small-flame"],
+        "valuesIncrement": [0]
     }
 }
