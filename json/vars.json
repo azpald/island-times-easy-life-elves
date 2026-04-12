@@ -2,6 +2,7 @@
     "icon_menu_elves": "/img/icon-menu/elves.png",
     "post_description": "The unofficial database for elves. A simple reference for the elves in Island Times: Easy Life.",
     "site_origin": "https://island-times-elves.kapitil.my.id",
+    "site_extra_headers": "<meta name=\"google-site-verification\" content=\"SBi5Ps4xRPBuYDTNS9ZrOS3oFTGv7w9u-VWLMDoxWCg\" />",
 
     "style_css": "/css/style.css",
     "layout_css": "/css/layout.css"
