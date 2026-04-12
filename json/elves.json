@@ -135,5 +135,167 @@
         },
         "continents": [],
         "skills": ["liquor-and-fire", "suppress", "clean-break"]
+    },
+    "elf-archer": {
+        "imgUrl": "/img/elves/elf-archer.png",
+        "name": "Elf Archer",
+        "element": "light",
+        "stats": {
+            "speed": {
+                "value": 150
+            },
+            "defense": {
+                "value": 0
+            },
+            "accuracy": {
+                "value": 0
+            },
+            "block": {
+                "value": 0
+            },
+            "critical": {
+                "value": 5
+            },
+            "tenacity": {
+                "value": 0
+            }
+        },
+        "continents": [],
+        "skills": ["arrow-rain", "key-critical", "rage-light"]
+    },
+    "tree-elder": {
+        "imgUrl": "/img/elves/tree-elder.png",
+        "name": "Tree Elder",
+        "element": "wood",
+        "stats": {
+            "speed": {
+                "value": 132
+            },
+            "defense": {
+                "value": 0
+            },
+            "accuracy": {
+                "value": 0
+            },
+            "block": {
+                "value": 0
+            },
+            "critical": {
+                "value": 0
+            },
+            "tenacity": {
+                "value": 20
+            }
+        },
+        "continents": [],
+        "skills": ["forest-resonance", "resistant-skin", "natural-affinity"]
+    },
+    "tree-guard": {
+        "imgUrl": "/img/elves/tree-guard.png",
+        "name": "Tree Guard",
+        "element": "wood",
+        "stats": {
+            "speed": {
+                "value": 138
+            },
+            "defense": {
+                "value": 0
+            },
+            "accuracy": {
+                "value": 0
+            },
+            "block": {
+                "value": 0
+            },
+            "critical": {
+                "value": 0
+            },
+            "tenacity": {
+                "value": 0
+            }
+        },
+        "continents": [],
+        "skills": ["vines-twine", "toxin-immunity", "heating-up"]
+    },
+    "armored-golem": {
+        "imgUrl": "/img/elves/armored-golem.png",
+        "name": "Armored Golem",
+        "element": "earth",
+        "stats": {
+            "speed": {
+                "value": 142
+            },
+            "defense": {
+                "value": 5
+            },
+            "accuracy": {
+                "value": 0
+            },
+            "block": {
+                "value": 0
+            },
+            "critical": {
+                "value": 0
+            },
+            "tenacity": {
+                "value": 0
+            }
+        },
+        "continents": [],
+        "skills": ["ground-cracking", "defense-breaking", "strong-armor"]
+    },
+    "little-statue": {
+        "imgUrl": "/img/elves/little-statue.png",
+        "name": "Little Statue",
+        "element": "earth",
+        "stats": {
+            "speed": {
+                "value": 138
+            },
+            "defense": {
+                "value": 5
+            },
+            "accuracy": {
+                "value": 0
+            },
+            "block": {
+                "value": 0
+            },
+            "critical": {
+                "value": 0
+            },
+            "tenacity": {
+                "value": 0
+            }
+        },
+        "continents": [],
+        "skills": ["thump", "resistance", "heating-up"]
+    },
+    "slime": {
+        "imgUrl": "/img/elves/slime.png",
+        "name": "Slime",
+        "element": "water",
+        "stats": {
+            "speed": {
+                "value": 138
+            },
+            "defense": {
+                "value": 5
+            },
+            "accuracy": {
+                "value": 0
+            },
+            "block": {
+                "value": 0
+            },
+            "critical": {
+                "value": 0
+            },
+            "tenacity": {
+                "value": 0
+            }
+        },
+        "continents": [],
+        "skills": ["bubble-attack", "mucus", "convert-block"]
     }
 }

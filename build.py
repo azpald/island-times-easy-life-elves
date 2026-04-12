@@ -2,6 +2,7 @@ import os
 import json
 import shutil
 import glob
+import sys
 from pathlib import Path
 
 # Vars
@@ -69,6 +70,10 @@ with open(dist / google_code, "w", encoding="utf-8") as f:
     f.write(f'google-site-verification: {google_code}')
 
 def render_skill (skill_name, show_elves=False):
+    if skill_name not in json_data["skills"]:
+        print(f"Skill not found: {skill_name}", file=sys.stderr)
+        return f' <div>[{skill_name}]</div> '
+
     skill = json_data["skills"][skill_name]
     skill_title = f'{skill["name"]}'
     skill_subtitle = f'Level: {skill["levelMax"]}/{skill["levelMax"]}'
@@ -112,7 +117,7 @@ def render_skill (skill_name, show_elves=False):
 
 def render_elf_item(elf, h="h2"):
     content = f'<div>{", ".join([json_data["stats"][stat_name]["text"] + ": " + str(stat_data["value"]) for stat_name, stat_data in elf["stats"].items()])}</div>'
-    content += f'<div><b class="green">Skills:</b> {", ".join([json_data["skills"][s]["name"] for s in elf["skills"]])}</div>'
+    content += f'<div><b class="green">Skills:</b> {", ".join([json_data["skills"].get(s,{}).get("name", s) for s in elf["skills"]])}</div>'
     content += f'<div><b class="green">Habitats:</b> {", ".join([json_data["continents"][s["id"]]["text"] for s in elf.get("continents", [])])}</div>'
     elves_text = '<div>'
     elves_text += f'<{h}><a href="/{dir_elves}/{elf["key"]}.html"><img class="inline-icon" src="{json_data["elements"][elf["element"]]["iconUrl"]}">{ elf["name"] }</a></{h}>'

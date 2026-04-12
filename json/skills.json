@@ -125,5 +125,32 @@
         "levelMax": 1,
         "valuesBase": [0],
         "valuesIncrement": [0]
+    },
+    "thump": {
+        "iconUrl": "/img/icon-skills/thump.png",
+        "name": "Thump",
+        "description": "Deals ({{value1}})% damage to target",
+        "isTransferable": false,
+        "levelMax": 5,
+        "valuesBase": [190],
+        "valuesIncrement": [40]
+    },
+    "resistance": {
+        "iconUrl": "/img/icon-skills/resistance.png",
+        "name": "Resistance",
+        "description": "Damage from the same attribute is reducaed by 50%",
+        "isTransferable": true,
+        "levelMax": 1,
+        "valuesBase": [0],
+        "valuesIncrement": [0]
+    },
+    "heating-up": {
+        "iconUrl": "/img/icon-skills/heating-up.png",
+        "name": "Heating Up",
+        "description": "Increases attack by ({{value1}})% for every 5 actions",
+        "isTransferable": true,
+        "levelMax": 3,
+        "valuesBase": [6],
+        "valuesIncrement": [2]
     }
 }
