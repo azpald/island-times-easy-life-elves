@@ -98,5 +98,32 @@
         "valuesBase": [0],
         "summon": ["small-flame"],
         "valuesIncrement": [0]
+    },
+    "liquor-and-fire": {
+        "iconUrl": "/img/icon-skills/liquor-and-fire.png",
+        "name": "Liquor and Fire",
+        "description": "Skill crit +50, deal ({{value1}})% damage x5 to the front-line target",
+        "isTransferable": false,
+        "levelMax": 5,
+        "valuesBase": [40],
+        "valuesIncrement": [10]
+    },
+    "suppress": {
+        "iconUrl": "/img/icon-skills/suppress.png",
+        "name": "Suppress",
+        "description": "Critical damage increased by({{value1}})%. Critical probability increased by ({{value2}})%.",
+        "isTransferable": true,
+        "levelMax": 3,
+        "valuesBase": [8, 8],
+        "valuesIncrement": [3, 3]
+    },
+    "clean-break": {
+        "iconUrl": "/img/icon-skills/clean-break.png",
+        "name": "Clean Break",
+        "description": "If 50% of the target's current Health is greater than the damage from a normal attack, there is 30% chance to deal the damage of target's current Health.",
+        "isTransferable": true,
+        "levelMax": 1,
+        "valuesBase": [0],
+        "valuesIncrement": [0]
     }
 }

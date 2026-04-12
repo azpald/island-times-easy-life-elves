@@ -108,5 +108,32 @@
             }
         ],
         "skills": ["anomalous-fire", "ignite", "shaping"]
+    },
+    "panda-hero": {
+        "imgUrl": "/img/elves/panda-hero.png",
+        "name": "Panda Hero",
+        "element": "fire",
+        "stats": {
+            "speed": {
+                "value": 150
+            },
+            "defense": {
+                "value": 0
+            },
+            "accuracy": {
+                "value": 5
+            },
+            "block": {
+                "value": 0
+            },
+            "critical": {
+                "value": 0
+            },
+            "tenacity": {
+                "value": 0
+            }
+        },
+        "continents": [],
+        "skills": ["liquor-and-fire", "suppress", "clean-break"]
     }
 }

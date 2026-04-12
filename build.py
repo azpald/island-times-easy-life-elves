@@ -40,9 +40,9 @@ skills_which_active = []
 skills_which_passive = []
 for skill in skills:
     if skill["isTransferable"]:
-        skills_which_active.append(skill)
-    else:
         skills_which_passive.append(skill)
+    else:
+        skills_which_active.append(skill)
 
 
 # Prepare output folder
@@ -78,7 +78,7 @@ def render_skill (skill_name, show_elves=False):
     elves_copy = ""
     if show_elves:
         elves_copy += f"""<blockquote><b class="green">Elves:</b> {", ".join([
-            f'<a href="/{dir_elves}/{e}.html">{json_data["elves"][e]["name"]}</a>' for e in elves_by_skill.get(skill_name, [])
+            f'<a href="/{dir_elves}/{e}.html"><img class="inline-icon" src="{ json_data["elements"][json_data["elves"][e]["element"]]["iconUrl"] }"> {json_data["elves"][e]["name"]}</a>' for e in elves_by_skill.get(skill_name, [])
         ])}</blockquote>"""
 
     # summon
