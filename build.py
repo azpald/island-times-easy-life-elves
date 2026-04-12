@@ -7,6 +7,7 @@ from pathlib import Path
 # Vars
 dir_elves = "elves"
 dir_elements = "elements"
+dir_skills = "skills"
 
 # Load jsons
 folder_json = Path("json")
@@ -17,11 +18,25 @@ for file in folder_json.glob("*.json"):
 
 elves = [{ "key": slug, **elf } for slug, elf in json_data["elves"].items()]
 elves.sort(key=lambda x: x['name'])
+elements = [{ "key": slug, **element } for slug, element in json_data["elements"].items()]
+elements.sort(key=lambda x: x['text'])
+skills = [{ "key": slug, **skill } for slug, skill in json_data["skills"].items()]
+skills.sort(key=lambda x: x['name'])
+
 elves_by_element = {}
 for elf in elves:
     if elf["element"] not in elves_by_element:
         elves_by_element[elf["element"]] = []
     elves_by_element[elf["element"]].append(elf)
+
+skills_which_active = []
+skills_which_passive = []
+for skill in skills:
+    if skill["isTransferable"]:
+        skills_which_active.append(skill)
+    else:
+        skills_which_passive.append(skill)
+
 
 # Prepare output folder
 dist = Path("dist")
@@ -58,8 +73,6 @@ def render_skill (skill_name):
         summon_copy += ", ".join([
             f'<a href="/{dir_elves}/{s}.html"><img class="inline-icon" src="{json_data["elves"][s]["imgUrl"]}">{ json_data["elves"][s]["name"] }</a>' for s in skill_summon
         ])
-        # for s in skill_summon:
-        #     summon_copy += f'<img class="inline-icon" src="{json_data["elves"][s]["imgUrl"]}">{ json_data["elves"][s]["name"] }'
         summon_copy += "</blockquote>"
     i = 0
     while i < len(skill["valuesBase"]):
@@ -99,7 +112,7 @@ page_content = page_content.replace("{{post_title}}", "Home")
 text_content = ""
 text_content += '<div class="card two-column article" style="text-align: center;">'
 text_content += f"""
-    <img src="/img/hero.jpg" style="height: 250px;">
+    <img src="/img/hero.jpg" style="width: 400px; max-width: 90vw;">
     <h1>Island Times: Elves Library</h1>
     <p>The unofficial database for elves</p>
     <p>A simple reference for the elves in Island Times: Easy Life.</p>
@@ -109,156 +122,78 @@ text_content += '</div>'
 text_content += '<div class="card two-column article container-multicolumns">'
 text_content += f"""
     <div class="mugshot"><a href="/{dir_elves}/"><img class="icon-medium" src="{json_data["vars"]["icon_menu_elves"]}"/><div>Elves</div></a></div>
-    <div class="mugshot"><a href="/{dir_elements}/"><img class="icon-medium" src="{1}"/><div>Elements</div></a></div>
-    <div class="mugshot"><a href="/continents/"><img class="icon-medium" src="{1}"/><div>Continents</div></a></div>
-    <div class="mugshot"><a href="/skills/"><img class="icon-medium" src="{1}"/><div>Skills</div></a></div>
+    <div class="mugshot"><a href="/{dir_elements}/"><img class="icon-medium" src="{json_data["vars"]["icon_menu_elements"]}"/><div>Elements</div></a></div>
+    <div class="mugshot"><a href="/skills/"><img class="icon-medium" src="{json_data["vars"]["icon_menu_skills"]}"/><div>Skills</div></a></div>
+    <div class="mugshot"><a href="/continents/"><img class="icon-medium" src="{json_data["vars"]["icon_menu_continents"]}"/><div>Continents</div></a></div>
 """
 text_content += '</div>'
 page_content = page_content.replace("{{page_content}}", text_content)
 with open(dist / "index.html", "w", encoding="utf-8") as f:
     f.write(page_content)
 
-
-
 ###################################
 # Write page for elves
 ###################################
-(dist / dir_elves).mkdir(parents=True, exist_ok=True)
-for slug, elf in json_data["elves"].items():
-    page_content = page_template
-    # page_content = page_content.replace("{{page_title}}", "<img class=\"inline-icon\" src=\"" + json_data["elements"][elf["element"]]["iconUrl"] + "\"> " + elf["name"])
-    page_content = page_content.replace("{{post_title}}", elf["name"])
-
-    stat_text = ""
-    for stat_name, stat_data in elf["stats"].items():
-        stat_text += f'<div class="form-row"><b>{ json_data["stats"][stat_name]["text"] }</b><span>{ stat_data["value"] }</span></div>'
-
-
-    element = json_data["elements"][elf["element"]]
-    text_content = f"""
-        <nav class="breadcrumb" aria-label="Breadcrumb">
-            <ol>
-                <li><a href="/">Home</a></li>
-                <li><a href="/{dir_elves}/">Elves</a></li>
-                <li aria-current="page">{elf["name"]}</li>
-            </ol>
-        </nav>
-        <header class="post-header card two-column">
-            <h1 class="title"><img class="inline-icon" src="{ json_data["elements"][elf["element"]]["iconUrl"] }"> { elf["name"] }</h1>
-        </header>
-    """
-    text_content += '<div class="card article">'
-    text_content += f"""
-        <div class="mugshot"><img src="{elf["imgUrl"]}"/></div>
-    """
-    # text_content += '</div>'
-    # text_content += '<div class="card article">'
-    text_content += f"""
-        <div>
-            <div class="form-row"><b>Element</b><a href="/{dir_elements}/{elf["element"]}.html">{element["text"]}</a></div>
-            {stat_text}
-        </div>
-    """
-    text_content += '</div>'
-
-    skill_text = ""
-    for skill_name in elf["skills"]:
-        skill_text += render_skill(skill_name)
-
-    text_content += '<div class="card article">'
-    text_content += '<h2>Skills</h2>'
-    text_content += f"""
-        <div>
-            {skill_text}
-        </div>
-    """
-    text_content += '</div>'
-
-    page_content = page_content.replace("{{page_content}}", text_content)
-
-    with open(dist / dir_elves / f"{slug}.html", "w", encoding="utf-8") as f:
-        f.write(page_content)
-
-# Create index page
-elves_text = ""
-elves_text += '<div class="card two-column">'
-for elf in elves:
-    elves_text += render_elf_item(elf)
-elves_text += '</div>'
-
-page_content = page_template
-# page_content = page_content.replace("{{page_title}}", "Elves")
-page_content = page_content.replace("{{post_title}}", "Elves")
-
-text_content = f"""
-    <nav class="breadcrumb" aria-label="Breadcrumb">
-        <ol>
-            <li><a href="/">Home</a></li>
-            <li aria-current="page">Elves</li>
-        </ol>
-    </nav>
-    <header class="post-header card two-column">
-        <h1 class="title">Elves</h1>
-    </header>
-"""
-text_content += elves_text
-
-page_content = page_content.replace("{{page_content}}", text_content)
-with open(dist / dir_elves / "index.html", "w", encoding="utf-8") as f:
-    f.write(page_content)
-
+with open("elves.py") as f:
+    exec(f.read())
 
 ###################################
 # Write page for elements
 ###################################
-(dist / dir_elements).mkdir(parents=True, exist_ok=True)
-for slug, item in json_data["elements"].items():
-    page_content = page_template
-    page_content = page_content.replace("{{post_title}}", item["text"])
+with open("elements.py") as f:
+    exec(f.read())
 
-    text_content = f"""
-        <nav class="breadcrumb" aria-label="Breadcrumb">
-            <ol>
-                <li><a href="/">Home</a></li>
-                <li><a href="/{dir_elements}/">Elements</a></li>
-                <li aria-current="page">{item["text"]}</li>
-            </ol>
-        </nav>
-        <header class="post-header card two-column">
-            <h1 class="title"><img class="inline-icon" src="{ item.get("iconUrl") }"> { item["text"] }</h1>
-        </header>
-    """
-    # text_content += '<div class="card article">'
-    # text_content += f"""
-    #     <div class="mugshot"><img src="{item["iconUrl"]}"/></div>
-    # """
-    # text_content += '</div>'
+
+###################################
+# Write page for skills
+###################################
+(dist / dir_skills).mkdir(parents=True, exist_ok=True)
+# for slug, item in json_data["skiils"].items():
+#     page_content = page_template
+#     page_content = page_content.replace("{{post_title}}", item["text"])
+
+#     text_content = f"""
+#         <nav class="breadcrumb" aria-label="Breadcrumb">
+#             <ol>
+#                 <li><a href="/">Home</a></li>
+#                 <li><a href="/{dir_elements}/">Elements</a></li>
+#                 <li aria-current="page">{item["text"]}</li>
+#             </ol>
+#         </nav>
+#         <header class="post-header card two-column">
+#             <h1 class="title"><img class="inline-icon" src="{ item.get("iconUrl") }"> { item["text"] }</h1>
+#         </header>
+#     """
+#     # text_content += '<div class="card article">'
+#     # text_content += f"""
+#     #     <div class="mugshot"><img src="{item["iconUrl"]}"/></div>
+#     # """
+#     # text_content += '</div>'
     
-    text_content += '<div class="two-column">'
-    text_content += f'<h2>Elves</h2>'
-    e = elves_by_element.get(slug, [])
-    if len(e) == 0:
-        text_content += f'<p>No elf with {item["text"]} element.</p>'
-    else:
-        for elf in elves_by_element.get(slug, []):
-            text_content += render_elf_item(elf, "h3")
-    text_content += '</div>'
+#     text_content += '<div class="two-column">'
+#     text_content += f'<h2>Elves</h2>'
+#     e = elves_by_element.get(slug, [])
+#     if len(e) == 0:
+#         text_content += f'<p>No elf with {item["text"]} element.</p>'
+#     else:
+#         for elf in elves_by_element.get(slug, []):
+#             text_content += render_elf_item(elf, "h3")
+#     text_content += '</div>'
 
-    page_content = page_content.replace("{{page_content}}", text_content)
+#     page_content = page_content.replace("{{page_content}}", text_content)
 
-    with open(dist / dir_elements / f"{slug}.html", "w", encoding="utf-8") as f:
-        f.write(page_content)
+#     with open(dist / dir_elements / f"{slug}.html", "w", encoding="utf-8") as f:
+#         f.write(page_content)
 
+# Create Skills index page
+skills_text = ""
+skills_text += '<div class="two-column"><h2>Active Skills</h2></div>'
+for s in skills_which_active:
+    skills_text += f'<div>{render_skill(s["key"])}</div>'
 
-
-# Create Elements index page
-elements = [{ "key": slug, **element } for slug, element in json_data["elements"].items()]
-elements.sort(key=lambda x: x['text'])
-elements_text = ""
-elements_text += '<div class="two-column container-multicolumns">'
-for element in elements:
-    elements_text += f'<div class="mugshot"><a href="/{dir_elements}/{element["key"]}.html"><img class="icon-medium" src="{element["iconUrl"]}"/><div>{element["text"]}</div></a></div>'
-elements_text += '</div>'
+skills_text += '<div class="two-column"><h2>Passive Skills</h2></div>'
+for s in skills_which_passive:
+    skills_text += f'<div>{render_skill(s["key"])}</div>'
 
 page_content = page_template
 page_content = page_content.replace("{{post_title}}", "Elements")
@@ -267,17 +202,17 @@ text_content = f"""
     <nav class="breadcrumb" aria-label="Breadcrumb">
         <ol>
             <li><a href="/">Home</a></li>
-            <li aria-current="page">Elements</li>
+            <li aria-current="page">Skills</li>
         </ol>
     </nav>
     <header class="post-header card two-column">
-        <h1 class="title">Elements</h1>
+        <h1 class="title">Skills</h1>
     </header>
 """
-text_content += elements_text
+text_content += skills_text
 
 page_content = page_content.replace("{{page_content}}", text_content)
-with open(dist / dir_elements / "index.html", "w", encoding="utf-8") as f:
+with open(dist / dir_skills / "index.html", "w", encoding="utf-8") as f:
     f.write(page_content)
 
 
