@@ -41,6 +41,11 @@ for d in ["css", "img"]:
 with open(dist / "404.html", "w", encoding="utf-8") as f:
     f.write('<script>location.href="/";</script>')
 
+# Hardcoded google-site-verification
+google_code = "google27d3aaf513c20177.html"
+with open(dist / google_code, "w", encoding="utf-8") as f:
+    f.write(f'google-site-verification: {google_code}')
+
 def render_skill (skill_name):
     skill = json_data["skills"][skill_name]
     skill_title = f'{skill["name"]}'
