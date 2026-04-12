@@ -3,3 +3,4 @@ tmp/
 dist/
 venv/
 requirements.txt
+__pycache__/

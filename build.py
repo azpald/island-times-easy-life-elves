@@ -8,6 +8,7 @@ from pathlib import Path
 dir_elves = "elves"
 dir_elements = "elements"
 dir_skills = "skills"
+dir_continents = "continents"
 
 # Load jsons
 folder_json = Path("json")
@@ -24,10 +25,16 @@ skills = [{ "key": slug, **skill } for slug, skill in json_data["skills"].items(
 skills.sort(key=lambda x: x['name'])
 
 elves_by_element = {}
+elves_by_skill = {}
 for elf in elves:
     if elf["element"] not in elves_by_element:
         elves_by_element[elf["element"]] = []
     elves_by_element[elf["element"]].append(elf)
+
+    for s in elf["skills"]:
+        if s not in elves_by_skill:
+            elves_by_skill[s] = []
+        elves_by_skill[s].append(elf["key"])
 
 skills_which_active = []
 skills_which_passive = []
@@ -61,11 +68,20 @@ google_code = "google27d3aaf513c20177.html"
 with open(dist / google_code, "w", encoding="utf-8") as f:
     f.write(f'google-site-verification: {google_code}')
 
-def render_skill (skill_name):
+def render_skill (skill_name, show_elves=False):
     skill = json_data["skills"][skill_name]
     skill_title = f'{skill["name"]}'
     skill_subtitle = f'Level: {skill["levelMax"]}/{skill["levelMax"]}'
     skill_description = skill["description"]
+
+    # elves
+    elves_copy = ""
+    if show_elves:
+        elves_copy += f"""<blockquote><b class="green">Elves:</b> {", ".join([
+            f'<a href="/{dir_elves}/{e}.html">{json_data["elves"][e]["name"]}</a>' for e in elves_by_skill.get(skill_name, [])
+        ])}</blockquote>"""
+
+    # summon
     summon_copy = ""
     skill_summon = skill.get("summon", [])
     if len(skill_summon) > 0:
@@ -74,6 +90,8 @@ def render_skill (skill_name):
             f'<a href="/{dir_elves}/{s}.html"><img class="inline-icon" src="{json_data["elves"][s]["imgUrl"]}">{ json_data["elves"][s]["name"] }</a>' for s in skill_summon
         ])
         summon_copy += "</blockquote>"
+
+    # value
     i = 0
     while i < len(skill["valuesBase"]):
         value = skill["valuesBase"][i] + (skill["levelMax"] - 1) * skill["valuesIncrement"][i]
@@ -87,14 +105,18 @@ def render_skill (skill_name):
                 <div>{ skill_subtitle }</div>
                 <div>{ skill_description }</div>
                 {summon_copy}
+                {elves_copy}
             </div>
         </div>
     """
 
 def render_elf_item(elf, h="h2"):
+    content = f'<div>{", ".join([json_data["stats"][stat_name]["text"] + ": " + str(stat_data["value"]) for stat_name, stat_data in elf["stats"].items()])}</div>'
+    content += f'<div><b class="green">Skills:</b> {", ".join([json_data["skills"][s]["name"] for s in elf["skills"]])}</div>'
+    content += f'<div><b class="green">Habitats:</b> {", ".join([json_data["continents"][s["id"]]["text"] for s in elf.get("continents", [])])}</div>'
     elves_text = '<div>'
     elves_text += f'<{h}><a href="/{dir_elves}/{elf["key"]}.html"><img class="inline-icon" src="{json_data["elements"][elf["element"]]["iconUrl"]}">{ elf["name"] }</a></{h}>'
-    elves_text += f'<div class="skill-row"><div><img class="icon-medium" src="{elf["imgUrl"]}"/></div><div>-</div></div>'
+    elves_text += f'<div class="skill-row"><div><img class="icon-medium" src="{elf["imgUrl"]}"/></div><div>{content}</div></div>'
     elves_text += '</div>'
     return elves_text
 
@@ -187,13 +209,13 @@ with open("elements.py") as f:
 
 # Create Skills index page
 skills_text = ""
-skills_text += '<div class="two-column"><h2>Active Skills</h2></div>'
+skills_text += '<div class="two-column"><h2 class="in-blue">Active Skills</h2></div>'
 for s in skills_which_active:
-    skills_text += f'<div>{render_skill(s["key"])}</div>'
+    skills_text += f'<div>{render_skill(s["key"], True)}</div>'
 
-skills_text += '<div class="two-column"><h2>Passive Skills</h2></div>'
+skills_text += '<div class="two-column"><h2 class="in-blue">Passive Skills</h2></div>'
 for s in skills_which_passive:
-    skills_text += f'<div>{render_skill(s["key"])}</div>'
+    skills_text += f'<div>{render_skill(s["key"], True)}</div>'
 
 page_content = page_template
 page_content = page_content.replace("{{post_title}}", "Elements")
@@ -217,4 +239,38 @@ with open(dist / dir_skills / "index.html", "w", encoding="utf-8") as f:
 
 
 
+###################################
+# Write page for continents
+###################################
+(dist / dir_continents).mkdir(parents=True, exist_ok=True)
+# Create Continents index page
+continents_text = ""
+for slug, item in json_data["continents"].items():
+    # continents_text += f'<div>{render_skill(s["key"])}</div>'
+    continents_text += f"""
+        <div>
+            <h2>{item["text"]}</h2>
+            <div class="mugshot"><img src="{item["iconUrl"]}"/></div>
+        </div>
+    """
+
+page_content = page_template
+page_content = page_content.replace("{{post_title}}", "Elements")
+
+text_content = f"""
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+        <ol>
+            <li><a href="/">Home</a></li>
+            <li aria-current="page">Continents</li>
+        </ol>
+    </nav>
+    <header class="post-header card two-column">
+        <h1 class="title">Continents</h1>
+    </header>
+"""
+text_content += continents_text
+
+page_content = page_content.replace("{{page_content}}", text_content)
+with open(dist / dir_continents / "index.html", "w", encoding="utf-8") as f:
+    f.write(page_content)
 

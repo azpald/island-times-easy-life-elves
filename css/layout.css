@@ -185,7 +185,7 @@ h3 {
 
 a {
     color: var(--accent);
-    text-decoration: none;
+    /* text-decoration: none; */
 }
 
 a:hover {
@@ -385,8 +385,12 @@ img.inline-icon {
     gap: 15px;
 }
 
-.form-row *:nth-child(2)::before {
+/* .form-row *:nth-child(2)::before {
     content: ": ";
+} */
+.form-row *:nth-child(1)::after {
+    content: ":";
+    float: inline-end;
 }
 
 

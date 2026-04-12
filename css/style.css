@@ -1,3 +1,25 @@
+:root {
+    --blue: aliceblue;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --blue: darkslateblue;
+    }
+}
+
 .green {
     color: var(--green);
+}
+.in-blue {
+    background-color: var(--blue);
+}
+
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a {
+    text-decoration: none !important;
 }

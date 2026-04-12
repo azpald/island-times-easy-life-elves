@@ -101,6 +101,12 @@
                 "value": 0
             }
         },
+        "continents": [
+            {
+                "id": "land-of-summer",
+                "note": ""
+            }
+        ],
         "skills": ["anomalous-fire", "ignite", "shaping"]
     }
 }
