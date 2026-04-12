@@ -75,10 +75,12 @@ jobs:
       #         print(f"processed {html}")
       #     PY
 
-      - name: Minify HTML files
-        uses: textadi/minifier-compressor-html-action@v2
-        env:
-          DIR: 'dist'
+      - name: Minify Files
+        uses: devatherock/minify-js@v3.1.0
+        with:
+          directory: 'dist'      # Path to your source folder
+          add_suffix: false      # Set to false to overwrite original files
+          # inclusions: '.*\.html' # Optional: limit to only HTML files
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
