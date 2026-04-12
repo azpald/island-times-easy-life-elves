@@ -14,6 +14,9 @@ concurrency:
   group: pages
   cancel-in-progress: true
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -21,6 +24,17 @@ jobs:
     steps:
       - name: Check out source
         uses: actions/checkout@v4
+
+      # - name: Set up Python
+      #   uses: actions/setup-python@v5
+      #   with:
+      #     python-version: '3.10'
+      #     cache: 'pip' # Speeds up subsequent runs
+
+      # - name: Install dependencies
+      #   run: |
+      #     python -m pip install --upgrade pip
+      #     pip install minify-html
 
       # - name: Prepare output folder
       #   run: |
@@ -60,6 +74,11 @@ jobs:
       #         html.write_text(text, encoding="utf-8")
       #         print(f"processed {html}")
       #     PY
+
+      - name: Minify HTML files
+        uses: textadi/minifier-compressor-html-action@v2
+        env:
+          DIR: 'dist'
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3

@@ -92,6 +92,15 @@ page_content = page_template
 # page_content = page_content.replace("{{page_title}}", "Home")
 page_content = page_content.replace("{{post_title}}", "Home")
 text_content = ""
+text_content += '<div class="card two-column article" style="text-align: center;">'
+text_content += f"""
+    <img src="/img/hero.jpg" style="height: 250px;">
+    <h1>Island Times: Elves Library</h1>
+    <p>The unofficial database for elves</p>
+    <p>A simple reference for the elves in Island Times: Easy Life.</p>
+"""
+text_content += '</div>'
+
 text_content += '<div class="card two-column article container-multicolumns">'
 text_content += f"""
     <div class="mugshot"><a href="/{dir_elves}/"><img class="icon-medium" src="{json_data["vars"]["icon_menu_elves"]}"/><div>Elves</div></a></div>
