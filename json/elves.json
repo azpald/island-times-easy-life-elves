@@ -184,7 +184,7 @@
                 "value": 0
             },
             "tenacity": {
-                "value": 20
+                "value": 0
             }
         },
         "continents": [],

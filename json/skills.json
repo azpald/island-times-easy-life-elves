@@ -152,5 +152,59 @@
         "levelMax": 3,
         "valuesBase": [6],
         "valuesIncrement": [2]
+    },
+    "arrow-rain": {
+        "iconUrl": "/img/icon-skills/arrow-rain.png",
+        "name": "Arrow Rain",
+        "description": "Shoot 8 arrows in a row, dealing ({{value1}})% damage to random targets",
+        "isTransferable": false,
+        "levelMax": 5,
+        "valuesBase": [30],
+        "valuesIncrement": [10]
+    },
+    "key-critical": {
+        "iconUrl": "/img/icon-skills/key-critical.png",
+        "name": "Key Critical",
+        "description": "When attacking other attribute sprite, Critical probability increased by ({{value1}})%",
+        "isTransferable": true,
+        "levelMax": 3,
+        "valuesBase": [15],
+        "valuesIncrement": [5]
+    },
+    "rage-light": {
+        "iconUrl": "/img/icon-skills/rage-light.png",
+        "name": "Rage",
+        "description": "Increases Rage by ({{value1}}) on Criticals",
+        "isTransferable": true,
+        "levelMax": 3,
+        "valuesBase": [6],
+        "valuesIncrement": [3]
+    },
+    "forest-resonance": {
+        "iconUrl": "/img/icon-skills/forest-resonance.png",
+        "name": "Forest Resonance",
+        "description": "Provides a [shield] to friendly forces in the front row that blocks ({{value1}})% of their attack power, while reducing enemy speed by 10% for 1 turn",
+        "isTransferable": false,
+        "levelMax": 5,
+        "valuesBase": [100],
+        "valuesIncrement": [30]
+    },
+    "resistant-skin": {
+        "iconUrl": "/img/icon-skills/resistant-skin.png",
+        "name": "Resistant Skin",
+        "description": "Damage taken reduced by ({{value1}})%",
+        "isTransferable": true,
+        "levelMax": 3,
+        "valuesBase": [15],
+        "valuesIncrement": [5]
+    },
+    "natural-affinity": {
+        "iconUrl": "/img/icon-skills/natural-affinity.png",
+        "name": "Natural Affinity",
+        "description": "Tenacity +({{value1}})",
+        "isTransferable": true,
+        "levelMax": 3,
+        "valuesBase": [20],
+        "valuesIncrement": [5]
     }
 }
