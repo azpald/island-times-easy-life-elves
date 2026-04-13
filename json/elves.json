@@ -271,6 +271,40 @@
         "continents": [],
         "skills": ["thump", "resistance", "heating-up"]
     },
+    "spar-giant": {
+        "imgUrl": "/img/elves/spar-giant.png",
+        "name": "Spar Giant",
+        "element": "earth",
+        "stats": {
+            "speed": {
+                "value": 113
+            },
+            "defense": {
+                "value": 23
+            },
+            "accuracy": {
+                "value": 21
+            },
+            "block": {
+                "value": 10
+            },
+            "critical": {
+                "value": 26
+            },
+            "tenacity": {
+                "value": 5
+            }
+        },
+        "continents": [
+            {
+                "id": "land-of-wind",
+                "note": "Floor 10"
+            }
+        ],
+        "isUnlisted": true,
+        "isBoss": true,
+        "skills": ["sweeping", "summoning", "uncontrolled-body", "heating-up", "rage-light", "abnormal-resistance"]
+    },
     "slime": {
         "imgUrl": "/img/elves/slime.png",
         "name": "Slime",

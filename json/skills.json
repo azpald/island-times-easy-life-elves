@@ -4,6 +4,7 @@
         "name": "Mana Ball",
         "description": "Launch a Mana ball that deals ({{value1}})% damage to the target and can be catapulted 5 times, adding 3 catalputs if it kills the target.",
         "isTransferable": false,
+        "isActive": true,
         "levelMax": 5,
         "valuesBase": [120],
         "valuesIncrement": [15]
@@ -31,6 +32,7 @@
         "name": "Full Blow",
         "description": "Deals ({{value1}})% damage to the target while lacerating wound and inflicting [bleed] on the target",
         "isTransferable": false,
+        "isActive": true,
         "levelMax": 5,
         "valuesBase": [180],
         "valuesIncrement": [30]
@@ -58,6 +60,7 @@
         "name": "Fire Sea",
         "description": "Sacrifice yourself into a sea of fire, dealing ({{value1}})% damage to the front row target and [burning] the enemy.",
         "isTransferable": false,
+        "isActive": true,
         "levelMax": 5,
         "valuesBase": [90],
         "valuesIncrement": [30]
@@ -76,6 +79,7 @@
         "name": "Anomalous Fire",
         "description": "Throe 8 fireballs in a row, dealing ({{value1}})% damage to random targets",
         "isTransferable": false,
+        "isActive": true,
         "levelMax": 5,
         "valuesBase": [30],
         "valuesIncrement": [10]
@@ -104,6 +108,7 @@
         "name": "Liquor and Fire",
         "description": "Skill crit +50, deal ({{value1}})% damage x5 to the front-line target",
         "isTransferable": false,
+        "isActive": true,
         "levelMax": 5,
         "valuesBase": [40],
         "valuesIncrement": [10]
@@ -131,6 +136,7 @@
         "name": "Thump",
         "description": "Deals ({{value1}})% damage to target",
         "isTransferable": false,
+        "isActive": true,
         "levelMax": 5,
         "valuesBase": [190],
         "valuesIncrement": [40]
@@ -158,6 +164,7 @@
         "name": "Arrow Rain",
         "description": "Shoot 8 arrows in a row, dealing ({{value1}})% damage to random targets",
         "isTransferable": false,
+        "isActive": true,
         "levelMax": 5,
         "valuesBase": [30],
         "valuesIncrement": [10]
@@ -185,6 +192,7 @@
         "name": "Forest Resonance",
         "description": "Provides a [shield] to friendly forces in the front row that blocks ({{value1}})% of their attack power, while reducing enemy speed by 10% for 1 turn",
         "isTransferable": false,
+        "isActive": true,
         "levelMax": 5,
         "valuesBase": [100],
         "valuesIncrement": [30]
@@ -212,6 +220,7 @@
         "name": "Vines Twine",
         "description": "Deals ({{value1}}) damage to the target in the front row and has chance to [stun] the target for 1 turn",
         "isTransferable": false,
+        "isActive": true,
         "levelMax": 5,
         "valuesBase": [130],
         "valuesIncrement": [20]
@@ -230,6 +239,7 @@
         "name": "Ground Cracking",
         "description": "Deals ({{value1}})% damage to front row targets.",
         "isTransferable": false,
+        "isActive": true,
         "levelMax": 5,
         "valuesBase": [175],
         "valuesIncrement": [25]
@@ -257,6 +267,7 @@
         "name": "Bubble Attack",
         "description": "Deals ({{value1}})% x4 damage to target",
         "isTransferable": false,
+        "isActive": true,
         "levelMax": 5,
         "valuesBase": [50],
         "valuesIncrement": [10]
@@ -278,5 +289,50 @@
         "levelMax": 3,
         "valuesBase": [1],
         "valuesIncrement": [1]
+    },
+    "summoning": {
+        "iconUrl": "/img/icon-skills/summoning.png",
+        "name": "Summoning",
+        "description": "Summon 2 Little Statues to assist in the battle",
+        "isTransferable": false,
+        "isUnlisted": true,
+        "isActive": true,
+        "summon": ["little-statue"],
+        "levelMax": 1,
+        "valuesBase": [0],
+        "valuesIncrement": [0]
+    },
+    "sweeping": {
+        "iconUrl": "/img/icon-skills/sweeping.png",
+        "name": "Sweeping",
+        "description": "Deals ({{value1}})% damage to front row enemies",
+        "isTransferable": false,
+        "isUnlisted": true,
+        "isActive": true,
+        "levelMax": 5,
+        "valuesBase": [150],
+        "valuesIncrement": [0]
+    },
+    "uncontrolled-body": {
+        "iconUrl": "/img/icon-skills/uncontrolled-body.png",
+        "name": "Uncontrolled Body",
+        "description": "Immune to stun, freeze, and other control abilities",
+        "isTransferable": false,
+        "isUnlisted": true,
+        "isActive": false,
+        "levelMax": 1,
+        "valuesBase": [0],
+        "valuesIncrement": [0]
+    },
+    "abnormal-resistance": {
+        "iconUrl": "/img/icon-skills/abnormal-resistance.png",
+        "name": "Abnormal Resistance",
+        "description": "When some debuff is triggered, the effect is reduced by 50%",
+        "isTransferable": false,
+        "isUnlisted": true,
+        "isActive": false,
+        "levelMax": 1,
+        "valuesBase": [0],
+        "valuesIncrement": [0]
     }
 }

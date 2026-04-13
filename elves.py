@@ -25,7 +25,7 @@ for slug, elf in json_data["elves"].items():
             </ol>
         </nav>
         <header class="post-header card two-column">
-            <h1 class="title"><img class="inline-icon" src="{ json_data["elements"][elf["element"]]["iconUrl"] }"> { elf["name"] }</h1>
+            <h1 class="title"><img class="inline-icon" src="{ json_data["elements"][elf["element"]]["iconUrl"] }"> { "[BOSS] " if elf.get("isBoss") else "" }{ elf["name"] }</h1>
         </header>
     """
     text_content += '<div class="card article">'
@@ -60,7 +60,7 @@ for slug, elf in json_data["elves"].items():
         for m in elves_by_skill.get(s, []):
             elf_master = json_data["elves"][m]
             summon_text += f'<div>'
-            summon_text += f'Summoned by: <a href="/{dir_elves}/{m}.html"><img class="inline-icon" src="{ json_data["elements"][elf_master["element"]]["iconUrl"] }"> {elf_master["name"]}</a>'
+            summon_text += f'Summoned by: <a href="/{dir_elves}/{m}.html"><img class="inline-icon" src="{ json_data["elements"][elf_master["element"]]["iconUrl"] }">{elf_master["name"]}</a>'
             if len(elf_master.get("continents", [])) > 0:
                 summon_text += f' (at {", ".join([json_data["continents"][s["id"]]["text"] for s in elf_master["continents"]])})'
             summon_text += f'</div>'
@@ -87,6 +87,8 @@ for slug, elf in json_data["elves"].items():
 elves_text = ""
 elves_text += '<div class="card two-column">'
 for elf in elves:
+    if elf.get("isUnlisted", False):
+        continue
     elves_text += render_elf_item(elf)
 elves_text += '</div>'
 

@@ -41,10 +41,10 @@ skills_which_active = []
 skills_which_passive = []
 skills_by_summon = {}
 for skill in skills:
-    if skill["isTransferable"]:
-        skills_which_passive.append(skill)
-    else:
+    if skill.get("isActive", False):
         skills_which_active.append(skill)
+    else:
+        skills_which_passive.append(skill)
 
     for e in skill.get("summon", []):
         if e not in skills_by_summon:
@@ -88,7 +88,7 @@ def render_skill (skill_name, show_elves=False):
     elves_copy = ""
     if show_elves:
         elves_copy += f"""<blockquote><b class="green">Elves:</b> {", ".join([
-            f'<a href="/{dir_elves}/{e}.html"><img class="inline-icon" src="{ json_data["elements"][json_data["elves"][e]["element"]]["iconUrl"] }"> {json_data["elves"][e]["name"]}</a>' for e in elves_by_skill.get(skill_name, [])
+            f'<a href="/{dir_elves}/{e}.html"><img class="inline-icon" src="{ json_data["elements"][json_data["elves"][e]["element"]]["iconUrl"] }">{json_data["elves"][e]["name"]}</a>' for e in elves_by_skill.get(skill_name, [])
         ])}</blockquote>"""
 
     # summon
@@ -126,7 +126,7 @@ def render_elf_item(elf, h="h2"):
     content += f'<div><b class="green">Skills:</b> {", ".join([json_data["skills"].get(s,{}).get("name", s) for s in elf["skills"]])}</div>'
     content += f'<div><b class="green">Locations:</b> {", ".join([json_data["continents"][s["id"]]["text"] for s in elf.get("continents", [])])}</div>'
     elves_text = '<div>'
-    elves_text += f'<{h}><a href="/{dir_elves}/{elf["key"]}.html"><img class="inline-icon" src="{json_data["elements"][elf["element"]]["iconUrl"]}">{ elf["name"] }</a></{h}>'
+    elves_text += f'<{h}><a href="/{dir_elves}/{elf["key"]}.html"><img class="inline-icon" src="{json_data["elements"][elf["element"]]["iconUrl"]}">{ "[BOSS] " if elf.get("isBoss") else "" }{ elf["name"] }</a></{h}>'
     elves_text += f'<div class="skill-row"><div><img class="icon-medium" src="{elf["imgUrl"]}"/></div><div>{content}</div></div>'
     elves_text += '</div>'
     return elves_text
@@ -222,10 +222,14 @@ with open("elements.py") as f:
 skills_text = ""
 skills_text += '<div class="two-column"><h2 class="in-blue">Active Skills</h2></div>'
 for s in skills_which_active:
+    if s.get("isUnlisted", False):
+        continue
     skills_text += f'<div>{render_skill(s["key"], True)}</div>'
 
 skills_text += '<div class="two-column"><h2 class="in-blue">Passive Skills</h2></div>'
 for s in skills_which_passive:
+    if s.get("isUnlisted", False):
+        continue
     skills_text += f'<div>{render_skill(s["key"], True)}</div>'
 
 page_content = page_template
