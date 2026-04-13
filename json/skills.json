@@ -206,5 +206,77 @@
         "levelMax": 3,
         "valuesBase": [20],
         "valuesIncrement": [5]
+    },
+    "vines-twine": {
+        "iconUrl": "/img/icon-skills/vines-twine.png",
+        "name": "Vines Twine",
+        "description": "Deals ({{value1}}) damage to the target in the front row and has chance to [stun] the target for 1 turn",
+        "isTransferable": false,
+        "levelMax": 5,
+        "valuesBase": [130],
+        "valuesIncrement": [20]
+    },
+    "toxin-immunity": {
+        "iconUrl": "/img/icon-skills/toxin-immunity.png",
+        "name": "Toxin Immunity",
+        "description": "Immune to poisoning",
+        "isTransferable": true,
+        "levelMax": 1,
+        "valuesBase": [0],
+        "valuesIncrement": [0]
+    },
+    "ground-cracking": {
+        "iconUrl": "/img/icon-skills/ground-cracking.png",
+        "name": "Ground Cracking",
+        "description": "Deals ({{value1}})% damage to front row targets.",
+        "isTransferable": false,
+        "levelMax": 5,
+        "valuesBase": [175],
+        "valuesIncrement": [25]
+    },
+    "defense-breaking": {
+        "iconUrl": "/img/icon-skills/defense-breaking.png",
+        "name": "Defense Breaking",
+        "description": "Attack ignore Defense",
+        "isTransferable": true,
+        "levelMax": 1,
+        "valuesBase": [0],
+        "valuesIncrement": [0]
+    },
+    "strong-armor": {
+        "iconUrl": "/img/icon-skills/strong-armor.png",
+        "name": "Strong Armor",
+        "description": "Damage taken reduced by ({{value1}})%.",
+        "isTransferable": true,
+        "levelMax": 3,
+        "valuesBase": [10],
+        "valuesIncrement": [4]
+    },
+    "bubble-attack": {
+        "iconUrl": "/img/icon-skills/bubble-attack.png",
+        "name": "Bubble Attack",
+        "description": "Deals ({{value1}})% x4 damage to target",
+        "isTransferable": false,
+        "levelMax": 5,
+        "valuesBase": [50],
+        "valuesIncrement": [10]
+    },
+    "mucus": {
+        "iconUrl": "/img/icon-skills/mucus.png",
+        "name": "Mucus",
+        "description": "Each time you release a skill, you have a 50% chance to summon 1 slime to assist in battle.",
+        "isTransferable": true,
+        "levelMax": 1,
+        "valuesBase": [0],
+        "valuesIncrement": [0]
+    },
+    "convert-block": {
+        "iconUrl": "/img/icon-skills/convert.png",
+        "name": "Convert",
+        "description": "Each attack steals target's ({{value1}}) Block",
+        "isTransferable": true,
+        "levelMax": 3,
+        "valuesBase": [1],
+        "valuesIncrement": [1]
     }
 }

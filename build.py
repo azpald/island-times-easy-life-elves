@@ -39,12 +39,17 @@ for elf in elves:
 
 skills_which_active = []
 skills_which_passive = []
+skills_by_summon = {}
 for skill in skills:
     if skill["isTransferable"]:
         skills_which_passive.append(skill)
     else:
         skills_which_active.append(skill)
 
+    for e in skill.get("summon", []):
+        if e not in skills_by_summon:
+            skills_by_summon[e] = []
+        skills_by_summon[e].append(skill["key"])
 
 # Prepare output folder
 dist = Path("dist")
@@ -100,6 +105,7 @@ def render_skill (skill_name, show_elves=False):
     i = 0
     while i < len(skill["valuesBase"]):
         value = skill["valuesBase"][i] + (skill["levelMax"] - 1) * skill["valuesIncrement"][i]
+        skill_description = skill_description.replace("({{value" + str(i + 1) + "}})", "<span class=\"green\">({{value" + str(i + 1) + "}})</span>")
         skill_description = skill_description.replace("{{value" + str(i + 1) + "}}", str(value))
         i += 1
     return f"""
@@ -118,7 +124,7 @@ def render_skill (skill_name, show_elves=False):
 def render_elf_item(elf, h="h2"):
     content = f'<div>{", ".join([json_data["stats"][stat_name]["text"] + ": " + str(stat_data["value"]) for stat_name, stat_data in elf["stats"].items()])}</div>'
     content += f'<div><b class="green">Skills:</b> {", ".join([json_data["skills"].get(s,{}).get("name", s) for s in elf["skills"]])}</div>'
-    content += f'<div><b class="green">Habitats:</b> {", ".join([json_data["continents"][s["id"]]["text"] for s in elf.get("continents", [])])}</div>'
+    content += f'<div><b class="green">Locations:</b> {", ".join([json_data["continents"][s["id"]]["text"] for s in elf.get("continents", [])])}</div>'
     elves_text = '<div>'
     elves_text += f'<{h}><a href="/{dir_elves}/{elf["key"]}.html"><img class="inline-icon" src="{json_data["elements"][elf["element"]]["iconUrl"]}">{ elf["name"] }</a></{h}>'
     elves_text += f'<div class="skill-row"><div><img class="icon-medium" src="{elf["imgUrl"]}"/></div><div>{content}</div></div>'

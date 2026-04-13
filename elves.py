@@ -47,10 +47,33 @@ for slug, elf in json_data["elves"].items():
         skill_text += render_skill(skill_name)
 
     text_content += '<div class="card article">'
-    text_content += '<h2>Skills</h2>'
+    text_content += '<h2 class="in-blue">Skills</h2>'
     text_content += f"""
         <div>
             {skill_text}
+        </div>
+    """
+    text_content += '</div>'
+
+    summon_text = ""
+    for s in skills_by_summon.get(slug, []):
+        for m in elves_by_skill.get(s, []):
+            elf_master = json_data["elves"][m]
+            summon_text += f'<div>'
+            summon_text += f'Summoned by: <a href="/{dir_elves}/{m}.html"><img class="inline-icon" src="{ json_data["elements"][elf_master["element"]]["iconUrl"] }"> {elf_master["name"]}</a>'
+            if len(elf_master.get("continents", [])) > 0:
+                summon_text += f' (at {", ".join([json_data["continents"][s["id"]]["text"] for s in elf_master["continents"]])})'
+            summon_text += f'</div>'
+    location_text = ""
+    for c in elf.get("continents", []):
+        location_text += f'<div>At {json_data["continents"][c["id"]]["text"]} {"("+c["note"]+")" if c["note"] else ""}</div>'
+        # location_text += f' (at {", ".join([json_data["continents"][s["id"]]["text"] for s in elf["continents"]])})'
+    text_content += '<div class="card article two-column">'
+    text_content += '<h2 class="in-blue">Locations</h2>'
+    text_content += f"""
+        <div>
+            {summon_text}
+            {location_text}
         </div>
     """
     text_content += '</div>'
