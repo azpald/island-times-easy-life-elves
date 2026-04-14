@@ -145,7 +145,7 @@ def render_elf_item(elf, h="h2"):
     content += f'<div><b class="green">Locations:</b> {", ".join([json_data["continents"][s["id"]]["text"] for s in elf.get("continents", [])])}</div>'
     elves_text = '<div>'
     elves_text += f'<{h}><a href="/{dir_elves}/{elf["key"]}.html"><img class="inline-icon" src="{json_data["elements"][elf["element"]]["iconUrl"]}">{ "[BOSS] " if elf.get("isBoss") else "" }{ elf["name"] }</a></{h}>'
-    elves_text += f'<div class="skill-row"><div><img class="icon-medium" src="{elf["imgUrl"]}"/></div><div>{content}</div></div>'
+    elves_text += f'<div class="elf-row"><div><img class="icon-medium" src="{elf["imgUrl"]}"/></div><div>{content}</div></div>'
     elves_text += '</div>'
     return elves_text
 

@@ -418,6 +418,8 @@ img.icon-medium {
     width: 100px;
     aspect-ratio: 1 / 1;
     object-fit: contain;
+    /* max-width: 100%; */
+    /* display: block; */
 }
 
 img.icon-small {
@@ -427,6 +429,13 @@ img.icon-small {
     object-fit: contain;
 }
 
+.elf-row {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    align-items: flex-start;
+    gap: 15px;
+    margin-top: 1rem;
+}
 
 /* ===== MENUBAR ===== */
 .site-header {
