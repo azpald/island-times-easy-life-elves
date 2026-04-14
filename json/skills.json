@@ -278,6 +278,7 @@
         "description": "Each time you release a skill, you have a 50% chance to summon 1 slime to assist in battle.",
         "isTransferable": true,
         "levelMax": 1,
+        "XXXsummon": ["mucus"],
         "valuesBase": [0],
         "valuesIncrement": [0]
     },
