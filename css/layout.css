@@ -194,10 +194,12 @@ a:hover {
 
 blockquote {
     margin: 0 0 1rem 0;
-    padding: 0.6rem 1rem;
+    /* padding: 0.6rem 1rem; */
+    padding: 0.4rem 1rem;
     border-left: 4px solid var(--border);
     color: var(--muted);
-    background: transparent;
+    /* background: transparent; */
+    background: #55555511;
     border-radius: 4px;
 }
 
@@ -311,7 +313,7 @@ button:hover {
     display: grid;
     grid-template-columns: 1fr;
     /* Default: 1 column */
-    gap: 20px 35px;
+    gap: 10px 35px;
 }
 
 /* When screen is wider, switch to 2 columns */
@@ -394,12 +396,21 @@ img.inline-icon {
 }
 
 
+.skill-panel {
+    border-top: solid 1px var(--border);
+}
+
 .skill-row {
     display: grid;
-    grid-template-columns: 100px 1fr;
+    grid-template-columns: 70px 1fr;
     align-items: flex-start;
     gap: 15px;
-    margin-bottom: 15px;
+    /* margin-bottom: 15px; */
+    margin-top: 1rem;
+}
+
+.skill-row h3 {
+    margin-top: 0;
 }
 
 img.icon-medium {
@@ -409,8 +420,11 @@ img.icon-medium {
     object-fit: contain;
 }
 
-.skill-row h3 {
-    margin-top: 0;
+img.icon-small {
+    height: 70px;
+    width: 70px;
+    aspect-ratio: 1 / 1;
+    object-fit: contain;
 }
 
 

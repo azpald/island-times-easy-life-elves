@@ -399,6 +399,7 @@
         "isActive": true,
         "levelMax": 5,
         "valuesBase": [175],
+        "summon": ["wolf"],
         "valuesIncrement": [35]
     },
     "excitation": {

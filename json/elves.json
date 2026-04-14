@@ -406,6 +406,33 @@
         "continents": [],
         "skills": ["throwing-axe", "cold", "fragmentation"]
     },
+    "wolf": {
+        "imgUrl": "/img/elves/wolf.png",
+        "name": "Wolf",
+        "element": "wood",
+        "stats": {
+            "speed": {
+                "value": 130
+            },
+            "defense": {
+                "value": 0
+            },
+            "accuracy": {
+                "value": 0
+            },
+            "block": {
+                "value": 0
+            },
+            "critical": {
+                "value": 0
+            },
+            "tenacity": {
+                "value": 0
+            }
+        },
+        "continents": [],
+        "skills": ["bite", "last-words"]
+    },
     "armored-golem": {
         "imgUrl": "/img/elves/armored-golem.png",
         "name": "Armored Golem",
@@ -431,7 +458,11 @@
             }
         },
         "continents": [],
-        "skills": ["ground-cracking", "defense-breaking", "strong-armor"]
+        "skills": [
+            "ground-cracking",
+            "defense-breaking",
+            "strong-armor"
+        ]
     },
     "little-statue": {
         "imgUrl": "/img/elves/little-statue.png",

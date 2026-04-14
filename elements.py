@@ -34,6 +34,8 @@ for slug, item in json_data["elements"].items():
         text_content += f'<p>No elf with {item["text"]} element.</p>'
     else:
         for elf in elves_by_element.get(slug, []):
+            if elf.get("isUnlisted", False):
+                continue
             text_content += render_elf_item(elf, "h3")
     text_content += '</div>'
 

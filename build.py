@@ -16,7 +16,12 @@ folder_json = Path("json")
 json_data = {}
 for file in folder_json.glob("*.json"):
     with open(file, "r", encoding="utf-8") as f:
-        json_data[file.stem] = json.load(f)
+        data = json.load(f)
+        if isinstance(data, dict):
+            for slug, d in data.items():
+                if isinstance(d, dict):
+                    d["key"] = slug
+        json_data[file.stem] = data
 
 elves = [{ "key": slug, **elf } for slug, elf in json_data["elves"].items()]
 elves.sort(key=lambda x: x['name'])
@@ -74,6 +79,9 @@ google_code = "google27d3aaf513c20177.html"
 with open(dist / google_code, "w", encoding="utf-8") as f:
     f.write(f'google-site-verification: {google_code}')
 
+def get_dom_skill_id(skill):
+    return f'{dir_skills}_{skill["key"]}'
+
 def render_skill (skill_name, show_elves=False):
     if skill_name not in json_data["skills"]:
         print(f"Skill not found: {skill_name}", file=sys.stderr)
@@ -87,19 +95,28 @@ def render_skill (skill_name, show_elves=False):
     # elves
     elves_copy = ""
     if show_elves:
-        elves_copy += f"""<blockquote><b class="green">Elves:</b> {", ".join([
+        elves_copy += f"""<div><b class="green">Elves:</b> {", ".join([
             f'<a href="/{dir_elves}/{e}.html"><img class="inline-icon" src="{ json_data["elements"][json_data["elves"][e]["element"]]["iconUrl"] }">{json_data["elves"][e]["name"]}</a>' for e in elves_by_skill.get(skill_name, [])
-        ])}</blockquote>"""
+        ])}</div>"""
 
     # summon
     summon_copy = ""
     skill_summon = skill.get("summon", [])
     if len(skill_summon) > 0:
-        summon_copy += '<blockquote><b class="green">Summons:</b> '
+        summon_copy += '<div><b class="green">Summons:</b> '
         summon_copy += ", ".join([
             f'<a href="/{dir_elves}/{s}.html"><img class="inline-icon" src="{json_data["elves"][s]["imgUrl"]}">{ json_data["elves"][s]["name"] }</a>' for s in skill_summon
         ])
-        summon_copy += "</blockquote>"
+        summon_copy += "</div>"
+
+    blockquote = ""
+    if summon_copy or elves_copy:
+        blockquote = f"""
+            <blockquote>
+                {summon_copy}
+                {elves_copy}
+            </blockquote>
+        """
 
     # value
     i = 0
@@ -109,15 +126,16 @@ def render_skill (skill_name, show_elves=False):
         skill_description = skill_description.replace("{{value" + str(i + 1) + "}}", str(value))
         i += 1
     return f"""
-        <div class="skill-row">
-            <div><img class="icon-medium" src="{skill["iconUrl"]}"/></div>
-            <div>
-                <h3>{ skill_title }</h3>
-                <div>{ skill_subtitle }</div>
-                <div>{ skill_description }</div>
-                {summon_copy}
-                {elves_copy}
+        <div class="skill-panel">
+            <div class="skill-row">
+                <div><img class="icon-small" src="{skill["iconUrl"]}"/></div>
+                <div>
+                    <h3 id="{get_dom_skill_id(skill)}">{ skill_title }</h3>
+                    <div>{ skill_subtitle }</div>
+                    <div>{ skill_description }</div>
+                </div>
             </div>
+            {blockquote}
         </div>
     """
 
