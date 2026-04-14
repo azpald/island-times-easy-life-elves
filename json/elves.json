@@ -551,5 +551,221 @@
         },
         "continents": [],
         "skills": ["bubble-attack", "mucus", "convert-block"]
+    },
+    "succubus": {
+        "imgUrl": "/img/elves/succubus.png",
+        "name": "Succubus",
+        "element": "wind",
+        "stats": {
+            "speed": {
+                "value": 153
+            },
+            "defense": {
+                "value": 0
+            },
+            "accuracy": {
+                "value": 0
+            },
+            "block": {
+                "value": 0
+            },
+            "critical": {
+                "value": 0
+            },
+            "tenacity": {
+                "value": 0
+            }
+        },
+        "continents": [],
+        "skills": ["curse", "convert-accuracy", "spell"]
+    },
+    "goblin-assassin": {
+        "imgUrl": "/img/elves/goblin-assassin.png",
+        "name": "Goblin Assassin",
+        "element": "wind",
+        "stats": {
+            "speed": {
+                "value": 145
+            },
+            "defense": {
+                "value": 0
+            },
+            "accuracy": {
+                "value": 0
+            },
+            "block": {
+                "value": 0
+            },
+            "critical": {
+                "value": 0
+            },
+            "tenacity": {
+                "value": 0
+            }
+        },
+        "continents": [],
+        "skills": ["throwing-knife", "lucky", "backstab"]
+    },
+    "goblin-thief": {
+        "imgUrl": "/img/elves/goblin-thief.png",
+        "name": "Goblin Thief",
+        "element": "wind",
+        "stats": {
+            "speed": {
+                "value": 145
+            },
+            "defense": {
+                "value": 0
+            },
+            "accuracy": {
+                "value": 0
+            },
+            "block": {
+                "value": 0
+            },
+            "critical": {
+                "value": 0
+            },
+            "tenacity": {
+                "value": 0
+            }
+        },
+        "continents": [],
+        "skills": ["throwing-knife", "steal", "setback"]
+    },
+    "succubus-oni": {
+        "imgUrl": "/img/elves/succubus-oni.png",
+        "name": "Succubus",
+        "element": "wind",
+        "stats": {
+            "speed": {
+                "value": 161
+            },
+            "defense": {
+                "value": 0
+            },
+            "accuracy": {
+                "value": 0
+            },
+            "block": {
+                "value": 0
+            },
+            "critical": {
+                "value": 0
+            },
+            "tenacity": {
+                "value": 0
+            }
+        },
+        "continents": [],
+        "skills": ["charm", "last-words-wind", "convert-accuracy"]
+    },
+    "cyclops": {
+        "imgUrl": "/img/elves/cyclops.png",
+        "name": "Cyclops",
+        "element": "wind",
+        "stats": {
+            "speed": {
+                "value": 145
+            },
+            "defense": {
+                "value": 0
+            },
+            "accuracy": {
+                "value": 0
+            },
+            "block": {
+                "value": 0
+            },
+            "critical": {
+                "value": 0
+            },
+            "tenacity": {
+                "value": 0
+            }
+        },
+        "continents": [],
+        "skills": ["gaze", "convert-accuracy", "convert-block"]
+    },
+    "small-eyed": {
+        "imgUrl": "/img/elves/small-eyed.png",
+        "name": "Small-eyed",
+        "element": "wind",
+        "stats": {
+            "speed": {
+                "value": 134
+            },
+            "defense": {
+                "value": 0
+            },
+            "accuracy": {
+                "value": 0
+            },
+            "block": {
+                "value": 0
+            },
+            "critical": {
+                "value": 0
+            },
+            "tenacity": {
+                "value": 0
+            }
+        },
+        "continents": [],
+        "skills": ["self-explosion", "enabling"]
+    },
+    "bat": {
+        "imgUrl": "/img/elves/bat.png",
+        "name": "Bat",
+        "element": "wind",
+        "stats": {
+            "speed": {
+                "value": 153
+            },
+            "defense": {
+                "value": 0
+            },
+            "accuracy": {
+                "value": 0
+            },
+            "block": {
+                "value": 0
+            },
+            "critical": {
+                "value": 0
+            },
+            "tenacity": {
+                "value": 0
+            }
+        },
+        "continents": [],
+        "skills": ["bite-wind", "insane", "vampirism"]
+    },
+    "wind-knight": {
+        "imgUrl": "/img/elves/wind-knight.png",
+        "name": "Wind Knight",
+        "element": "wind",
+        "stats": {
+            "speed": {
+                "value": 153
+            },
+            "defense": {
+                "value": 0
+            },
+            "accuracy": {
+                "value": 0
+            },
+            "block": {
+                "value": 0
+            },
+            "critical": {
+                "value": 0
+            },
+            "tenacity": {
+                "value": 0
+            }
+        },
+        "continents": [],
+        "skills": ["wind-blade", "wind-speed", "wind-power"]
     }
 }

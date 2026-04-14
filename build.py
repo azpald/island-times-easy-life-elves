@@ -82,6 +82,14 @@ with open(dist / google_code, "w", encoding="utf-8") as f:
 def get_dom_skill_id(skill):
     return f'{dir_skills}_{skill["key"]}'
 
+def get_dom_skill_link(skill_name):
+    skill = json_data["skills"].get(skill_name, {})
+    name = skill.get("name", skill_name)
+    link = ""
+    if "key" in skill:
+        link = f'/{dir_skills}/#{dir_skills}_{skill["key"]}'
+    return f'<a href="{link}">{name}</a>' if link else f'<span>{name}</span>'
+
 def render_skill (skill_name, show_elves=False):
     if skill_name not in json_data["skills"]:
         print(f"Skill not found: {skill_name}", file=sys.stderr)
@@ -141,7 +149,7 @@ def render_skill (skill_name, show_elves=False):
 
 def render_elf_item(elf, h="h2"):
     content = f'<div>{", ".join([json_data["stats"][stat_name]["text"] + ": " + str(stat_data["value"]) for stat_name, stat_data in elf["stats"].items()])}</div>'
-    content += f'<div><b class="green">Skills:</b> {", ".join([json_data["skills"].get(s,{}).get("name", s) for s in elf["skills"]])}</div>'
+    content += f'<div><b class="green">Skills:</b> {", ".join([get_dom_skill_link(s) for s in elf["skills"]])}</div>'
     content += f'<div><b class="green">Locations:</b> {", ".join([json_data["continents"][s["id"]]["text"] for s in elf.get("continents", [])])}</div>'
     elves_text = '<div>'
     elves_text += f'<{h}><a href="/{dir_elves}/{elf["key"]}.html"><img class="inline-icon" src="{json_data["elements"][elf["element"]]["iconUrl"]}">{ "[BOSS] " if elf.get("isBoss") else "" }{ elf["name"] }</a></{h}>'
@@ -276,16 +284,49 @@ with open(dist / dir_skills / "index.html", "w", encoding="utf-8") as f:
 # Write page for continents
 ###################################
 (dist / dir_continents).mkdir(parents=True, exist_ok=True)
-# Create Continents index page
-continents_text = ""
 for slug, item in json_data["continents"].items():
-    # continents_text += f'<div>{render_skill(s["key"])}</div>'
+    page_content = page_template
+    page_content = page_content.replace("{{post_title}}", item["text"])
+
+    text_content = f"""
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <ol>
+                <li><a href="/">Home</a></li>
+                <li><a href="/{dir_continents}/">Continents</a></li>
+                <li aria-current="page">{item["text"]}</li>
+            </ol>
+        </nav>
+        <header class="post-header card two-column">
+            <h1 class="title"><img class="inline-icon" src="{ item.get("iconUrl") }"> { item["text"] }</h1>
+        </header>
+    """
+    
+    # text_content += '<div class="two-column">'
+    # text_content += f'<h2>Elves</h2>'
+    # e = elves_by_element.get(slug, [])
+    # if len(e) == 0:
+    #     text_content += f'<p>No elf with {item["text"]} element.</p>'
+    # else:
+    #     for elf in elves_by_element.get(slug, []):
+    #         if elf.get("isUnlisted", False):
+    #             continue
+    #         text_content += render_elf_item(elf, "h3")
+    # text_content += '</div>'
+
+    page_content = page_content.replace("{{page_content}}", text_content)
+
+    with open(dist / dir_continents / f"{slug}.html", "w", encoding="utf-8") as f:
+        f.write(page_content)
+
+# Create Continents index page
+continents_text = '<div class="two-column container-multicolumns">'
+for slug, item in json_data["continents"].items():
     continents_text += f"""
-        <div>
-            <h2>{item["text"]}</h2>
-            <div class="mugshot"><img src="{item["iconUrl"]}"/></div>
+        <div class="mugshot">
+            <a href="/{dir_continents}/{item["key"]}.html"><img class="icon-medium" src="{item["iconUrl"]}"/><div>{item["text"]}</div></a>
         </div>
     """
+continents_text += '</div>'
 
 page_content = page_template
 page_content = page_content.replace("{{post_title}}", "Elements")

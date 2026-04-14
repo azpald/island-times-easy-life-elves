@@ -446,6 +446,7 @@
         "isTransferable": false,
         "isActive": true,
         "levelMax": 5,
+        "summon": ["wolf"],
         "valuesBase": [180],
         "valuesIncrement": [30]
     },
@@ -522,5 +523,52 @@
         "levelMax": 3,
         "valuesBase": [0],
         "valuesIncrement": [0]
+    },
+    "bite": {
+        "iconUrl": "/img/icon-skills/bite.png",
+        "name": "Bite",
+        "description": "Deals ({{value1}})% damage to target",
+        "isTransferable": false,
+        "isActive": true,
+        "levelMax": 5,
+        "valuesBase": [190],
+        "valuesIncrement": [30]
+    },
+    "last-words": {
+        "iconUrl": "/img/icon-skills/last-words.png",
+        "name": "Last Words",
+        "description": "Increases random teammates' attack by ({{value1}})% after death",
+        "isTransferable": true,
+        "levelMax": 3,
+        "valuesBase": [5],
+        "valuesIncrement": [2]
+    },
+    "wind-blade": {
+        "iconUrl": "/img/icon-skills/wind-blade.png",
+        "name": "Wind Blade",
+        "description": "Deals ({{value1}})% damage to front row targets and [slow] them down for 1 turn.",
+        "isTransferable": false,
+        "isActive": true,
+        "levelMax": 5,
+        "valuesBase": [150],
+        "valuesIncrement": [20]
+    },
+    "wind-speed": {
+        "iconUrl": "/img/icon-skills/wind-speed.png",
+        "name": "Wind Speed",
+        "description": "Once in combat, increase speed by ({{value1}})% for 3 turns. (not stacked)",
+        "isTransferable": true,
+        "levelMax": 3,
+        "valuesBase": [10],
+        "valuesIncrement": [5]
+    },
+    "wind-power": {
+        "iconUrl": "/img/icon-skills/wind-power.png",
+        "name": "Wind Power",
+        "description": "Once in combat, increase attack by ({{value1}})% for each Wind friendly.",
+        "isTransferable": true,
+        "levelMax": 3,
+        "valuesBase": [8],
+        "valuesIncrement": [3]
     }
 }
