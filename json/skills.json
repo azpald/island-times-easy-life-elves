@@ -334,5 +334,33 @@
         "levelMax": 1,
         "valuesBase": [0],
         "valuesIncrement": [0]
+    },
+    "throwing-axe": {
+        "iconUrl": "/img/icon-skills/throwing-axe.png",
+        "name": "Throwing Axe",
+        "description": "Deals ({{value1}})x4 damage to the targets, 50% chance to [Bleed]",
+        "isTransferable": false,
+        "isActive": true,
+        "levelMax": 5,
+        "valuesBase": [50],
+        "valuesIncrement": [10]
+    },
+    "cold": {
+        "iconUrl": "/img/icon-skills/cold.png",
+        "name": "Cold",
+        "description": "Crit probability increased by ({{value1}})",
+        "isTransferable": true,
+        "levelMax": 3,
+        "valuesBase": [10],
+        "valuesIncrement": [5]
+    },
+    "fragmentation": {
+        "iconUrl": "/img/icon-skills/fragmentation.png",
+        "name": "Fragmentation",
+        "description": "Deals an additional ({{value1}})% damage to bleeding targets",
+        "isTransferable": true,
+        "levelMax": 3,
+        "valuesBase": [10],
+        "valuesIncrement": [5]
     }
 }

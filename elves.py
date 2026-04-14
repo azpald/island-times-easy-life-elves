@@ -30,7 +30,7 @@ for slug, elf in json_data["elves"].items():
     """
     text_content += '<div class="card article">'
     text_content += f"""
-        <div class="mugshot"><img src="{elf["imgUrl"]}"/></div>
+        <div class="mugshot"><img src="{elf["imgUrl"]}" alt="{elf["name"]}"/></div>
     """
     # text_content += '</div>'
     # text_content += '<div class="card article">'

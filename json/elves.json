@@ -217,6 +217,195 @@
         "continents": [],
         "skills": ["vines-twine", "toxin-immunity", "heating-up"]
     },
+    "longaxe-orc": {
+        "imgUrl": "/img/elves/longaxe-orc.png",
+        "name": "Longaxe Orc",
+        "element": "wood",
+        "stats": {
+            "speed": {
+                "value": 140
+            },
+            "defense": {
+                "value": 0
+            },
+            "accuracy": {
+                "value": 0
+            },
+            "block": {
+                "value": 0
+            },
+            "critical": {
+                "value": 0
+            },
+            "tenacity": {
+                "value": 0
+            }
+        },
+        "continents": [],
+        "skills": ["axe-strike", "promote", "scar-deepen"]
+    },
+    "wolf-orc": {
+        "imgUrl": "/img/elves/wolf-orc.png",
+        "name": "Wolf Orc",
+        "element": "wood",
+        "stats": {
+            "speed": {
+                "value": 140
+            },
+            "defense": {
+                "value": 0
+            },
+            "accuracy": {
+                "value": 0
+            },
+            "block": {
+                "value": 0
+            },
+            "critical": {
+                "value": 0
+            },
+            "tenacity": {
+                "value": 0
+            }
+        },
+        "continents": [],
+        "skills": ["claw-strike", "excitation", "fusion"]
+    },
+    "dog-headed-orc": {
+        "imgUrl": "/img/elves/dog-headed-orc.png",
+        "name": "Dog-headed Orc",
+        "element": "wood",
+        "stats": {
+            "speed": {
+                "value": 140
+            },
+            "defense": {
+                "value": 0
+            },
+            "accuracy": {
+                "value": 0
+            },
+            "block": {
+                "value": 0
+            },
+            "critical": {
+                "value": 0
+            },
+            "tenacity": {
+                "value": 0
+            }
+        },
+        "continents": [],
+        "skills": ["claw", "confidence", "cold"]
+    },
+    "wolf-cavalry-b": {
+        "imgUrl": "/img/elves/wolf-cavalry-b.png",
+        "name": "Wolf Cavalry B",
+        "element": "wood",
+        "stats": {
+            "speed": {
+                "value": 146
+            },
+            "defense": {
+                "value": 0
+            },
+            "accuracy": {
+                "value": 0
+            },
+            "block": {
+                "value": 0
+            },
+            "critical": {
+                "value": 0
+            },
+            "tenacity": {
+                "value": 0
+            }
+        },
+        "continents": [],
+        "skills": ["roar", "partner", "position"]
+    },
+    "wolf-cavalry-a": {
+        "imgUrl": "/img/elves/wolf-cavalry-a.png",
+        "name": "Wolf Cavalry A",
+        "element": "wood",
+        "stats": {
+            "speed": {
+                "value": 145
+            },
+            "defense": {
+                "value": 0
+            },
+            "accuracy": {
+                "value": 0
+            },
+            "block": {
+                "value": 0
+            },
+            "critical": {
+                "value": 0
+            },
+            "tenacity": {
+                "value": 0
+            }
+        },
+        "continents": [],
+        "skills": ["fatal-blow", "bloodthristy", "beast-roar"]
+    },
+    "orc-flamen": {
+        "imgUrl": "/img/elves/orc-flamen.png",
+        "name": "Orc Flamen",
+        "element": "wood",
+        "stats": {
+            "speed": {
+                "value": 131
+            },
+            "defense": {
+                "value": 0
+            },
+            "accuracy": {
+                "value": 0
+            },
+            "block": {
+                "value": 0
+            },
+            "critical": {
+                "value": 0
+            },
+            "tenacity": {
+                "value": 0
+            }
+        },
+        "continents": [],
+        "skills": ["poisonous-injury", "toxins", "poison"]
+    },
+    "duel-axe-orc": {
+        "imgUrl": "/img/elves/duel-axe-orc.png",
+        "name": "Duel Axe Orc",
+        "element": "wood",
+        "stats": {
+            "speed": {
+                "value": 140
+            },
+            "defense": {
+                "value": 0
+            },
+            "accuracy": {
+                "value": 0
+            },
+            "block": {
+                "value": 0
+            },
+            "critical": {
+                "value": 0
+            },
+            "tenacity": {
+                "value": 0
+            }
+        },
+        "continents": [],
+        "skills": ["throwing-axe", "cold", "fragmentation"]
+    },
     "armored-golem": {
         "imgUrl": "/img/elves/armored-golem.png",
         "name": "Armored Golem",
