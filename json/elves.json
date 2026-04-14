@@ -49,6 +49,7 @@
                 "value": 0
             }
         },
+        "continents": [{"id": "land-of-chaos","note": "Floor 26"}],
         "skills": ["full-blow", "epidemic-spreading", "calling-servant"]
     },
     "small-flame": {
@@ -791,7 +792,7 @@
     "ghost-mage": {"imgUrl": "/img/elves/ghost-mage.png", "name": "Ghost Mage", "element": "darkness", "stats": {"speed": {"value": 140}, "defense": {"value": 0}, "accuracy": {"value": 0}, "block": {"value": 5}, "critical": {"value": 0}, "tenacity": {"value": 0}}, "continents": [], "skills": []},
     "skeleton-mage": {"imgUrl": "/img/elves/skeleton-mage.png", "name": "Skeleton Mage", "element": "darkness", "stats": {"speed": {"value": 140}, "defense": {"value": 0}, "accuracy": {"value": 0}, "block": {"value": 5}, "critical": {"value": 0}, "tenacity": {"value": 0}}, "continents": [{"id": "land-of-chaos","note": "Floor 23"}], "skills": []},
     "sickle-ghost": {"imgUrl": "/img/elves/sickle-ghost.png", "name": "Sickle Ghost", "element": "darkness", "stats": {"speed": {"value": 140}, "defense": {"value": 0}, "accuracy": {"value": 0}, "block": {"value": 5}, "critical": {"value": 0}, "tenacity": {"value": 0}}, "continents": [{"id": "land-of-chaos","note": "Can be spawned on floor 23 and 25"}], "skills": []},
-    "zombie": {"imgUrl": "/img/elves/zombie.png", "name": "Zombie", "element": "darkness", "stats": {"speed": {"value": 138}, "defense": {"value": 0}, "accuracy": {"value": 0}, "block": {"value": 5}, "critical": {"value": 0}, "tenacity": {"value": 0}}, "continents": [], "skills": []},
+    "zombie": {"imgUrl": "/img/elves/zombie.png", "name": "Zombie", "element": "darkness", "stats": {"speed": {"value": 138}, "defense": {"value": 0}, "accuracy": {"value": 0}, "block": {"value": 5}, "critical": {"value": 0}, "tenacity": {"value": 0}}, "continents": [{"id": "land-of-chaos","note": "Floor 26"}], "skills": []},
     "skeleton-archer": {"imgUrl": "/img/elves/skeleton-archer.png", "name": "Skeleton Archer", "element": "darkness", "stats": {"speed": {"value": 132}, "defense": {"value": 0}, "accuracy": {"value": 0}, "block": {"value": 5}, "critical": {"value": 0}, "tenacity": {"value": 0}}, "continents": [{"id": "land-of-chaos","note": "Floor 25"}], "skills": []},
     "little-skeleton": {"imgUrl": "/img/elves/little-skeleton.png", "name": "Little Skeleton", "element": "darkness", "stats": {"speed": {"value": 128}, "defense": {"value": 0}, "accuracy": {"value": 0}, "block": {"value": 5}, "critical": {"value": 0}, "tenacity": {"value": 0}}, "continents": [{"id": "land-of-wind","note": "Floor 1"}, {"id": "land-of-chaos","note": "Floor 23, 25"}], "skills": []}
 }
