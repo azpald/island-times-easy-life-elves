@@ -30,6 +30,8 @@ elements.sort(key=lambda x: x['text'])
 skills = [{ "key": slug, **skill } for slug, skill in json_data["skills"].items()]
 skills.sort(key=lambda x: x['name'])
 
+skills_by_element_which_active = {}
+skills_by_element_which_passive = {}
 elves_by_element = {}
 elves_by_skill = {}
 for elf in elves:
@@ -37,10 +39,26 @@ for elf in elves:
         elves_by_element[elf["element"]] = []
     elves_by_element[elf["element"]].append(elf)
 
+    if elf["element"] not in skills_by_element_which_active:
+        skills_by_element_which_active[elf["element"]] = []
+
+    if elf["element"] not in skills_by_element_which_passive:
+        skills_by_element_which_passive[elf["element"]] = []
+
     for s in elf["skills"]:
+        skill = json_data["skills"].get(s, False)
+        if skill and skill.get("isActive", False):
+            skills_by_element_which_active[elf["element"]].append(s)
+        elif skill:
+            skills_by_element_which_passive[elf["element"]].append(s)
         if s not in elves_by_skill:
             elves_by_skill[s] = []
         elves_by_skill[s].append(elf["key"])
+
+for e in skills_by_element_which_active:
+    skills_by_element_which_active[e] = [json_data["skills"][s] for s in set(skills_by_element_which_active[e])]
+for e in skills_by_element_which_passive:
+    skills_by_element_which_passive[e] = [json_data["skills"][s] for s in set(skills_by_element_which_passive[e])]
 
 skills_which_active = []
 skills_which_passive = []

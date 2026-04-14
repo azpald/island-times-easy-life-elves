@@ -570,5 +570,61 @@
         "levelMax": 3,
         "valuesBase": [8],
         "valuesIncrement": [3]
+    },
+    "curse": {
+        "iconUrl": "/img/icon-skills/curse.png",
+        "name": "Curse",
+        "description": "Deals ({{value1}})% damage to and [curse] all targets. Cursed target take 20% extra damage for 2 turns.",
+        "isTransferable": false,
+        "isActive": true,
+        "levelMax": 5,
+        "valuesBase": [180],
+        "valuesIncrement": [40]
+    },
+    "convert-accuracy": {
+        "iconUrl": "/img/icon-skills/convert.png",
+        "name": "Convert",
+        "description": "Each attack steals target's ({{value1}}) Accuracy",
+        "isTransferable": true,
+        "levelMax": 3,
+        "valuesBase": [1],
+        "valuesIncrement": [1]
+    },
+    "spell": {
+        "iconUrl": "/img/icon-skills/spell.png",
+        "name": "Spell",
+        "description": "({{value1}})% chance to [curse] the target with Attack.",
+        "isTransferable": true,
+        "levelMax": 3,
+        "valuesBase": [30],
+        "valuesIncrement": [10]
+    },
+    "throwing-knife": {
+        "iconUrl": "/img/icon-skills/throwing-knife.png",
+        "name": "Throwing Knife",
+        "description": "Deals ({{value1}})%x3 damage to the target",
+        "isTransferable": false,
+        "isActive": true,
+        "levelMax": 5,
+        "valuesBase": [55],
+        "valuesIncrement": [15]
+    },
+    "lucky": {
+        "iconUrl": "/img/icon-skills/lucky.png",
+        "name": "Lucky",
+        "description": "When in the team, opening the Treasure Chest in the wild increases ({{value1}}) Luck",
+        "isTransferable": true,
+        "levelMax": 3,
+        "valuesBase": [5],
+        "valuesIncrement": [2]
+    },
+    "backstab": {
+        "iconUrl": "/img/icon-skills/backstab.png",
+        "name": "Backstab",
+        "description": "Increase damage by ({{value1}})% when attacking the last row of targets",
+        "isTransferable": true,
+        "levelMax": 3,
+        "valuesBase": [10],
+        "valuesIncrement": [5]
     }
 }

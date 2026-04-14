@@ -21,22 +21,46 @@ for slug, item in json_data["elements"].items():
             <h1 class="title"><img class="inline-icon" src="{ item.get("iconUrl") }"> { item["text"] }</h1>
         </header>
     """
-    # text_content += '<div class="card article">'
-    # text_content += f"""
-    #     <div class="mugshot"><img src="{item["iconUrl"]}"/></div>
-    # """
-    # text_content += '</div>'
     
+    # Elves
     text_content += '<div class="two-column">'
-    text_content += f'<h2>Elves</h2>'
+    text_content += f'<h2 class="in-blue">Elves</h2>'
     e = elves_by_element.get(slug, [])
     if len(e) == 0:
         text_content += f'<p>No elf with {item["text"]} element.</p>'
     else:
-        for elf in elves_by_element.get(slug, []):
+        for elf in e:
             if elf.get("isUnlisted", False):
                 continue
             text_content += render_elf_item(elf, "h3")
+    text_content += '</div>'
+    
+    # Passive skills
+    text_content += '<div class="two-column">'
+    text_content += f'<h2 class="in-blue">Passive Skills</h2>'
+    e = skills_by_element_which_passive.get(slug, [])
+    if len(e) == 0:
+        pass
+        # text_content += f'<p>No elf with {item["text"]} element.</p>'
+    else:
+        for skill in e:
+            if skill.get("isUnlisted", False):
+                continue
+            text_content += render_skill(skill["key"], True)
+    text_content += '</div>'
+    
+    # Passive skills
+    text_content += '<div class="two-column">'
+    text_content += f'<h2 class="in-blue">Active Skills</h2>'
+    e = skills_by_element_which_active.get(slug, [])
+    if len(e) == 0:
+        pass
+        # text_content += f'<p>No elf with {item["text"]} element.</p>'
+    else:
+        for skill in e:
+            if skill.get("isUnlisted", False):
+                continue
+            text_content += render_skill(skill["key"], True)
     text_content += '</div>'
 
     page_content = page_content.replace("{{page_content}}", text_content)
@@ -49,7 +73,7 @@ for slug, item in json_data["elements"].items():
 # Create Elements index page
 elements_text = ""
 elements_text += '<div class="two-column container-multicolumns">'
-for element in elements:
+for _, element in json_data["elements"].items():
     elements_text += f'<div class="mugshot"><a href="/{dir_elements}/{element["key"]}.html"><img class="icon-medium" src="{element["iconUrl"]}"/><div>{element["text"]}</div></a></div>'
 elements_text += '</div>'
 
