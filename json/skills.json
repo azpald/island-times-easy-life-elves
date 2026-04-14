@@ -626,5 +626,100 @@
         "levelMax": 3,
         "valuesBase": [10],
         "valuesIncrement": [5]
+    },
+    "steal": {
+        "iconUrl": "/img/icon-skills/steal.png",
+        "name": "Steal",
+        "description": "Steal extra ({{value1}}) gold when attacking",
+        "isTransferable": true,
+        "levelMax": 3,
+        "valuesBase": [8],
+        "valuesIncrement": [3]
+    },
+    "setback": {
+        "iconUrl": "/img/icon-skills/setback.png",
+        "name": "Setback",
+        "description": "When attacking, the target takes an additional 1 damage for every 2 Gold Coins lost",
+        "isTransferable": true,
+        "levelMax": 1,
+        "valuesBase": [0],
+        "valuesIncrement": [0]
+    },
+    "charm": {
+        "iconUrl": "/img/icon-skills/charm.png",
+        "name": "Charm",
+        "description": "Deals ({{value1}})% damage to the target and [slow] the enemy by 15% for 2 turns",
+        "isTransferable": false,
+        "isActive": true,
+        "levelMax": 5,
+        "valuesBase": [160],
+        "valuesIncrement": [40]
+    },
+    "last-words-wind": {
+        "iconUrl": "/img/icon-skills/last-words-wind.png",
+        "name": "Last Words",
+        "description": "Restore ({{value1}})% health to other teammates when they die",
+        "isTransferable": true,
+        "levelMax": 3,
+        "valuesBase": [25],
+        "valuesIncrement": [5]
+    },
+    "gaze": {
+        "iconUrl": "/img/icon-skills/gaze.png",
+        "name": "Gaze",
+        "description": "Deals ({{value1}})% damage to the target and summons a monster",
+        "isTransferable": false,
+        "isActive": true,
+        "summon": ["small-eyed"],
+        "levelMax": 5,
+        "valuesBase": [180],
+        "valuesIncrement": [35]
+    },
+    "self-explosion": {
+        "iconUrl": "/img/icon-skills/self-explosion.png",
+        "name": "Self-explosion",
+        "description": "Sacrifice yourself, dealing damage of ({{value1}})% of the current Health",
+        "isTransferable": false,
+        "isActive": true,
+        "levelMax": 5,
+        "valuesBase": [155],
+        "valuesIncrement": [15]
+    },
+    "enabling": {
+        "iconUrl": "/img/icon-skills/enabling.png",
+        "name": "Enabling",
+        "description": "Adds ({{value1}}) random attributes to random teammates per action",
+        "isTransferable": true,
+        "levelMax": 2,
+        "valuesBase": [1],
+        "valuesIncrement": [1]
+    },
+    "bite-wind": {
+        "iconUrl": "/img/icon-skills/bite-wind.png",
+        "name": "Bite",
+        "description": "Deals ({{value1}})% damage to the target and [bleeds] the target",
+        "isTransferable": false,
+        "isActive": true,
+        "levelMax": 5,
+        "valuesBase": [180],
+        "valuesIncrement": [40]
+    },
+    "insane": {
+        "iconUrl": "/img/icon-skills/insane.png",
+        "name": "Insane",
+        "description": "Increases ({{value1}}) Attack after Critical for 2 turns",
+        "isTransferable": true,
+        "levelMax": 3,
+        "valuesBase": [5],
+        "valuesIncrement": [2]
+    },
+    "vampirism": {
+        "iconUrl": "/img/icon-skills/vampirism.png",
+        "name": "Vampirism",
+        "description": "When dealing damage, absorb ({{value1}})% to restore health",
+        "isTransferable": true,
+        "levelMax": 3,
+        "valuesBase": [6],
+        "valuesIncrement": [3]
     }
 }
