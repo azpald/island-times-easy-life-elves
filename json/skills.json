@@ -362,5 +362,164 @@
         "levelMax": 3,
         "valuesBase": [10],
         "valuesIncrement": [5]
+    },
+    "axe-strike": {
+        "iconUrl": "/img/icon-skills/throwing-axe.png",
+        "name": "Axe Strike",
+        "description": "Deals ({{value1}})% damage to the target and [bleeds] the target",
+        "isTransferable": false,
+        "isActive": true,
+        "levelMax": 5,
+        "valuesBase": [185],
+        "valuesIncrement": [35]
+    },
+    "promote": {
+        "iconUrl": "/img/icon-skills/promote.png",
+        "name": "Promote",
+        "description": "Attack power increased by ({{value1}})%",
+        "isTransferable": true,
+        "levelMax": 3,
+        "valuesBase": [4],
+        "valuesIncrement": [2]
+    },
+    "scar-deepen": {
+        "iconUrl": "/img/icon-skills/scar-deepen.png",
+        "name": "Scar Deepen",
+        "description": "If the target bleeds, during an attack, the bleed status is increased by 1 turn",
+        "isTransferable": true,
+        "levelMax": 1,
+        "valuesBase": [0],
+        "valuesIncrement": [0]
+    },
+    "claw-strike": {
+        "iconUrl": "/img/icon-skills/claw-strike.png",
+        "name": "Claw Strike",
+        "description": "Deals ({{value1}})% damage to the target and summon 1 wolf to assist.",
+        "isTransferable": false,
+        "isActive": true,
+        "levelMax": 5,
+        "valuesBase": [175],
+        "valuesIncrement": [35]
+    },
+    "excitation": {
+        "iconUrl": "/img/icon-skills/excitation.png",
+        "name": "Excitation",
+        "description": "Each time a wolf dies, its Attack increases by ({{value1}})% (stackable)",
+        "isTransferable": true,
+        "levelMax": 3,
+        "valuesBase": [6],
+        "valuesIncrement": [3]
+    },
+    "fusion": {
+        "iconUrl": "/img/icon-skills/fusion.png",
+        "name": "Fusion",
+        "description": "Attack with damage of ({{value1}})% of own Health",
+        "isTransferable": true,
+        "levelMax": 3,
+        "valuesBase": [5],
+        "valuesIncrement": [2]
+    },
+    "claw": {
+        "iconUrl": "/img/icon-skills/claw.png",
+        "name": "Claw",
+        "description": "Deals ({{value1}})% X3 damage to the target and increases attack power by 5% (stackable)",
+        "isTransferable": false,
+        "isActive": true,
+        "levelMax": 5,
+        "valuesBase": [55],
+        "valuesIncrement": [15]
+    },
+    "confidence": {
+        "iconUrl": "/img/icon-skills/confidence.png",
+        "name": "Confidence",
+        "description": "Critical damage increases by ({{value1}})",
+        "isTransferable": true,
+        "levelMax": 3,
+        "valuesBase": [40],
+        "valuesIncrement": [10]
+    },
+    "roar": {
+        "iconUrl": "/img/icon-skills/roar.png",
+        "name": "Roar",
+        "description": "Deals ({{value1}})% damage to the target and summons a wolf to assist.",
+        "isTransferable": false,
+        "isActive": true,
+        "levelMax": 5,
+        "valuesBase": [180],
+        "valuesIncrement": [30]
+    },
+    "partner": {
+        "iconUrl": "/img/icon-skills/partner.png",
+        "name": "Partner",
+        "description": "Increases damage by ({{value1}})% for each wolf on our side during combat",
+        "isTransferable": true,
+        "levelMax": 3,
+        "valuesBase": [15],
+        "valuesIncrement": [5]
+    },
+    "position": {
+        "iconUrl": "/img/icon-skills/position.png",
+        "name": "Position",
+        "description": "Self parry increased by ({{value1}})",
+        "isTransferable": true,
+        "levelMax": 3,
+        "valuesBase": [10],
+        "valuesIncrement": [5]
+    },
+    "fatal-blow": {
+        "iconUrl": "/img/icon-skills/fatal-blow.png",
+        "name": "Fatal Blow",
+        "description": "Deals ({{value1}})% damage to the target. If the target's health is lower than its own, it will trigger an additional 50% damage regardless of Defense.",
+        "isTransferable": false,
+        "isActive": true,
+        "levelMax": 5,
+        "valuesBase": [190],
+        "valuesIncrement": [40]
+    },
+    "bloodthirsty": {
+        "iconUrl": "/img/icon-skills/bloodthirsty.png",
+        "name": "Bloodthirsty",
+        "description": "After killing the target, the attack power increases by ({{value1}})% for 2 rounds.",
+        "isTransferable": true,
+        "levelMax": 3,
+        "valuesBase": [8],
+        "valuesIncrement": [3]
+    },
+    "beast-roar": {
+        "iconUrl": "/img/icon-skills/beast-roar.png",
+        "name": "Beast Roar",
+        "description": "Once in combat, increase orc attack power by ({{value1}}) (not stacked)",
+        "isTransferable": true,
+        "levelMax": 3,
+        "valuesBase": [8],
+        "valuesIncrement": [3]
+    },
+    "poisonous-injury": {
+        "iconUrl": "/img/icon-skills/poisonous-injury.png",
+        "name": "Poisonous Injury",
+        "description": "Deals ({{value1}})% x4 damage to a random target and 50% poisons the target for 2 turns",
+        "isTransferable": false,
+        "isActive": true,
+        "levelMax": 5,
+        "valuesBase": [55],
+        "valuesIncrement": [15]
+    },
+    "toxins": {
+        "iconUrl": "/img/icon-skills/toxins.png",
+        "name": "Toxins",
+        "description": "When attacking, if the target is poisoned, it will cause an additional poison damage.",
+        "isTransferable": true,
+        "levelMax": 1,
+        "valuesBase": [0],
+        "valuesIncrement": [0]
+    },
+    "poison": {
+        "iconUrl": "/img/icon-skills/poison.png",
+        "name": "Poison",
+        "description": "Poison all orc weapons. 1% chance to poison the target when attacking.",
+        "isTransferable": true,
+        "levelMax": 3,
+        "valuesBase": [0],
+        "valuesIncrement": [0]
     }
 }

@@ -350,7 +350,7 @@
             }
         },
         "continents": [],
-        "skills": ["fatal-blow", "bloodthristy", "beast-roar"]
+        "skills": ["fatal-blow", "bloodthirsty", "beast-roar"]
     },
     "orc-flamen": {
         "imgUrl": "/img/elves/orc-flamen.png",
