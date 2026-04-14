@@ -179,12 +179,15 @@ def render_elf_item(elf, h="h2"):
 page_template = ""
 with open("html/page.html", "r", encoding="utf-8") as f:
     page_template = f.read()
-for placeholder, value in json_data["vars"].items():
-    page_template = page_template.replace("{{" + placeholder + "}}", value)
+
+def save_html(path, page_content):
+    for placeholder, value in json_data["vars"].items():
+        page_content = page_content.replace("{{" + placeholder + "}}", value)
+    with open(path, "w", encoding="utf-8") as f:
+        f.write(page_content)
 
 # Landing page
 page_content = page_template
-# page_content = page_content.replace("{{page_title}}", "Home")
 page_content = page_content.replace("{{post_title}}", "Home")
 text_content = ""
 text_content += '<div class="card two-column article" style="text-align: center;">'
@@ -205,8 +208,7 @@ text_content += f"""
 """
 text_content += '</div>'
 page_content = page_content.replace("{{page_content}}", text_content)
-with open(dist / "index.html", "w", encoding="utf-8") as f:
-    f.write(page_content)
+save_html(dist / "index.html", page_content)
 
 ###################################
 # Write page for elves
@@ -293,9 +295,7 @@ text_content = f"""
 text_content += skills_text
 
 page_content = page_content.replace("{{page_content}}", text_content)
-with open(dist / dir_skills / "index.html", "w", encoding="utf-8") as f:
-    f.write(page_content)
-
+save_html(dist / dir_skills / "index.html", page_content)
 
 
 ###################################
@@ -333,8 +333,7 @@ for slug, item in json_data["continents"].items():
 
     page_content = page_content.replace("{{page_content}}", text_content)
 
-    with open(dist / dir_continents / f"{slug}.html", "w", encoding="utf-8") as f:
-        f.write(page_content)
+    save_html(dist / dir_continents / f"{slug}.html", page_content)
 
 # Create Continents index page
 continents_text = '<div class="two-column container-multicolumns">'
@@ -363,6 +362,5 @@ text_content = f"""
 text_content += continents_text
 
 page_content = page_content.replace("{{page_content}}", text_content)
-with open(dist / dir_continents / "index.html", "w", encoding="utf-8") as f:
-    f.write(page_content)
+save_html(dist / dir_continents / "index.html", page_content)
 

@@ -80,8 +80,7 @@ for slug, elf in json_data["elves"].items():
 
     page_content = page_content.replace("{{page_content}}", text_content)
 
-    with open(dist / dir_elves / f"{slug}.html", "w", encoding="utf-8") as f:
-        f.write(page_content)
+    save_html(dist / dir_elves / f"{slug}.html", page_content)
 
 # Create index page
 elves_text = ""
@@ -110,5 +109,4 @@ text_content = f"""
 text_content += elves_text
 
 page_content = page_content.replace("{{page_content}}", text_content)
-with open(dist / dir_elves / "index.html", "w", encoding="utf-8") as f:
-    f.write(page_content)
+save_html(dist / dir_elves / "index.html", page_content)

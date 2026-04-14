@@ -65,9 +65,7 @@ for slug, item in json_data["elements"].items():
 
     page_content = page_content.replace("{{page_content}}", text_content)
 
-    with open(dist / dir_elements / f"{slug}.html", "w", encoding="utf-8") as f:
-        f.write(page_content)
-
+    save_html(dist / dir_elements / f"{slug}.html", page_content)
 
 
 # Create Elements index page
@@ -94,6 +92,7 @@ text_content = f"""
 text_content += elements_text
 
 page_content = page_content.replace("{{page_content}}", text_content)
-with open(dist / dir_elements / "index.html", "w", encoding="utf-8") as f:
-    f.write(page_content)
+
+page_content = page_content.replace("{{post_description}}", "Elements in Island Times: Easy Life.")
+save_html(dist / dir_elements / "index.html", page_content)
 
