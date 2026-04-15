@@ -252,7 +252,7 @@ text_content += '<div class="card two-column article" style="text-align: center;
 text_content += f"""
     <img src="/img/hero.jpg" style="width: 400px; max-width: 90vw;">
     <h1>Island Times: Elves Library</h1>
-    <p>The unofficial database for elves</p>
+    <p>The unofficial wiki for elves</p>
     <p>A simple reference for the elves in Island Times: Easy Life.</p>
 """
 text_content += '</div>'
