@@ -444,11 +444,17 @@ img.icon-small {
 }
 
 .menu-bar {
-    display: flex;
+    display: block;
     justify-content: space-between;
     align-items: center;
     padding-bottom: 0.75rem;
     border-bottom: 1px solid var(--border);
+}
+
+@media (min-width: 500px) {
+    .menu-bar {
+        display: flex;
+    }
 }
 
 .menu-left {
