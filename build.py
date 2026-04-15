@@ -23,12 +23,17 @@ for file in folder_json.glob("*.json"):
                     d["key"] = slug
         json_data[file.stem] = data
 
-elves = [{ "key": slug, **elf } for slug, elf in json_data["elves"].items()]
+elves = [elf for slug, elf in json_data["elves"].items()]
 elves.sort(key=lambda x: x['name'])
-elements = [{ "key": slug, **element } for slug, element in json_data["elements"].items()]
+elements = [element for slug, element in json_data["elements"].items()]
 elements.sort(key=lambda x: x['text'])
-skills = [{ "key": slug, **skill } for slug, skill in json_data["skills"].items()]
+skills = [skill for slug, skill in json_data["skills"].items()]
 skills.sort(key=lambda x: x['name'])
+
+with open("patchlocations.py") as f:
+    exec(f.read())
+# for i in json_data["continents"]:
+#     print(i)
 
 skills_by_element_which_active = {}
 skills_by_element_which_passive = {}
