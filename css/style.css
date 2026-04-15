@@ -23,3 +23,12 @@ h5 a,
 h6 a {
     text-decoration: none !important;
 }
+
+h1.in-blue,
+h2.in-blue,
+h3.in-blue,
+h4.in-blue,
+h5.in-blue,
+h6.in-blue {
+    padding-left: 0.5rem;
+}

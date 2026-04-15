@@ -62,11 +62,12 @@ for slug, elf in json_data["elves"].items():
             summon_text += f'<div>'
             summon_text += f'Summoned by: <a href="/{dir_elves}/{m}.html"><img class="inline-icon" src="{ json_data["elements"][elf_master["element"]]["iconUrl"] }">{elf_master["name"]}</a>'
             if len(elf_master.get("continents", [])) > 0:
-                summon_text += f' (at {", ".join([json_data["continents"][s["id"]]["text"] for s in elf_master["continents"]])})'
+                summon_text += f' (at {", ".join([get_dom_continent_link(s["id"]) for s in elf_master["continents"]])})'
             summon_text += f'</div>'
+
     location_text = ""
     for c in elf.get("continents", []):
-        location_text += f'<div>At {json_data["continents"][c["id"]]["text"]} {"("+c["note"]+")" if c["note"] else ""}</div>'
+        location_text += f'<div>At {get_dom_continent_link(c["id"])} {"("+c["note"]+")" if c["note"] else ""}</div>'
         # location_text += f' (at {", ".join([json_data["continents"][s["id"]]["text"] for s in elf["continents"]])})'
     text_content += '<div class="card article two-column">'
     text_content += '<h2 class="in-blue">Locations</h2>'
@@ -81,6 +82,7 @@ for slug, elf in json_data["elves"].items():
     page_content = page_content.replace("{{page_content}}", text_content)
 
     save_html(dist / dir_elves / f"{slug}.html", page_content)
+
 
 # Create index page
 elves_text = ""

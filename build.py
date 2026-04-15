@@ -38,6 +38,7 @@ with open("patchlocations.py") as f:
 skills_by_element_which_active = {}
 skills_by_element_which_passive = {}
 elves_by_element = {}
+elves_by_continent = {}
 elves_by_skill = {}
 for elf in elves:
     if elf["element"] not in elves_by_element:
@@ -59,6 +60,11 @@ for elf in elves:
         if s not in elves_by_skill:
             elves_by_skill[s] = []
         elves_by_skill[s].append(elf["key"])
+    
+    for c in elf.get("continents", []):
+        if c["id"] not in elves_by_continent:
+            elves_by_continent[c["id"]] = []
+        elves_by_continent[c["id"]].append(elf)
 
 for e in skills_by_element_which_active:
     skills_by_element_which_active[e] = [json_data["skills"][s] for s in set(skills_by_element_which_active[e])]
@@ -111,6 +117,14 @@ def get_dom_skill_link(skill_name):
     link = ""
     if "key" in skill:
         link = f'/{dir_skills}/#{dir_skills}_{skill["key"]}'
+    return f'<a href="{link}">{name}</a>' if link else f'<span>{name}</span>'
+
+def get_dom_continent_link(continent_name):
+    continent = json_data["continents"].get(continent_name, {})
+    name = continent.get("text", continent_name)
+    link = ""
+    if "key" in continent:
+        link = f'/{dir_continents}/{continent["key"]}.html'
     return f'<a href="{link}">{name}</a>' if link else f'<span>{name}</span>'
 
 def render_skill (skill_name, show_elves=False):
@@ -173,7 +187,7 @@ def render_skill (skill_name, show_elves=False):
 def render_elf_item(elf, h="h2"):
     content = f'<div>{", ".join([json_data["stats"][stat_name]["text"] + ": " + str(stat_data["value"]) for stat_name, stat_data in elf["stats"].items()])}</div>'
     content += f'<div><b class="green">Skills:</b> {", ".join([get_dom_skill_link(s) for s in elf["skills"]])}</div>'
-    content += f'<div><b class="green">Locations:</b> {", ".join([json_data["continents"][s["id"]]["text"] for s in elf.get("continents", [])])}</div>'
+    content += f'<div><b class="green">Locations:</b> {", ".join([get_dom_continent_link(s["id"]) for s in elf.get("continents", [])])}</div>'
     elves_text = '<div>'
     elves_text += f'<{h}><a href="/{dir_elves}/{elf["key"]}.html"><img class="inline-icon" src="{json_data["elements"][elf["element"]]["iconUrl"]}">{ "[BOSS] " if elf.get("isBoss") else "" }{ elf["name"] }</a></{h}>'
     elves_text += f'<div class="elf-row"><div><img class="icon-medium" src="{elf["imgUrl"]}"/></div><div>{content}</div></div>'
@@ -324,17 +338,18 @@ for slug, item in json_data["continents"].items():
         </header>
     """
     
-    # text_content += '<div class="two-column">'
-    # text_content += f'<h2>Elves</h2>'
-    # e = elves_by_element.get(slug, [])
-    # if len(e) == 0:
-    #     text_content += f'<p>No elf with {item["text"]} element.</p>'
-    # else:
-    #     for elf in elves_by_element.get(slug, []):
-    #         if elf.get("isUnlisted", False):
-    #             continue
-    #         text_content += render_elf_item(elf, "h3")
-    # text_content += '</div>'
+    # Elves    
+    text_content += '<div class="two-column">'
+    text_content += f'<h2 class="in-blue">Elves</h2>'
+    e = elves_by_continent.get(slug, [])
+    if len(e) == 0:
+        text_content += f'<p>No elf in {item["text"]}.</p>'
+    else:
+        for elf in e:
+            if elf.get("isUnlisted", False):
+                continue
+            text_content += render_elf_item(elf, "h3")
+    text_content += '</div>'
 
     page_content = page_content.replace("{{page_content}}", text_content)
 
