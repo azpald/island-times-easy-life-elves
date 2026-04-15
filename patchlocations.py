@@ -1,6 +1,8 @@
 a = []
 
 ##################################################################
+a.append(["land-of-wind", "phantom-figurine", "1, 2"])
+a.append(["land-of-wind", "elf-archer", "1, 2, 7"])
 a.append(["land-of-wind", "slime", "1, 2"])
 a.append(["land-of-wind", "bat", "1, 2, 5, 6, 8"])
 a.append(["land-of-wind", "little-skeleton", "1, 2, 3, 4, 9"])
@@ -21,13 +23,43 @@ a.append(["land-of-wind", "ghost-mage", "8"])
 a.append(["land-of-wind", "succubus-oni", "9"])
 a.append(["land-of-wind", "fire-statue", "9"])
 a.append(["land-of-wind", "spar-giant", "10"])
+a.append(["land-of-summer", "bat", "1, 2, 4"])
+a.append(["land-of-summer", "statue", "1, 2"])
+a.append(["land-of-summer", "slime", "1"])
+a.append(["land-of-summer", "water-element", "1, 2"])
+a.append(["land-of-summer", "elf-archer", "1, 7, 8"])
+a.append(["land-of-summer", "wolf-cavalry-a", "2"])
+a.append(["land-of-summer", "wolf-cavalry-b", "2"])
+a.append(["land-of-summer", "cyclops", "3, 4"])
+a.append(["land-of-summer", "claw-beast", "3"])
+a.append(["land-of-summer", "fire-beast", "3"])
+a.append(["land-of-summer", "fire-spirit", "3, 4"])
+a.append(["land-of-summer", "fire-element", "3, 4"])
+a.append(["land-of-summer", "fire-statue", "4"])
+a.append(["land-of-summer", "skeleton-mage", "5, 6"])
+a.append(["land-of-summer", "zombie", "5, 6"])
+a.append(["land-of-summer", "skeleton-archer", "5, 6"])
+a.append(["land-of-summer", "ghost-mage", "5, 6"])
+a.append(["land-of-summer", "sword-ghost", "5, 6"])
+a.append(["land-of-summer", "dark-knight", "5, 6"])
+a.append(["land-of-summer", "flower-elf", "7, 8"])
+a.append(["land-of-summer", "tree-elder", "7, 8"])
+a.append(["land-of-summer", "deer-spirit", "7, 8"])
+a.append(["land-of-summer", "light", "7, 8"])
+a.append(["land-of-summer", "duel-axe-orc", "9"])
+a.append(["land-of-summer", "dog-headed-orc", "9"])
+a.append(["land-of-summer", "wolf-orc", "9"])
+a.append(["land-of-summer", "tree-guard", "9"])
+a.append(["land-of-summer", "orc-flamen", "9"])
 ##################################################################
 
 for b in a:
     slug = b[1]
     land = b[0]
     floor = b[2]
-    note = f'Floor {floor}'
+    note = f'Spawns on Floor {floor}'
+    if land == "land-of-chaos":
+        note = f'May appear on Floor {floor}'
     elf = json_data["elves"].get(slug, {})
     elf["continents"] = elf.get("continents", [])
     for c in elf["continents"]:
