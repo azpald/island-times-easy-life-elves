@@ -85,6 +85,29 @@ for skill in skills:
             skills_by_summon[e] = []
         skills_by_summon[e].append(skill["key"])
 
+
+elves_by_master_continent = {}
+continents_by_summon = {}
+for summon, skills in skills_by_summon.items():
+    for skill in skills:
+        for master in elves_by_skill.get(skill, []):
+            for c in json_data["elves"][master].get("continents", []):
+                continent = c["id"]
+                if continent not in elves_by_master_continent:
+                    elves_by_master_continent[continent] = []
+                elves_by_master_continent[continent].append({
+                    "summon": summon,
+                    "master": master,
+                })
+
+                if summon not in continents_by_summon:
+                    continents_by_summon[summon] = []
+                continents_by_summon[summon].append({
+                    "master": master,
+                    "continent": continent,
+                })
+
+
 # Prepare output folder
 dist = Path("dist")
 shutil.rmtree(dist, ignore_errors=True)
@@ -126,6 +149,10 @@ def get_dom_continent_link(continent_name):
     if "key" in continent:
         link = f'/{dir_continents}/{continent["key"]}.html'
     return f'<a href="{link}">{name}</a>' if link else f'<span>{name}</span>'
+
+def get_dom_elf_link(elf_name):
+    elf = json_data["elves"][elf_name]
+    return f'<a href="/{dir_elves}/{elf_name}.html"><img class="inline-icon" src="{ json_data["elements"][elf["element"]]["iconUrl"] }">{elf["name"]}</a>'
 
 def render_skill (skill_name, show_elves=False):
     if skill_name not in json_data["skills"]:
@@ -187,7 +214,19 @@ def render_skill (skill_name, show_elves=False):
 def render_elf_item(elf, h="h2", show_locations=True):
     content = f'<div>{", ".join([json_data["stats"][stat_name]["text"] + ": " + str(stat_data["value"]) for stat_name, stat_data in elf["stats"].items()])}</div>'
     content += f'<div><b class="green">Skills:</b> {", ".join([get_dom_skill_link(s) for s in elf["skills"]])}</div>'
-    if show_locations :content += f'<div><b class="green">Locations:</b> {", ".join([get_dom_continent_link(s["id"]) for s in elf.get("continents", [])])}</div>'
+    if show_locations:
+        # content += f"""
+        #     <div><b class="green">Locations:</b> {", ".join(
+        #         [get_dom_continent_link(s["id"]) for s in elf.get("continents", [])]
+        #         + [get_dom_continent_link(s["continent"]) + f' (summoned by {get_dom_elf_link(s["master"])})' for s in continents_by_summon.get(elf["key"], [])]
+        #     )}</div>
+        # """
+        content += f"""
+            <div><b class="green">Locations:</b><ul> {" ".join(
+                [f'<li>{get_dom_continent_link(s["id"])}</li>' for s in elf.get("continents", [])]
+                + [f'<li>{get_dom_continent_link(s["continent"])} (summoned by {get_dom_elf_link(s["master"])})</li>' for s in continents_by_summon.get(elf["key"], [])]
+            )}</ul></div>
+        """
     elves_text = '<div>'
     elves_text += f'<{h}><a href="/{dir_elves}/{elf["key"]}.html"><img class="inline-icon" src="{json_data["elements"][elf["element"]]["iconUrl"]}">{ "[BOSS] " if elf.get("isBoss") else "" }{ elf["name"] }</a></{h}>'
     elves_text += f'<div class="elf-row"><div><img class="icon-medium" src="{elf["imgUrl"]}"/></div><div>{content}</div></div>'
@@ -342,13 +381,25 @@ for slug, item in json_data["continents"].items():
     text_content += '<div class="two-column">'
     text_content += f'<h2 class="in-blue">Elves</h2>'
     e = elves_by_continent.get(slug, [])
+    set_elves = set()
     if len(e) == 0:
         text_content += f'<p>No elf in {item["text"]}.</p>'
     else:
         for elf in e:
+            if elf["key"] in set_elves:
+                continue
+            set_elves.add(elf["key"])
             if elf.get("isUnlisted", False):
                 continue
             text_content += render_elf_item(elf, "h3", show_locations=False)
+    for d in elves_by_master_continent.get(slug, []):
+        elf = json_data["elves"][d["summon"]]
+        if elf["key"] in set_elves:
+            continue
+        set_elves.add(elf["key"])
+        if elf.get("isUnlisted", False):
+            continue
+        text_content += render_elf_item(elf, "h3", show_locations=False)
     text_content += '</div>'
 
     page_content = page_content.replace("{{page_content}}", text_content)

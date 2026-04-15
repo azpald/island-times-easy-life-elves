@@ -56,14 +56,19 @@ for slug, elf in json_data["elves"].items():
     text_content += '</div>'
 
     summon_text = ""
-    for s in skills_by_summon.get(slug, []):
-        for m in elves_by_skill.get(s, []):
-            elf_master = json_data["elves"][m]
+    for d in continents_by_summon.get(slug, []):
+            elf_master = json_data["elves"][d["master"]]
             summon_text += f'<div>'
-            summon_text += f'Summoned by: <a href="/{dir_elves}/{m}.html"><img class="inline-icon" src="{ json_data["elements"][elf_master["element"]]["iconUrl"] }">{elf_master["name"]}</a>'
-            if len(elf_master.get("continents", [])) > 0:
-                summon_text += f' (at {", ".join([get_dom_continent_link(s["id"]) for s in elf_master["continents"]])})'
+            summon_text += f'Summoned by: {get_dom_elf_link(d["master"])}</a> ({get_dom_continent_link(d["continent"])})'
             summon_text += f'</div>'
+    # for s in skills_by_summon.get(slug, []):
+    #     for m in elves_by_skill.get(s, []):
+    #         elf_master = json_data["elves"][m]
+    #         summon_text += f'<div>'
+    #         summon_text += f'Summoned by: <a href="/{dir_elves}/{m}.html"><img class="inline-icon" src="{ json_data["elements"][elf_master["element"]]["iconUrl"] }">{elf_master["name"]}</a>'
+    #         if len(elf_master.get("continents", [])) > 0:
+    #             summon_text += f' (at {", ".join([get_dom_continent_link(s["id"]) for s in elf_master["continents"]])})'
+    #         summon_text += f'</div>'
 
     location_text = ""
     for c in elf.get("continents", []):
