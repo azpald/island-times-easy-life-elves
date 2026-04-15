@@ -184,10 +184,10 @@ def render_skill (skill_name, show_elves=False):
         </div>
     """
 
-def render_elf_item(elf, h="h2"):
+def render_elf_item(elf, h="h2", show_locations=True):
     content = f'<div>{", ".join([json_data["stats"][stat_name]["text"] + ": " + str(stat_data["value"]) for stat_name, stat_data in elf["stats"].items()])}</div>'
     content += f'<div><b class="green">Skills:</b> {", ".join([get_dom_skill_link(s) for s in elf["skills"]])}</div>'
-    content += f'<div><b class="green">Locations:</b> {", ".join([get_dom_continent_link(s["id"]) for s in elf.get("continents", [])])}</div>'
+    if show_locations :content += f'<div><b class="green">Locations:</b> {", ".join([get_dom_continent_link(s["id"]) for s in elf.get("continents", [])])}</div>'
     elves_text = '<div>'
     elves_text += f'<{h}><a href="/{dir_elves}/{elf["key"]}.html"><img class="inline-icon" src="{json_data["elements"][elf["element"]]["iconUrl"]}">{ "[BOSS] " if elf.get("isBoss") else "" }{ elf["name"] }</a></{h}>'
     elves_text += f'<div class="elf-row"><div><img class="icon-medium" src="{elf["imgUrl"]}"/></div><div>{content}</div></div>'
@@ -348,7 +348,7 @@ for slug, item in json_data["continents"].items():
         for elf in e:
             if elf.get("isUnlisted", False):
                 continue
-            text_content += render_elf_item(elf, "h3")
+            text_content += render_elf_item(elf, "h3", show_locations=False)
     text_content += '</div>'
 
     page_content = page_content.replace("{{page_content}}", text_content)
