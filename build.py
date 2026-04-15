@@ -261,8 +261,8 @@ text_content += '<div class="card two-column article container-multicolumns">'
 text_content += f"""
     <div class="mugshot"><a href="/{dir_elves}/"><img class="icon-medium" src="{json_data["vars"]["icon_menu_elves"]}"/><div>Elves</div></a></div>
     <div class="mugshot"><a href="/{dir_elements}/"><img class="icon-medium" src="{json_data["vars"]["icon_menu_elements"]}"/><div>Elements</div></a></div>
-    <div class="mugshot"><a href="/skills/"><img class="icon-medium" src="{json_data["vars"]["icon_menu_skills"]}"/><div>Skills</div></a></div>
-    <div class="mugshot"><a href="/continents/"><img class="icon-medium" src="{json_data["vars"]["icon_menu_continents"]}"/><div>Continents</div></a></div>
+    <div class="mugshot"><a href="/{dir_skills}/"><img class="icon-medium" src="{json_data["vars"]["icon_menu_skills"]}"/><div>Skills</div></a></div>
+    <div class="mugshot"><a href="/{dir_continents}/"><img class="icon-medium" src="{json_data["vars"]["icon_menu_continents"]}"/><div>Continents</div></a></div>
 """
 text_content += '</div>'
 page_content = page_content.replace("{{page_content}}", text_content)
