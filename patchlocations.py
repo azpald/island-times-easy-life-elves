@@ -70,12 +70,16 @@ a.append(["land-of-forest", "tree-guard", "5"])
 a.append(["land-of-forest", "light", "5"])
 a.append(["land-of-forest", "dog-headed-orc", "6"])
 a.append(["land-of-forest", "wolf-orc", "6"])
-a.append(["land-of-forest", "ghost", "6"])
+a.append(["land-of-forest", "ghost", "6, 8, 9"])
 a.append(["land-of-forest", "moonlight-flamen", "6"])
 a.append(["land-of-forest", "skeleton-archer", "7"])
 a.append(["land-of-forest", "statue", "7"])
 a.append(["land-of-forest", "fire-statue", "7"])
 a.append(["land-of-forest", "little-skeleton", "7"])
+a.append(["land-of-forest", "ghost-mage", "8, 9"])
+a.append(["land-of-forest", "skeleton-mage", "8, 9"])
+a.append(["land-of-forest", "butcher-zombie", "8, 9"])
+a.append(["land-of-forest", "zombie", "8, 9"])
 ##################################################################
 
 for b in a:
