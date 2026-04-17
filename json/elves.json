@@ -2176,6 +2176,8 @@
                 "note": "Spawns on Floor 10"
             }
         ],
+        "isUnlisted": true,
+        "isBoss": true,
         "skills": [],
         "key": "spectre"
     }
