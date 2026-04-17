@@ -1291,7 +1291,11 @@
                 "note": "May appear on Floor 40"
             }
         ],
-        "skills": [],
+        "skills": [
+            "fire-rain",
+            "ignite",
+            "light-up"
+        ],
         "key": "fire-statue"
     },
     "water-element": {
@@ -1328,7 +1332,11 @@
                 "note": "May appear on Floor 29, 31"
             }
         ],
-        "skills": [],
+        "skills": [
+            "ice-attack",
+            "ice-armor",
+            "ice-freezing"
+        ],
         "key": "water-element"
     },
     "moonlight-flamen": {
@@ -1361,7 +1369,11 @@
                 "note": "Spawns on Floor 6"
             }
         ],
-        "skills": [],
+        "skills": [
+            "moonlight-spreading",
+            "position",
+            "moonlight-piercing"
+        ],
         "key": "moonlight-flamen"
     },
     "half-goat": {
@@ -1394,7 +1406,11 @@
                 "note": "Floor 14, 16"
             }
         ],
-        "skills": [],
+        "skills": [
+            "ice-explosion",
+            "ice-burst",
+            "wisdom"
+        ],
         "key": "half-goat"
     },
     "mucus": {
@@ -1422,7 +1438,10 @@
             }
         },
         "continents": [],
-        "skills": [],
+        "skills": [
+            "bubble-attack",
+            "sacrifice"
+        ],
         "key": "mucus"
     },
     "fire-spider": {
@@ -1450,7 +1469,11 @@
             }
         },
         "continents": [],
-        "skills": [],
+        "skills": [
+            "combo",
+            "convert-block",
+            "crit-combo"
+        ],
         "key": "fire-spider"
     },
     "fire-beast": {
@@ -1491,7 +1514,11 @@
                 "note": "Spawns on Floor 3, 4"
             }
         ],
-        "skills": [],
+        "skills": [
+            "fireball",
+            "aim",
+            "ignite"
+        ],
         "key": "fire-beast"
     },
     "demon-lord": {

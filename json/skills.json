@@ -722,5 +722,109 @@
         "levelMax": 3,
         "valuesBase": [6],
         "valuesIncrement": [3]
+    },
+    "thump-water": {
+        "iconUrl": "/img/icon-skills/thump-water.png",
+        "name": "Thump",
+        "description": "Deals ({{value1}})% damage to target",
+        "isTransferable": false,
+        "isActive": true,
+        "levelMax": 5,
+        "valuesBase": [215],
+        "valuesIncrement": [35]
+    },
+    "aim": {
+        "iconUrl": "/img/icon-skills/aim.png",
+        "name": "Aim",
+        "description": "The hit increases by ({{value1}})",
+        "isTransferable": true,
+        "levelMax": 3,
+        "valuesBase": [10],
+        "valuesIncrement": [5]
+    },
+    "stone-pointing": {
+        "iconUrl": "/img/icon-skills/stone-pointing.png",
+        "name": "Stone Pointing",
+        "description": "Deals ({{value1}})% damage to and [stun] the target for 1 turn.",
+        "isTransferable": false,
+        "isActive": true,
+        "levelMax": 5,
+        "valuesBase": [190],
+        "valuesIncrement": [30]
+    },
+    "toughness-breaking": {
+        "iconUrl": "/img/icon-skills/toughness-breaking.png",
+        "name": "Toughness Breaking",
+        "description": "Attack ignore Tenacity.",
+        "isTransferable": true,
+        "levelMax": 1,
+        "valuesBase": [0],
+        "valuesIncrement": [0]
+    },
+    "suppress-earth": {
+        "iconUrl": "/img/icon-skills/suppress-earth.png",
+        "name": "Suppress",
+        "description": "Critical damage increased by({{value1}})%. Critical probability increased by ({{value2}})%.",
+        "isTransferable": true,
+        "levelMax": 3,
+        "valuesBase": [8, 8],
+        "valuesIncrement": [3, 3]
+    },
+    "rockfall": {
+        "iconUrl": "/img/icon-skills/rockfall.png",
+        "name": "Rockfall",
+        "description": "Deals ({{value1}})% damage to the target and [stun] the target",
+        "isTransferable": false,
+        "isActive": true,
+        "levelMax": 5,
+        "valuesBase": [190],
+        "valuesIncrement": [30]
+    },
+    "blade-armor": {
+        "iconUrl": "/img/icon-skills/blade-armor.png",
+        "name": "Blade Armor",
+        "description": "Damage taken rebound ({{value1}})%",
+        "isTransferable": true,
+        "levelMax": 3,
+        "valuesBase": [15],
+        "valuesIncrement": [5]
+    },
+    "fire-rain": {
+        "iconUrl": "/img/icon-skills/fire-rain.png",
+        "name": "Fire Rain",
+        "description": "Deals ({{value1}})% damage to 4 random targets, 50% chance to [burn]",
+        "isTransferable": false,
+        "isActive": true,
+        "levelMax": 5,
+        "valuesBase": [55],
+        "valuesIncrement": [15]
+    },
+    "ice-attack": {
+        "iconUrl": "/img/icon-skills/ice-attack.png",
+        "name": "Ice Attack",
+        "description": "Deals ({{value1}})% damage to all enemies and 50% chance to [feeze] front row enemies",
+        "isTransferable": false,
+        "isActive": true,
+        "levelMax": 5,
+        "valuesBase": [95],
+        "valuesIncrement": [15]
+    },
+    "ice-armor": {
+        "iconUrl": "/img/icon-skills/ice-armor.png",
+        "name": "Ice Armor",
+        "description": "The enemy that attacks is influenced by ice, and damage taken is increased by ({{value1}})% for 2 turns",
+        "isTransferable": true,
+        "levelMax": 3,
+        "valuesBase": [10],
+        "valuesIncrement": [5]
+    },
+    "ice-freezing": {
+        "iconUrl": "/img/icon-skills/ice-freezing.png",
+        "name": "Ice Freezing",
+        "description": "Attack have ({{value1}})% probability to make the [freeze] target",
+        "isTransferable": true,
+        "levelMax": 3,
+        "valuesBase": [15],
+        "valuesIncrement": [5]
     }
 }
