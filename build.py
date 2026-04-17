@@ -32,6 +32,10 @@ skills.sort(key=lambda x: x['name'])
 
 with open("patchlocations.py") as f:
     exec(f.read())
+with open("patchskills.py") as f:
+    exec(f.read())
+with open("json/elves.json", "w", encoding="utf-8") as f:
+    f.write(json.dumps(json_data["elves"], indent=4))
 # for i in json_data["continents"]:
 #     print(i)
 

@@ -23,7 +23,12 @@
                 "value": 0
             }
         },
-        "skills": ["mana-ball", "smite", "rage"]
+        "skills": [
+            "mana-ball",
+            "smite",
+            "rage"
+        ],
+        "key": "lich"
     },
     "butcher-zombie": {
         "imgUrl": "/img/elves/butcher-zombie.png",
@@ -49,8 +54,22 @@
                 "value": 0
             }
         },
-        "continents": [{"id": "land-of-chaos","note": "Floor 26"}],
-        "skills": ["full-blow", "epidemic-spreading", "calling-servant"]
+        "continents": [
+            {
+                "id": "land-of-chaos",
+                "note": "May appear on Floor 37"
+            },
+            {
+                "id": "land-of-forest",
+                "note": "Spawns on Floor 8, 9"
+            }
+        ],
+        "skills": [
+            "full-blow",
+            "epidemic-spreading",
+            "calling-servant"
+        ],
+        "key": "butcher-zombie"
     },
     "small-flame": {
         "imgUrl": "/img/elves/small-flame.png",
@@ -76,7 +95,11 @@
                 "value": 0
             }
         },
-        "skills": ["fire-sea", "light-up"]
+        "skills": [
+            "fire-sea",
+            "light-up"
+        ],
+        "key": "small-flame"
     },
     "fire-element": {
         "imgUrl": "/img/elves/fire-element.png",
@@ -105,10 +128,23 @@
         "continents": [
             {
                 "id": "land-of-summer",
-                "note": ""
+                "note": "Spawns on Floor 3, 4"
+            },
+            {
+                "id": "land-of-forest",
+                "note": "Spawns on Floor 4"
+            },
+            {
+                "id": "land-of-chaos",
+                "note": "May appear on Floor 29, 31"
             }
         ],
-        "skills": ["anomalous-fire", "ignite", "shaping"]
+        "skills": [
+            "anomalous-fire",
+            "ignite",
+            "shaping"
+        ],
+        "key": "fire-element"
     },
     "panda-hero": {
         "imgUrl": "/img/elves/panda-hero.png",
@@ -135,7 +171,12 @@
             }
         },
         "continents": [],
-        "skills": ["liquor-and-fire", "suppress", "clean-break"]
+        "skills": [
+            "liquor-and-fire",
+            "suppress",
+            "clean-break"
+        ],
+        "key": "panda-hero"
     },
     "elf-archer": {
         "imgUrl": "/img/elves/elf-archer.png",
@@ -161,8 +202,30 @@
                 "value": 0
             }
         },
-        "continents": [{"id": "land-of-chaos","note": "Floor 11, 13"}],
-        "skills": ["arrow-rain", "key-critical", "rage-light"]
+        "continents": [
+            {
+                "id": "land-of-chaos",
+                "note": "May appear on Floor 41"
+            },
+            {
+                "id": "land-of-wind",
+                "note": "Spawns on Floor 1, 2, 7"
+            },
+            {
+                "id": "land-of-summer",
+                "note": "Spawns on Floor 1, 7, 8"
+            },
+            {
+                "id": "land-of-forest",
+                "note": "Spawns on Floor 5, 7"
+            }
+        ],
+        "skills": [
+            "arrow-rain",
+            "key-critical",
+            "rage-light"
+        ],
+        "key": "elf-archer"
     },
     "tree-elder": {
         "imgUrl": "/img/elves/tree-elder.png",
@@ -188,8 +251,18 @@
                 "value": 0
             }
         },
-        "continents": [],
-        "skills": ["forest-resonance", "resistant-skin", "natural-affinity"]
+        "continents": [
+            {
+                "id": "land-of-summer",
+                "note": "Spawns on Floor 7, 8"
+            }
+        ],
+        "skills": [
+            "forest-resonance",
+            "resistant-skin",
+            "natural-affinity"
+        ],
+        "key": "tree-elder"
     },
     "tree-guard": {
         "imgUrl": "/img/elves/tree-guard.png",
@@ -215,8 +288,30 @@
                 "value": 0
             }
         },
-        "continents": [{"id": "land-of-chaos","note": "Floor 14, 16"}],
-        "skills": ["vines-twine", "toxin-immunity", "heating-up"]
+        "continents": [
+            {
+                "id": "land-of-chaos",
+                "note": "May appear on Floor 38, 40"
+            },
+            {
+                "id": "land-of-wind",
+                "note": "Spawns on Floor 3, 4, 8"
+            },
+            {
+                "id": "land-of-summer",
+                "note": "Spawns on Floor 9"
+            },
+            {
+                "id": "land-of-forest",
+                "note": "Spawns on Floor 5"
+            }
+        ],
+        "skills": [
+            "vines-twine",
+            "toxin-immunity",
+            "heating-up"
+        ],
+        "key": "tree-guard"
     },
     "longaxe-orc": {
         "imgUrl": "/img/elves/longaxe-orc.png",
@@ -243,7 +338,12 @@
             }
         },
         "continents": [],
-        "skills": ["axe-strike", "promote", "scar-deepen"]
+        "skills": [
+            "axe-strike",
+            "promote",
+            "scar-deepen"
+        ],
+        "key": "longaxe-orc"
     },
     "wolf-orc": {
         "imgUrl": "/img/elves/wolf-orc.png",
@@ -269,8 +369,26 @@
                 "value": 0
             }
         },
-        "continents": [],
-        "skills": ["claw-strike", "excitation", "fusion"]
+        "continents": [
+            {
+                "id": "land-of-wind",
+                "note": "Spawns on Floor 5, 6"
+            },
+            {
+                "id": "land-of-summer",
+                "note": "Spawns on Floor 9"
+            },
+            {
+                "id": "land-of-forest",
+                "note": "Spawns on Floor 6"
+            }
+        ],
+        "skills": [
+            "claw-strike",
+            "excitation",
+            "fusion"
+        ],
+        "key": "wolf-orc"
     },
     "dog-headed-orc": {
         "imgUrl": "/img/elves/dog-headed-orc.png",
@@ -296,8 +414,22 @@
                 "value": 0
             }
         },
-        "continents": [],
-        "skills": ["claw", "confidence", "cold"]
+        "continents": [
+            {
+                "id": "land-of-summer",
+                "note": "Spawns on Floor 9"
+            },
+            {
+                "id": "land-of-forest",
+                "note": "Spawns on Floor 6"
+            }
+        ],
+        "skills": [
+            "claw",
+            "confidence",
+            "cold"
+        ],
+        "key": "dog-headed-orc"
     },
     "wolf-cavalry-b": {
         "imgUrl": "/img/elves/wolf-cavalry-b.png",
@@ -323,8 +455,30 @@
                 "value": 0
             }
         },
-        "continents": [],
-        "skills": ["roar", "partner", "position"]
+        "continents": [
+            {
+                "id": "land-of-wind",
+                "note": "Spawns on Floor 7"
+            },
+            {
+                "id": "land-of-summer",
+                "note": "Spawns on Floor 2"
+            },
+            {
+                "id": "land-of-forest",
+                "note": "Spawns on Floor 2"
+            },
+            {
+                "id": "land-of-chaos",
+                "note": "May appear on Floor 2"
+            }
+        ],
+        "skills": [
+            "roar",
+            "partner",
+            "position"
+        ],
+        "key": "wolf-cavalry-b"
     },
     "wolf-cavalry-a": {
         "imgUrl": "/img/elves/wolf-cavalry-a.png",
@@ -350,8 +504,26 @@
                 "value": 0
             }
         },
-        "continents": [],
-        "skills": ["fatal-blow", "bloodthirsty", "beast-roar"]
+        "continents": [
+            {
+                "id": "land-of-wind",
+                "note": "Spawns on Floor 5, 6, 7"
+            },
+            {
+                "id": "land-of-summer",
+                "note": "Spawns on Floor 2"
+            },
+            {
+                "id": "land-of-chaos",
+                "note": "May appear on Floor 2"
+            }
+        ],
+        "skills": [
+            "fatal-blow",
+            "bloodthirsty",
+            "beast-roar"
+        ],
+        "key": "wolf-cavalry-a"
     },
     "orc-flamen": {
         "imgUrl": "/img/elves/orc-flamen.png",
@@ -377,8 +549,22 @@
                 "value": 0
             }
         },
-        "continents": [],
-        "skills": ["poisonous-injury", "toxins", "poison"]
+        "continents": [
+            {
+                "id": "land-of-wind",
+                "note": "Spawns on Floor 5, 6"
+            },
+            {
+                "id": "land-of-summer",
+                "note": "Spawns on Floor 9"
+            }
+        ],
+        "skills": [
+            "poisonous-injury",
+            "toxins",
+            "poison"
+        ],
+        "key": "orc-flamen"
     },
     "duel-axe-orc": {
         "imgUrl": "/img/elves/duel-axe-orc.png",
@@ -404,8 +590,30 @@
                 "value": 0
             }
         },
-        "continents": [],
-        "skills": ["throwing-axe", "cold", "fragmentation"]
+        "continents": [
+            {
+                "id": "land-of-wind",
+                "note": "Spawns on Floor 5, 6"
+            },
+            {
+                "id": "land-of-summer",
+                "note": "Spawns on Floor 9"
+            },
+            {
+                "id": "land-of-forest",
+                "note": "Spawns on Floor 1, 2"
+            },
+            {
+                "id": "land-of-chaos",
+                "note": "May appear on Floor 53, 2"
+            }
+        ],
+        "skills": [
+            "throwing-axe",
+            "cold",
+            "fragmentation"
+        ],
+        "key": "duel-axe-orc"
     },
     "wolf": {
         "imgUrl": "/img/elves/wolf.png",
@@ -432,7 +640,11 @@
             }
         },
         "continents": [],
-        "skills": ["bite", "last-words"]
+        "skills": [
+            "bite",
+            "last-words"
+        ],
+        "key": "wolf"
     },
     "armored-golem": {
         "imgUrl": "/img/elves/armored-golem.png",
@@ -463,7 +675,8 @@
             "ground-cracking",
             "defense-breaking",
             "strong-armor"
-        ]
+        ],
+        "key": "armored-golem"
     },
     "little-statue": {
         "imgUrl": "/img/elves/little-statue.png",
@@ -490,7 +703,12 @@
             }
         },
         "continents": [],
-        "skills": ["thump", "resistance", "heating-up"]
+        "skills": [
+            "thump",
+            "resistance",
+            "heating-up"
+        ],
+        "key": "little-statue"
     },
     "spar-giant": {
         "imgUrl": "/img/elves/spar-giant.png",
@@ -519,12 +737,20 @@
         "continents": [
             {
                 "id": "land-of-wind",
-                "note": "Floor 10"
+                "note": "Spawns on Floor 10"
             }
         ],
         "isUnlisted": true,
         "isBoss": true,
-        "skills": ["sweeping", "summoning", "uncontrolled-body", "heating-up", "rage-light", "abnormal-resistance"]
+        "skills": [
+            "sweeping",
+            "summoning",
+            "uncontrolled-body",
+            "heating-up",
+            "rage-light",
+            "abnormal-resistance"
+        ],
+        "key": "spar-giant"
     },
     "slime": {
         "imgUrl": "/img/elves/slime.png",
@@ -550,8 +776,30 @@
                 "value": 0
             }
         },
-        "continents": [],
-        "skills": ["bubble-attack", "mucus", "convert-block"]
+        "continents": [
+            {
+                "id": "land-of-wind",
+                "note": "Spawns on Floor 1, 2"
+            },
+            {
+                "id": "land-of-summer",
+                "note": "Spawns on Floor 1"
+            },
+            {
+                "id": "land-of-forest",
+                "note": "Spawns on Floor 1"
+            },
+            {
+                "id": "land-of-chaos",
+                "note": "May appear on Floor 47, 1"
+            }
+        ],
+        "skills": [
+            "bubble-attack",
+            "mucus",
+            "convert-block"
+        ],
+        "key": "slime"
     },
     "succubus": {
         "imgUrl": "/img/elves/succubus.png",
@@ -577,8 +825,18 @@
                 "value": 0
             }
         },
-        "continents": [],
-        "skills": ["curse", "convert-accuracy", "spell"]
+        "continents": [
+            {
+                "id": "land-of-chaos",
+                "note": "May appear on Floor 32, 34"
+            }
+        ],
+        "skills": [
+            "curse",
+            "convert-accuracy",
+            "spell"
+        ],
+        "key": "succubus"
     },
     "goblin-assassin": {
         "imgUrl": "/img/elves/goblin-assassin.png",
@@ -604,8 +862,26 @@
                 "value": 0
             }
         },
-        "continents": [],
-        "skills": ["throwing-knife", "lucky", "backstab"]
+        "continents": [
+            {
+                "id": "land-of-wind",
+                "note": "Spawns on Floor 3, 4"
+            },
+            {
+                "id": "land-of-forest",
+                "note": "Spawns on Floor 1, 2"
+            },
+            {
+                "id": "land-of-chaos",
+                "note": "May appear on Floor 44, 46"
+            }
+        ],
+        "skills": [
+            "throwing-knife",
+            "lucky",
+            "backstab"
+        ],
+        "key": "goblin-assassin"
     },
     "goblin-thief": {
         "imgUrl": "/img/elves/goblin-thief.png",
@@ -631,8 +907,18 @@
                 "value": 0
             }
         },
-        "continents": [],
-        "skills": ["throwing-knife", "steal", "setback"]
+        "continents": [
+            {
+                "id": "land-of-chaos",
+                "note": "May appear on Floor 44, 46, 53, 2"
+            }
+        ],
+        "skills": [
+            "throwing-knife",
+            "steal",
+            "setback"
+        ],
+        "key": "goblin-thief"
     },
     "succubus-oni": {
         "imgUrl": "/img/elves/succubus-oni.png",
@@ -658,8 +944,22 @@
                 "value": 0
             }
         },
-        "continents": [],
-        "skills": ["charm", "last-words-wind", "convert-accuracy"]
+        "continents": [
+            {
+                "id": "land-of-wind",
+                "note": "Spawns on Floor 9"
+            },
+            {
+                "id": "land-of-forest",
+                "note": "Spawns on Floor 3, 4"
+            }
+        ],
+        "skills": [
+            "charm",
+            "last-words-wind",
+            "convert-accuracy"
+        ],
+        "key": "succubus-oni"
     },
     "cyclops": {
         "imgUrl": "/img/elves/cyclops.png",
@@ -685,8 +985,30 @@
                 "value": 0
             }
         },
-        "continents": [{"id": "land-of-chaos","note": "Floor 17, 19"}],
-        "skills": ["gaze", "convert-accuracy", "convert-block"]
+        "continents": [
+            {
+                "id": "land-of-chaos",
+                "note": "May appear on Floor 41, 43"
+            },
+            {
+                "id": "land-of-wind",
+                "note": "Spawns on Floor 8"
+            },
+            {
+                "id": "land-of-summer",
+                "note": "Spawns on Floor 3, 4"
+            },
+            {
+                "id": "land-of-forest",
+                "note": "Spawns on Floor 1"
+            }
+        ],
+        "skills": [
+            "gaze",
+            "convert-accuracy",
+            "convert-block"
+        ],
+        "key": "cyclops"
     },
     "small-eyed": {
         "imgUrl": "/img/elves/small-eyed.png",
@@ -713,7 +1035,11 @@
             }
         },
         "continents": [],
-        "skills": ["self-explosion", "enabling"]
+        "skills": [
+            "self-explosion",
+            "enabling"
+        ],
+        "key": "small-eyed"
     },
     "bat": {
         "imgUrl": "/img/elves/bat.png",
@@ -739,8 +1065,30 @@
                 "value": 0
             }
         },
-        "continents": [{"id": "land-of-chaos","note": "Floor 17, 19"}],
-        "skills": ["bite-wind", "insane", "vampirism"]
+        "continents": [
+            {
+                "id": "land-of-chaos",
+                "note": "Floor 17, 19"
+            },
+            {
+                "id": "land-of-wind",
+                "note": "Spawns on Floor 1, 2, 5, 6, 8"
+            },
+            {
+                "id": "land-of-summer",
+                "note": "Spawns on Floor 1, 2, 4"
+            },
+            {
+                "id": "land-of-forest",
+                "note": "Spawns on Floor 1, 2, 5"
+            }
+        ],
+        "skills": [
+            "bite-wind",
+            "insane",
+            "vampirism"
+        ],
+        "key": "bat"
     },
     "wind-knight": {
         "imgUrl": "/img/elves/wind-knight.png",
@@ -766,33 +1114,1069 @@
                 "value": 0
             }
         },
-        "continents": [],
-        "skills": ["wind-blade", "wind-speed", "wind-power"]
+        "continents": [
+            {
+                "id": "land-of-chaos",
+                "note": "May appear on Floor 32, 34"
+            }
+        ],
+        "skills": [
+            "wind-blade",
+            "wind-speed",
+            "wind-power"
+        ],
+        "key": "wind-knight"
     },
-    "phantom-figurine": {"imgUrl": "/img/elves/phantom-figurine.png", "name": "Phantom Figurine", "element": "water", "stats": {"speed": {"value": 140}, "defense": {"value": 0}, "accuracy": {"value": 0}, "block": {"value": 0}, "critical": {"value": 0}, "tenacity": {"value": 5}}, "continents": [{"id": "land-of-wind","note": "Floor 1"}], "skills": []},
-    "gold-golem": {"imgUrl": "/img/elves/gold-golem.png", "name": "Gold Golem", "element": "earth", "stats": {"speed": {"value": 140}, "defense": {"value": 5}, "accuracy": {"value": 0}, "block": {"value": 0}, "critical": {"value": 0}, "tenacity": {"value": 0}}, "continents": [], "skills": []},
-    "statue": {"imgUrl": "/img/elves/statue.png", "name": "Statue", "element": "earth", "stats": {"speed": {"value": 135}, "defense": {"value": 5}, "accuracy": {"value": 0}, "block": {"value": 0}, "critical": {"value": 0}, "tenacity": {"value": 0}}, "continents": [], "skills": []},
-    "fire-statue": {"imgUrl": "/img/elves/fire-statue.png", "name": "Fire Statue", "element": "earth", "stats": {"speed": {"value": 138}, "defense": {"value": 5}, "accuracy": {"value": 0}, "block": {"value": 0}, "critical": {"value": 0}, "tenacity": {"value": 0}}, "continents": [], "skills": []},
-    "water-element": {"imgUrl": "/img/elves/water-element.png", "name": "Water Element", "element": "water", "stats": {"speed": {"value": 145}, "defense": {"value": 0}, "accuracy": {"value": 0}, "block": {"value": 0}, "critical": {"value": 0}, "tenacity": {"value": 5}}, "continents": [], "skills": []},
-    "moonlight-flamen": {"imgUrl": "/img/elves/moonlight-flamen.png", "name": "Moonlight Flamen", "element": "water", "stats": {"speed": {"value": 148}, "defense": {"value": 0}, "accuracy": {"value": 0}, "block": {"value": 0}, "critical": {"value": 0}, "tenacity": {"value": 5}}, "continents": [], "skills": []},
-    "half-goat": {"imgUrl": "/img/elves/half-goat.png", "name": "Half-goat", "element": "water", "stats": {"speed": {"value": 140}, "defense": {"value": 0}, "accuracy": {"value": 0}, "block": {"value": 0}, "critical": {"value": 0}, "tenacity": {"value": 5}}, "continents": [{"id": "land-of-chaos","note": "Floor 14, 16"}], "skills": []},
-    "mucus": {"imgUrl": "/img/elves/mucus.png", "name": "Mucus", "element": "water", "stats": {"speed": {"value": 120}, "defense": {"value": 0}, "accuracy": {"value": 0}, "block": {"value": 0}, "critical": {"value": 0}, "tenacity": {"value": 5}}, "continents": [], "skills": []},
-    "fire-spider": {"imgUrl": "/img/elves/fire-spider.png", "name": "Fire Spider", "element": "fire", "stats": {"speed": {"value": 140}, "defense": {"value": 0}, "accuracy": {"value": 5}, "block": {"value": 0}, "critical": {"value": 0}, "tenacity": {"value": 0}}, "continents": [], "skills": []},
-    "fire-beast": {"imgUrl": "/img/elves/fire-beast.png", "name": "Fire Beast", "element": "fire", "stats": {"speed": {"value": 140}, "defense": {"value": 0}, "accuracy": {"value": 5}, "block": {"value": 0}, "critical": {"value": 0}, "tenacity": {"value": 0}}, "continents": [{"id": "land-of-chaos","note": "Floor 10"}], "skills": []},
-    "demon-lord": {"imgUrl": "/img/elves/demon-lord.png", "name": "Demon Lord", "element": "fire", "stats": {"speed": {"value": 136}, "defense": {"value": 0}, "accuracy": {"value": 5}, "block": {"value": 0}, "critical": {"value": 0}, "tenacity": {"value": 0}}, "continents": [], "skills": []},
-    "fire-spirit": {"imgUrl": "/img/elves/fire-spirit.png", "name": "Fire Spirit", "element": "fire", "stats": {"speed": {"value": 140}, "defense": {"value": 0}, "accuracy": {"value": 5}, "block": {"value": 0}, "critical": {"value": 0}, "tenacity": {"value": 0}}, "continents": [{"id": "land-of-chaos","note": "Floor 10"}], "skills": []},
-    "guard-a": {"imgUrl": "/img/elves/guard-a.png", "name": "Guard A", "element": "fire", "stats": {"speed": {"value": 140}, "defense": {"value": 0}, "accuracy": {"value": 5}, "block": {"value": 0}, "critical": {"value": 0}, "tenacity": {"value": 0}}, "continents": [], "skills": []},
-    "deer-spirit": {"imgUrl": "/img/elves/deer-spirit.png", "name": "Deer Spirit", "element": "light", "stats": {"speed": {"value": 134}, "defense": {"value": 0}, "accuracy": {"value": 0}, "block": {"value": 0}, "critical": {"value": 5}, "tenacity": {"value": 0}}, "continents": [{"id": "land-of-chaos","note": "Floor 11"}], "skills": []},
-    "elf-mage": {"imgUrl": "/img/elves/elf-mage.png", "name": "Elf Mage", "element": "light", "stats": {"speed": {"value": 136}, "defense": {"value": 0}, "accuracy": {"value": 0}, "block": {"value": 0}, "critical": {"value": 5}, "tenacity": {"value": 0}}, "continents": [{"id": "land-of-chaos","note": "Floor 13"}], "skills": []},
-    "flower-elf": {"imgUrl": "/img/elves/flower-elf.png", "name": "Flower Elf", "element": "light", "stats": {"speed": {"value": 134}, "defense": {"value": 0}, "accuracy": {"value": 0}, "block": {"value": 0}, "critical": {"value": 5}, "tenacity": {"value": 0}}, "continents": [], "skills": []},
-    "light": {"imgUrl": "/img/elves/light.png", "name": "Light", "element": "light", "stats": {"speed": {"value": 130}, "defense": {"value": 0}, "accuracy": {"value": 0}, "block": {"value": 0}, "critical": {"value": 5}, "tenacity": {"value": 0}}, "continents": [], "skills": []},
-    "sword-ghost": {"imgUrl": "/img/elves/sword-ghost.png", "name": "Sword Ghost", "element": "darkness", "stats": {"speed": {"value": 140}, "defense": {"value": 0}, "accuracy": {"value": 0}, "block": {"value": 5}, "critical": {"value": 0}, "tenacity": {"value": 0}}, "continents": [{"id": "land-of-chaos","note": "Floor 22"}], "skills": []},
-    "dark-knight": {"imgUrl": "/img/elves/dark-knight.png", "name": "Dark Knight", "element": "darkness", "stats": {"speed": {"value": 140}, "defense": {"value": 0}, "accuracy": {"value": 0}, "block": {"value": 5}, "critical": {"value": 0}, "tenacity": {"value": 0}}, "continents": [{"id": "land-of-chaos","note": "Floor 20, 22"}], "skills": []},
-    "ghost": {"imgUrl": "/img/elves/ghost.png", "name": "Ghost", "element": "darkness", "stats": {"speed": {"value": 140}, "defense": {"value": 0}, "accuracy": {"value": 0}, "block": {"value": 5}, "critical": {"value": 0}, "tenacity": {"value": 0}}, "continents": [{"id": "land-of-chaos","note": "Floor 20"}], "skills": []},
-    "ghost-mage": {"imgUrl": "/img/elves/ghost-mage.png", "name": "Ghost Mage", "element": "darkness", "stats": {"speed": {"value": 140}, "defense": {"value": 0}, "accuracy": {"value": 0}, "block": {"value": 5}, "critical": {"value": 0}, "tenacity": {"value": 0}}, "continents": [], "skills": []},
-    "skeleton-mage": {"imgUrl": "/img/elves/skeleton-mage.png", "name": "Skeleton Mage", "element": "darkness", "stats": {"speed": {"value": 140}, "defense": {"value": 0}, "accuracy": {"value": 0}, "block": {"value": 5}, "critical": {"value": 0}, "tenacity": {"value": 0}}, "continents": [{"id": "land-of-chaos","note": "Floor 23"}], "skills": []},
-    "sickle-ghost": {"imgUrl": "/img/elves/sickle-ghost.png", "name": "Sickle Ghost", "element": "darkness", "stats": {"speed": {"value": 140}, "defense": {"value": 0}, "accuracy": {"value": 0}, "block": {"value": 5}, "critical": {"value": 0}, "tenacity": {"value": 0}}, "continents": [{"id": "land-of-chaos","note": "May appear on Floors 23, 25"}], "skills": []},
-    "zombie": {"imgUrl": "/img/elves/zombie.png", "name": "Zombie", "element": "darkness", "stats": {"speed": {"value": 138}, "defense": {"value": 0}, "accuracy": {"value": 0}, "block": {"value": 5}, "critical": {"value": 0}, "tenacity": {"value": 0}}, "continents": [{"id": "land-of-chaos","note": "Floor 26"}], "skills": []},
-    "skeleton-archer": {"imgUrl": "/img/elves/skeleton-archer.png", "name": "Skeleton Archer", "element": "darkness", "stats": {"speed": {"value": 132}, "defense": {"value": 0}, "accuracy": {"value": 0}, "block": {"value": 5}, "critical": {"value": 0}, "tenacity": {"value": 0}}, "continents": [{"id": "land-of-chaos","note": "Floor 25"}], "skills": []},
-    "little-skeleton": {"imgUrl": "/img/elves/little-skeleton.png", "name": "Little Skeleton", "element": "darkness", "stats": {"speed": {"value": 128}, "defense": {"value": 0}, "accuracy": {"value": 0}, "block": {"value": 5}, "critical": {"value": 0}, "tenacity": {"value": 0}}, "continents": [{"id": "land-of-wind","note": "Floor 1"}, {"id": "land-of-chaos","note": "Floor 23, 25"}], "skills": []},"claw-beast": {"imgUrl": "/img/elves/claw-beast.png", "name": "Claw Beast", "element": "fire", "stats": {"speed": {"value": 140}, "defense": {"value": 0}, "accuracy": {"value": 5}, "block": {"value": 0}, "critical": {"value": 0}, "tenacity": {"value": 0}}, "continents": [], "skills": []}
+    "phantom-figurine": {
+        "imgUrl": "/img/elves/phantom-figurine.png",
+        "name": "Phantom Figurine",
+        "element": "water",
+        "stats": {
+            "speed": {
+                "value": 140
+            },
+            "defense": {
+                "value": 0
+            },
+            "accuracy": {
+                "value": 0
+            },
+            "block": {
+                "value": 0
+            },
+            "critical": {
+                "value": 0
+            },
+            "tenacity": {
+                "value": 5
+            }
+        },
+        "continents": [
+            {
+                "id": "land-of-wind",
+                "note": "Spawns on Floor 1, 2"
+            },
+            {
+                "id": "land-of-forest",
+                "note": "Spawns on Floor 2, 6"
+            },
+            {
+                "id": "land-of-chaos",
+                "note": "May appear on Floor 49, 50, 52, 1"
+            }
+        ],
+        "skills": [
+            "thump-water",
+            "aim",
+            "combo-turbo"
+        ],
+        "key": "phantom-figurine"
+    },
+    "gold-golem": {
+        "imgUrl": "/img/elves/gold-golem.png",
+        "name": "Gold Golem",
+        "element": "earth",
+        "stats": {
+            "speed": {
+                "value": 140
+            },
+            "defense": {
+                "value": 5
+            },
+            "accuracy": {
+                "value": 0
+            },
+            "block": {
+                "value": 0
+            },
+            "critical": {
+                "value": 0
+            },
+            "tenacity": {
+                "value": 0
+            }
+        },
+        "continents": [],
+        "skills": [
+            "stone-pointing",
+            "toughness-breaking",
+            "suppress-earth"
+        ],
+        "key": "gold-golem"
+    },
+    "statue": {
+        "imgUrl": "/img/elves/statue.png",
+        "name": "Statue",
+        "element": "earth",
+        "stats": {
+            "speed": {
+                "value": 135
+            },
+            "defense": {
+                "value": 5
+            },
+            "accuracy": {
+                "value": 0
+            },
+            "block": {
+                "value": 0
+            },
+            "critical": {
+                "value": 0
+            },
+            "tenacity": {
+                "value": 0
+            }
+        },
+        "continents": [
+            {
+                "id": "land-of-wind",
+                "note": "Spawns on Floor 3, 4, 9"
+            },
+            {
+                "id": "land-of-summer",
+                "note": "Spawns on Floor 1, 2"
+            },
+            {
+                "id": "land-of-forest",
+                "note": "Spawns on Floor 7"
+            }
+        ],
+        "skills": [
+            "rockfall",
+            "abnormal-resistance",
+            "blade-armor"
+        ],
+        "key": "statue"
+    },
+    "fire-statue": {
+        "imgUrl": "/img/elves/fire-statue.png",
+        "name": "Fire Statue",
+        "element": "earth",
+        "stats": {
+            "speed": {
+                "value": 138
+            },
+            "defense": {
+                "value": 5
+            },
+            "accuracy": {
+                "value": 0
+            },
+            "block": {
+                "value": 0
+            },
+            "critical": {
+                "value": 0
+            },
+            "tenacity": {
+                "value": 0
+            }
+        },
+        "continents": [
+            {
+                "id": "land-of-wind",
+                "note": "Spawns on Floor 9"
+            },
+            {
+                "id": "land-of-summer",
+                "note": "Spawns on Floor 4"
+            },
+            {
+                "id": "land-of-forest",
+                "note": "Spawns on Floor 7"
+            },
+            {
+                "id": "land-of-chaos",
+                "note": "May appear on Floor 40"
+            }
+        ],
+        "skills": [],
+        "key": "fire-statue"
+    },
+    "water-element": {
+        "imgUrl": "/img/elves/water-element.png",
+        "name": "Water Element",
+        "element": "water",
+        "stats": {
+            "speed": {
+                "value": 145
+            },
+            "defense": {
+                "value": 0
+            },
+            "accuracy": {
+                "value": 0
+            },
+            "block": {
+                "value": 0
+            },
+            "critical": {
+                "value": 0
+            },
+            "tenacity": {
+                "value": 5
+            }
+        },
+        "continents": [
+            {
+                "id": "land-of-summer",
+                "note": "Spawns on Floor 1, 2"
+            },
+            {
+                "id": "land-of-chaos",
+                "note": "May appear on Floor 29, 31"
+            }
+        ],
+        "skills": [],
+        "key": "water-element"
+    },
+    "moonlight-flamen": {
+        "imgUrl": "/img/elves/moonlight-flamen.png",
+        "name": "Moonlight Flamen",
+        "element": "water",
+        "stats": {
+            "speed": {
+                "value": 148
+            },
+            "defense": {
+                "value": 0
+            },
+            "accuracy": {
+                "value": 0
+            },
+            "block": {
+                "value": 0
+            },
+            "critical": {
+                "value": 0
+            },
+            "tenacity": {
+                "value": 5
+            }
+        },
+        "continents": [
+            {
+                "id": "land-of-forest",
+                "note": "Spawns on Floor 6"
+            }
+        ],
+        "skills": [],
+        "key": "moonlight-flamen"
+    },
+    "half-goat": {
+        "imgUrl": "/img/elves/half-goat.png",
+        "name": "Half-goat",
+        "element": "water",
+        "stats": {
+            "speed": {
+                "value": 140
+            },
+            "defense": {
+                "value": 0
+            },
+            "accuracy": {
+                "value": 0
+            },
+            "block": {
+                "value": 0
+            },
+            "critical": {
+                "value": 0
+            },
+            "tenacity": {
+                "value": 5
+            }
+        },
+        "continents": [
+            {
+                "id": "land-of-chaos",
+                "note": "Floor 14, 16"
+            }
+        ],
+        "skills": [],
+        "key": "half-goat"
+    },
+    "mucus": {
+        "imgUrl": "/img/elves/mucus.png",
+        "name": "Mucus",
+        "element": "water",
+        "stats": {
+            "speed": {
+                "value": 120
+            },
+            "defense": {
+                "value": 0
+            },
+            "accuracy": {
+                "value": 0
+            },
+            "block": {
+                "value": 0
+            },
+            "critical": {
+                "value": 0
+            },
+            "tenacity": {
+                "value": 5
+            }
+        },
+        "continents": [],
+        "skills": [],
+        "key": "mucus"
+    },
+    "fire-spider": {
+        "imgUrl": "/img/elves/fire-spider.png",
+        "name": "Fire Spider",
+        "element": "fire",
+        "stats": {
+            "speed": {
+                "value": 140
+            },
+            "defense": {
+                "value": 0
+            },
+            "accuracy": {
+                "value": 5
+            },
+            "block": {
+                "value": 0
+            },
+            "critical": {
+                "value": 0
+            },
+            "tenacity": {
+                "value": 0
+            }
+        },
+        "continents": [],
+        "skills": [],
+        "key": "fire-spider"
+    },
+    "fire-beast": {
+        "imgUrl": "/img/elves/fire-beast.png",
+        "name": "Fire Beast",
+        "element": "fire",
+        "stats": {
+            "speed": {
+                "value": 140
+            },
+            "defense": {
+                "value": 0
+            },
+            "accuracy": {
+                "value": 5
+            },
+            "block": {
+                "value": 0
+            },
+            "critical": {
+                "value": 0
+            },
+            "tenacity": {
+                "value": 0
+            }
+        },
+        "continents": [
+            {
+                "id": "land-of-chaos",
+                "note": "Floor 10"
+            },
+            {
+                "id": "land-of-summer",
+                "note": "Spawns on Floor 3"
+            },
+            {
+                "id": "land-of-forest",
+                "note": "Spawns on Floor 3, 4"
+            }
+        ],
+        "skills": [],
+        "key": "fire-beast"
+    },
+    "demon-lord": {
+        "imgUrl": "/img/elves/demon-lord.png",
+        "name": "Demon Lord",
+        "element": "fire",
+        "stats": {
+            "speed": {
+                "value": 136
+            },
+            "defense": {
+                "value": 0
+            },
+            "accuracy": {
+                "value": 5
+            },
+            "block": {
+                "value": 0
+            },
+            "critical": {
+                "value": 0
+            },
+            "tenacity": {
+                "value": 0
+            }
+        },
+        "continents": [
+            {
+                "id": "land-of-forest",
+                "note": "Spawns on Floor 3"
+            }
+        ],
+        "skills": [],
+        "key": "demon-lord"
+    },
+    "fire-spirit": {
+        "imgUrl": "/img/elves/fire-spirit.png",
+        "name": "Fire Spirit",
+        "element": "fire",
+        "stats": {
+            "speed": {
+                "value": 140
+            },
+            "defense": {
+                "value": 0
+            },
+            "accuracy": {
+                "value": 5
+            },
+            "block": {
+                "value": 0
+            },
+            "critical": {
+                "value": 0
+            },
+            "tenacity": {
+                "value": 0
+            }
+        },
+        "continents": [
+            {
+                "id": "land-of-chaos",
+                "note": "Floor 10"
+            },
+            {
+                "id": "land-of-summer",
+                "note": "Spawns on Floor 3, 4"
+            },
+            {
+                "id": "land-of-forest",
+                "note": "Spawns on Floor 3, 4"
+            }
+        ],
+        "skills": [],
+        "key": "fire-spirit"
+    },
+    "guard-a": {
+        "imgUrl": "/img/elves/guard-a.png",
+        "name": "Guard A",
+        "element": "fire",
+        "stats": {
+            "speed": {
+                "value": 140
+            },
+            "defense": {
+                "value": 0
+            },
+            "accuracy": {
+                "value": 5
+            },
+            "block": {
+                "value": 0
+            },
+            "critical": {
+                "value": 0
+            },
+            "tenacity": {
+                "value": 0
+            }
+        },
+        "continents": [],
+        "skills": [],
+        "key": "guard-a"
+    },
+    "deer-spirit": {
+        "imgUrl": "/img/elves/deer-spirit.png",
+        "name": "Deer Spirit",
+        "element": "light",
+        "stats": {
+            "speed": {
+                "value": 134
+            },
+            "defense": {
+                "value": 0
+            },
+            "accuracy": {
+                "value": 0
+            },
+            "block": {
+                "value": 0
+            },
+            "critical": {
+                "value": 5
+            },
+            "tenacity": {
+                "value": 0
+            }
+        },
+        "continents": [
+            {
+                "id": "land-of-chaos",
+                "note": "May appear on Floor 43"
+            },
+            {
+                "id": "land-of-wind",
+                "note": "Spawns on Floor 7"
+            },
+            {
+                "id": "land-of-summer",
+                "note": "Spawns on Floor 7, 8"
+            }
+        ],
+        "skills": [],
+        "key": "deer-spirit"
+    },
+    "elf-mage": {
+        "imgUrl": "/img/elves/elf-mage.png",
+        "name": "Elf Mage",
+        "element": "light",
+        "stats": {
+            "speed": {
+                "value": 136
+            },
+            "defense": {
+                "value": 0
+            },
+            "accuracy": {
+                "value": 0
+            },
+            "block": {
+                "value": 0
+            },
+            "critical": {
+                "value": 5
+            },
+            "tenacity": {
+                "value": 0
+            }
+        },
+        "continents": [
+            {
+                "id": "land-of-chaos",
+                "note": "Floor 13"
+            }
+        ],
+        "skills": [],
+        "key": "elf-mage"
+    },
+    "flower-elf": {
+        "imgUrl": "/img/elves/flower-elf.png",
+        "name": "Flower Elf",
+        "element": "light",
+        "stats": {
+            "speed": {
+                "value": 134
+            },
+            "defense": {
+                "value": 0
+            },
+            "accuracy": {
+                "value": 0
+            },
+            "block": {
+                "value": 0
+            },
+            "critical": {
+                "value": 5
+            },
+            "tenacity": {
+                "value": 0
+            }
+        },
+        "continents": [
+            {
+                "id": "land-of-summer",
+                "note": "Spawns on Floor 7, 8"
+            },
+            {
+                "id": "land-of-forest",
+                "note": "Spawns on Floor 5"
+            }
+        ],
+        "skills": [],
+        "key": "flower-elf"
+    },
+    "light": {
+        "imgUrl": "/img/elves/light.png",
+        "name": "Light",
+        "element": "light",
+        "stats": {
+            "speed": {
+                "value": 130
+            },
+            "defense": {
+                "value": 0
+            },
+            "accuracy": {
+                "value": 0
+            },
+            "block": {
+                "value": 0
+            },
+            "critical": {
+                "value": 5
+            },
+            "tenacity": {
+                "value": 0
+            }
+        },
+        "continents": [
+            {
+                "id": "land-of-summer",
+                "note": "Spawns on Floor 7, 8"
+            },
+            {
+                "id": "land-of-forest",
+                "note": "Spawns on Floor 5"
+            }
+        ],
+        "skills": [],
+        "key": "light"
+    },
+    "sword-ghost": {
+        "imgUrl": "/img/elves/sword-ghost.png",
+        "name": "Sword Ghost",
+        "element": "darkness",
+        "stats": {
+            "speed": {
+                "value": 140
+            },
+            "defense": {
+                "value": 0
+            },
+            "accuracy": {
+                "value": 0
+            },
+            "block": {
+                "value": 5
+            },
+            "critical": {
+                "value": 0
+            },
+            "tenacity": {
+                "value": 0
+            }
+        },
+        "continents": [
+            {
+                "id": "land-of-chaos",
+                "note": "Floor 22"
+            },
+            {
+                "id": "land-of-summer",
+                "note": "Spawns on Floor 5, 6"
+            }
+        ],
+        "skills": [],
+        "key": "sword-ghost"
+    },
+    "dark-knight": {
+        "imgUrl": "/img/elves/dark-knight.png",
+        "name": "Dark Knight",
+        "element": "darkness",
+        "stats": {
+            "speed": {
+                "value": 140
+            },
+            "defense": {
+                "value": 0
+            },
+            "accuracy": {
+                "value": 0
+            },
+            "block": {
+                "value": 5
+            },
+            "critical": {
+                "value": 0
+            },
+            "tenacity": {
+                "value": 0
+            }
+        },
+        "continents": [
+            {
+                "id": "land-of-chaos",
+                "note": "May appear on Floor 37"
+            },
+            {
+                "id": "land-of-summer",
+                "note": "Spawns on Floor 5, 6"
+            }
+        ],
+        "skills": [],
+        "key": "dark-knight"
+    },
+    "ghost": {
+        "imgUrl": "/img/elves/ghost.png",
+        "name": "Ghost",
+        "element": "darkness",
+        "stats": {
+            "speed": {
+                "value": 140
+            },
+            "defense": {
+                "value": 0
+            },
+            "accuracy": {
+                "value": 0
+            },
+            "block": {
+                "value": 5
+            },
+            "critical": {
+                "value": 0
+            },
+            "tenacity": {
+                "value": 0
+            }
+        },
+        "continents": [
+            {
+                "id": "land-of-chaos",
+                "note": "Floor 20"
+            },
+            {
+                "id": "land-of-forest",
+                "note": "Spawns on Floor 6, 8, 9"
+            }
+        ],
+        "skills": [],
+        "key": "ghost"
+    },
+    "ghost-mage": {
+        "imgUrl": "/img/elves/ghost-mage.png",
+        "name": "Ghost Mage",
+        "element": "darkness",
+        "stats": {
+            "speed": {
+                "value": 140
+            },
+            "defense": {
+                "value": 0
+            },
+            "accuracy": {
+                "value": 0
+            },
+            "block": {
+                "value": 5
+            },
+            "critical": {
+                "value": 0
+            },
+            "tenacity": {
+                "value": 0
+            }
+        },
+        "continents": [
+            {
+                "id": "land-of-wind",
+                "note": "Spawns on Floor 8"
+            },
+            {
+                "id": "land-of-summer",
+                "note": "Spawns on Floor 5, 6"
+            },
+            {
+                "id": "land-of-forest",
+                "note": "Spawns on Floor 8, 9"
+            },
+            {
+                "id": "land-of-chaos",
+                "note": "May appear on Floor 35"
+            }
+        ],
+        "skills": [],
+        "key": "ghost-mage"
+    },
+    "skeleton-mage": {
+        "imgUrl": "/img/elves/skeleton-mage.png",
+        "name": "Skeleton Mage",
+        "element": "darkness",
+        "stats": {
+            "speed": {
+                "value": 140
+            },
+            "defense": {
+                "value": 0
+            },
+            "accuracy": {
+                "value": 0
+            },
+            "block": {
+                "value": 5
+            },
+            "critical": {
+                "value": 0
+            },
+            "tenacity": {
+                "value": 0
+            }
+        },
+        "continents": [
+            {
+                "id": "land-of-chaos",
+                "note": "Floor 23"
+            },
+            {
+                "id": "land-of-wind",
+                "note": "Spawns on Floor 8"
+            },
+            {
+                "id": "land-of-summer",
+                "note": "Spawns on Floor 5, 6"
+            },
+            {
+                "id": "land-of-forest",
+                "note": "Spawns on Floor 8, 9"
+            }
+        ],
+        "skills": [],
+        "key": "skeleton-mage"
+    },
+    "sickle-ghost": {
+        "imgUrl": "/img/elves/sickle-ghost.png",
+        "name": "Sickle Ghost",
+        "element": "darkness",
+        "stats": {
+            "speed": {
+                "value": 140
+            },
+            "defense": {
+                "value": 0
+            },
+            "accuracy": {
+                "value": 0
+            },
+            "block": {
+                "value": 5
+            },
+            "critical": {
+                "value": 0
+            },
+            "tenacity": {
+                "value": 0
+            }
+        },
+        "continents": [
+            {
+                "id": "land-of-chaos",
+                "note": "May appear on Floor 23, 25"
+            }
+        ],
+        "skills": [],
+        "key": "sickle-ghost"
+    },
+    "zombie": {
+        "imgUrl": "/img/elves/zombie.png",
+        "name": "Zombie",
+        "element": "darkness",
+        "stats": {
+            "speed": {
+                "value": 138
+            },
+            "defense": {
+                "value": 0
+            },
+            "accuracy": {
+                "value": 0
+            },
+            "block": {
+                "value": 5
+            },
+            "critical": {
+                "value": 0
+            },
+            "tenacity": {
+                "value": 0
+            }
+        },
+        "continents": [
+            {
+                "id": "land-of-chaos",
+                "note": "May appear on Floor 28"
+            },
+            {
+                "id": "land-of-wind",
+                "note": "Spawns on Floor 7"
+            },
+            {
+                "id": "land-of-summer",
+                "note": "Spawns on Floor 5, 6"
+            },
+            {
+                "id": "land-of-forest",
+                "note": "Spawns on Floor 8, 9"
+            }
+        ],
+        "skills": [],
+        "key": "zombie"
+    },
+    "skeleton-archer": {
+        "imgUrl": "/img/elves/skeleton-archer.png",
+        "name": "Skeleton Archer",
+        "element": "darkness",
+        "stats": {
+            "speed": {
+                "value": 132
+            },
+            "defense": {
+                "value": 0
+            },
+            "accuracy": {
+                "value": 0
+            },
+            "block": {
+                "value": 5
+            },
+            "critical": {
+                "value": 0
+            },
+            "tenacity": {
+                "value": 0
+            }
+        },
+        "continents": [
+            {
+                "id": "land-of-chaos",
+                "note": "May appear on Floor 49, 1"
+            },
+            {
+                "id": "land-of-wind",
+                "note": "Spawns on Floor 3, 4, 9"
+            },
+            {
+                "id": "land-of-summer",
+                "note": "Spawns on Floor 5, 6"
+            },
+            {
+                "id": "land-of-forest",
+                "note": "Spawns on Floor 7"
+            }
+        ],
+        "skills": [],
+        "key": "skeleton-archer"
+    },
+    "little-skeleton": {
+        "imgUrl": "/img/elves/little-skeleton.png",
+        "name": "Little Skeleton",
+        "element": "darkness",
+        "stats": {
+            "speed": {
+                "value": 128
+            },
+            "defense": {
+                "value": 0
+            },
+            "accuracy": {
+                "value": 0
+            },
+            "block": {
+                "value": 5
+            },
+            "critical": {
+                "value": 0
+            },
+            "tenacity": {
+                "value": 0
+            }
+        },
+        "continents": [
+            {
+                "id": "land-of-wind",
+                "note": "Spawns on Floor 1, 2, 3, 4, 9"
+            },
+            {
+                "id": "land-of-chaos",
+                "note": "May appear on Floor 28, 35, 47, 50, 52, 1"
+            },
+            {
+                "id": "land-of-forest",
+                "note": "Spawns on Floor 7"
+            }
+        ],
+        "skills": [],
+        "key": "little-skeleton"
+    },
+    "claw-beast": {
+        "imgUrl": "/img/elves/claw-beast.png",
+        "name": "Claw Beast",
+        "element": "fire",
+        "stats": {
+            "speed": {
+                "value": 140
+            },
+            "defense": {
+                "value": 0
+            },
+            "accuracy": {
+                "value": 5
+            },
+            "block": {
+                "value": 0
+            },
+            "critical": {
+                "value": 0
+            },
+            "tenacity": {
+                "value": 0
+            }
+        },
+        "continents": [
+            {
+                "id": "land-of-summer",
+                "note": "Spawns on Floor 3"
+            },
+            {
+                "id": "land-of-forest",
+                "note": "Spawns on Floor 3, 4"
+            }
+        ],
+        "skills": [],
+        "key": "claw-beast"
+    },
+    "spectre": {
+        "imgUrl": "/img/elves/spectre.png",
+        "name": "Spectre",
+        "element": "darkness",
+        "stats": {
+            "speed": {
+                "value": 146
+            },
+            "defense": {
+                "value": 20
+            },
+            "accuracy": {
+                "value": 24
+            },
+            "block": {
+                "value": 26
+            },
+            "critical": {
+                "value": 30
+            },
+            "tenacity": {
+                "value": 10
+            }
+        },
+        "continents": [
+            {
+                "id": "land-of-summer",
+                "note": "Spawns on Floor 10"
+            }
+        ],
+        "skills": [],
+        "key": "spectre"
+    }
 }
