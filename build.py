@@ -7,6 +7,10 @@ from pathlib import Path
 from scripts.generatesitemap import get_url_priority
 from datetime import datetime, timezone
 
+def is_github_action():
+    # Returns True if running in GitHub Actions, False otherwise
+    return os.getenv('GITHUB_ACTIONS') == 'true'
+
 # Vars
 dir_elves = "elves"
 dir_elements = "elements"
@@ -119,8 +123,8 @@ dist = Path("dist")
 shutil.rmtree(dist, ignore_errors=True)
 dist.mkdir(parents=True, exist_ok=True)
 
-# Copy css, img
-for d in ["css", "img"]:
+# Copy css, img, js
+for d in ["css", "img", "js"]:
     src_dir = Path(d)
     dst_dir = dist / src_dir
     if src_dir.exists():
@@ -271,6 +275,8 @@ def save_html(path, page_content):
 
     for placeholder, value in json_data["vars"].items():
         page_content = page_content.replace("{{" + placeholder + "}}", value)
+    if not is_github_action():
+        page_content += '<script src="/js/debug.js"></script>'
     with open(path, "w", encoding="utf-8") as f:
         f.write(page_content)
 
