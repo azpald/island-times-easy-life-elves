@@ -4,6 +4,8 @@ import shutil
 import glob
 import sys
 from pathlib import Path
+from scripts.generatesitemap import get_url_priority
+from datetime import datetime, timezone
 
 # Vars
 dir_elves = "elves"
@@ -251,7 +253,22 @@ page_template = ""
 with open("html/page.html", "r", encoding="utf-8") as f:
     page_template = f.read()
 
+sitemap = []
 def save_html(path, page_content):
+    # sitemap
+    # https://www.sitemaps.org/protocol.html
+    url_path = path.relative_to(path.parts[0]).as_posix().removesuffix("index.html").rstrip('/')
+    url = f"""{json_data["vars"]["site_origin"].rstrip('/')}/{url_path}"""
+    priority = get_url_priority(url)
+    lastmod = datetime.now(timezone.utc).isoformat(timespec='seconds')
+    changefreq = "daily"
+    sitemap.append({
+        "loc": url,
+        "priority": priority,
+        "lastmod": lastmod,
+        "changefreq": changefreq,
+    })
+
     for placeholder, value in json_data["vars"].items():
         page_content = page_content.replace("{{" + placeholder + "}}", value)
     with open(path, "w", encoding="utf-8") as f:
@@ -448,3 +465,23 @@ text_content += continents_text
 page_content = page_content.replace("{{page_content}}", text_content)
 save_html(dist / dir_continents / "index.html", page_content)
 
+
+# generate sitemap
+# print(sitemap)
+sitemap_copy = [f"""
+    <url>
+        <loc>{s["loc"]}</loc>
+        <lastmod>{s["lastmod"]}</lastmod>
+        <changefreq>{s["changefreq"]}</changefreq>
+        <priority>{s["priority"]}</priority>
+   </url> """ for s in sitemap
+]
+save_html(
+    dist / "sitemap.xml",
+    f"""
+        <?xml version="1.0" encoding="UTF-8"?>
+        <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+            {"".join(sitemap_copy)}
+        </urlset> 
+    """
+)
