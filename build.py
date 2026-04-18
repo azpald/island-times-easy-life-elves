@@ -168,6 +168,14 @@ def render_skill (skill_name, show_elves=False):
     skill_subtitle = f'Level: {skill["levelMax"]}/{skill["levelMax"]}'
     skill_description = skill["description"]
 
+    # notes
+    notes_copy = ""
+    notes = skill.get("notes", [])
+    if len(notes) > 0:
+        notes_copy += "<blockquote><ul>"
+        notes_copy += "".join([f'<li>{n}</li>' for n in notes])
+        notes_copy += "</ul></blockquote>"
+
     # elves
     elves_copy = ""
     if show_elves:
@@ -211,6 +219,7 @@ def render_skill (skill_name, show_elves=False):
                     <div>{ skill_description }</div>
                 </div>
             </div>
+            {notes_copy}
             {blockquote}
         </div>
     """

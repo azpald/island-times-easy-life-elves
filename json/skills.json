@@ -464,6 +464,7 @@
         "iconUrl": "/img/icon-skills/position.png",
         "name": "Position",
         "description": "Self parry increased by ({{value1}})",
+        "notes": ["Self parry means block"],
         "isTransferable": true,
         "levelMax": 3,
         "valuesBase": [10],
@@ -826,5 +827,62 @@
         "levelMax": 3,
         "valuesBase": [15],
         "valuesIncrement": [5]
+    },
+    "combo-turbo": {
+        "iconUrl": "/img/icon-skills/combo-turbo.png",
+        "name": "Combo Turbo",
+        "description": "Attack the same target consecutively, increasing damage by ({{value1}})% each time",
+        "isTransferable": true,
+        "levelMax": 3,
+        "valuesBase": [5],
+        "valuesIncrement": [2]
+    },
+    "moonlight-spreading": {
+        "iconUrl": "/img/icon-skills/moonlight-spreading.png",
+        "name": "Moonlight Spreading",
+        "description": "Team Attack Power Increases by ({{value1}})%, Enemy Attack Power Decreases by ({{value2}})% for 2 rounds",
+        "notes": ["The effect is not stackable"],
+        "isTransferable": false,
+        "isActive": true,
+        "levelMax": 5,
+        "valuesBase": [8, 8],
+        "valuesIncrement": [4, 4]
+    },
+    "moonlight-piercing": {
+        "iconUrl": "/img/icon-skills/moonlight-piercing.png",
+        "name": "Moonlight Piercing",
+        "description": "When entering the battle, the whole team ignores the enemy's defense for 2 rounds.",
+        "isTransferable": true,
+        "levelMax": 1,
+        "valuesBase": [0],
+        "valuesIncrement": [0]
+    },
+    "ice-explosion": {
+        "iconUrl": "/img/icon-skills/ice-explosion.png",
+        "name": "Ice Explosion",
+        "description": "Deals ({{value1}})x4 damage to the enemy and [freezes] the target",
+        "isTransferable": false,
+        "isActive": true,
+        "levelMax": 5,
+        "valuesBase": [45],
+        "valuesIncrement": [10]
+    },
+    "ice-burst": {
+        "iconUrl": "/img/icon-skills/ice-burst.png",
+        "name": "Ice Burst",
+        "description": "End of freeze deals ({{value1}})% damage to target",
+        "isTransferable": true,
+        "levelMax": 3,
+        "valuesBase": [100],
+        "valuesIncrement": [30]
+    },
+    "wisdom": {
+        "iconUrl": "/img/icon-skills/wisdom.png",
+        "name": "Wisdom",
+        "description": "Increase Experience gained in combat by ({{value1}})%",
+        "isTransferable": true,
+        "levelMax": 3,
+        "valuesBase": [30],
+        "valuesIncrement": [10]
     }
 }
