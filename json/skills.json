@@ -884,5 +884,43 @@
         "levelMax": 3,
         "valuesBase": [30],
         "valuesIncrement": [10]
+    },
+    "sacrifice": {
+        "iconUrl": "/img/icon-skills/sacrifice.png",
+        "name": "Sacrifice",
+        "description": "Upon death, the average friendly health is restored according to ({{value1}})% of its own health limit.",
+        "isTransferable": true,
+        "levelMax": 3,
+        "valuesBase": [30],
+        "valuesIncrement": [10]
+    },
+    "combo": {
+        "iconUrl": "/img/icon-skills/combo.png",
+        "name": "Combo",
+        "description": "Deals ({{value1}})%x4 damage to a single enemy",
+        "isTransferable": false,
+        "isActive": true,
+        "levelMax": 5,
+        "valuesBase": [50],
+        "valuesIncrement": [10]
+    },
+    "crit-combo": {
+        "iconUrl": "/img/icon-skills/crit-combo.png",
+        "name": "Crit Combo",
+        "description": "Increases attack by ({{value1}})% for 5 turns on a critical strike",
+        "isTransferable": true,
+        "levelMax": 3,
+        "valuesBase": [2],
+        "valuesIncrement": [1]
+    },
+    "fireball": {
+        "iconUrl": "/img/icon-skills/fireball.png",
+        "name": "Fireball",
+        "description": "Throw 5 fireballs that deal ({{value1}})% damage to a random target and 50% chance to [burn] the target.",
+        "isTransferable": false,
+        "isActive": true,
+        "levelMax": 5,
+        "valuesBase": [55],
+        "valuesIncrement": [15]
     }
 }

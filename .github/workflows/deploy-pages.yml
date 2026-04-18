@@ -80,7 +80,7 @@ jobs:
         with:
           directory: 'dist'      # Path to your source folder
           add_suffix: false      # Set to false to overwrite original files
-          # inclusions: '.*\.html' # Optional: limit to only HTML files
+          inclusions: '.*\.html|.*\.js|.*\.css|.*\.xml'
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
