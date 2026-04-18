@@ -286,7 +286,7 @@ page_content = page_content.replace("{{post_title}}", "Home")
 text_content = ""
 text_content += '<div class="card two-column article" style="text-align: center;">'
 text_content += f"""
-    <img alt="Island TImes: Elves Library" src="/img/hero.jpg" style="width: 400px; max-width: 90vw;">
+    <img alt="Island Times: Elves Library" src="/img/hero.jpg" style="width: 400px; max-width: 90vw;">
     <h1>Island Times: Elves Library</h1>
     <p>The unofficial wiki for elves</p>
     <p>A simple reference for the elves in Island Times: Easy Life.</p>

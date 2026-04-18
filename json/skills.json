@@ -922,5 +922,63 @@
         "levelMax": 5,
         "valuesBase": [55],
         "valuesIncrement": [15]
+    },
+    "strong": {
+        "iconUrl": "/img/icon-skills/strong.png",
+        "name": "Strong",
+        "description": "Deals increased damage by ({{value1}})% to targets with more than 50% health",
+        "isTransferable": true,
+        "levelMax": 3,
+        "valuesBase": [20],
+        "valuesIncrement": [5]
+    },
+    "bloodshed": {
+        "iconUrl": "/img/icon-skills/bloodshed.png",
+        "name": "Bloodshed",
+        "description": "When attacking: If your health is below 50%, the damage is increased by ({{value1}})%",
+        "isTransferable": true,
+        "levelMax": 3,
+        "valuesBase": [20],
+        "valuesIncrement": [5]
+    },
+    "guarding": {
+        "iconUrl": "/img/icon-skills/guarding.png",
+        "name": "Guarding",
+        "description": "Deals ({{value1}})% damage to enemy targets and summon 1 guard to assist.",
+        "isTransferable": false,
+        "summon": ["guard-a"],
+        "isActive": true,
+        "levelMax": 5,
+        "valuesBase": [180],
+        "valuesIncrement": [30]
+    },
+    "cheer-up": {
+        "iconUrl": "/img/icon-skills/cheer-up.png",
+        "name": "Cheer-up",
+        "description": "Restores ({{value1}}) Rage after killing the target",
+        "isTransferable": true,
+        "levelMax": 3,
+        "valuesBase": [15],
+        "valuesIncrement": [5]
+    },
+    "courage": {
+        "iconUrl": "/img/icon-skills/courage.png",
+        "name": "Courage",
+        "description": "1% more damage for every 3% Health lost",
+        "isTransferable": true,
+        "levelMax": 1,
+        "valuesBase": [0],
+        "valuesIncrement": [0]
+    },
+    "charged-blow": {
+        "iconUrl": "/img/icon-skills/charged-blow.png",
+        "name": "Charged Blow",
+        "description": "Deals ({{value1}})% damage to target",
+        "isTransferable": false,
+        "summon": ["guard-a"],
+        "isActive": true,
+        "levelMax": 5,
+        "valuesBase": [190],
+        "valuesIncrement": [40]
     }
 }

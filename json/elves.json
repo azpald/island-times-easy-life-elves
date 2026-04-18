@@ -1551,7 +1551,11 @@
                 "note": "Spawns on Floor 3"
             }
         ],
-        "skills": [],
+        "skills": [
+            "fatal-blow",
+            "strong",
+            "bloodshed"
+        ],
         "key": "demon-lord"
     },
     "fire-spirit": {
@@ -1592,7 +1596,11 @@
                 "note": "Spawns on Floor 3, 4"
             }
         ],
-        "skills": [],
+        "skills": [
+            "guarding",
+            "cheer-up",
+            "courage"
+        ],
         "key": "fire-spirit"
     },
     "guard-a": {
@@ -1620,7 +1628,10 @@
             }
         },
         "continents": [],
-        "skills": [],
+        "skills": [
+            "charged-blow",
+            "courage"
+        ],
         "key": "guard-a"
     },
     "deer-spirit": {
