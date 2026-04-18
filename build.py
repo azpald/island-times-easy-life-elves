@@ -162,7 +162,7 @@ def get_dom_continent_link(continent_name):
 
 def get_dom_elf_link(elf_name):
     elf = json_data["elves"][elf_name]
-    return f'<a href="/{dir_elves}/{elf_name}.html"><img class="inline-icon" src="{ json_data["elements"][elf["element"]]["iconUrl"] }">{elf["name"]}</a>'
+    return f'<a href="/{dir_elves}/{elf_name}.html"><img alt="{elf["name"]}" class="inline-icon" src="{ json_data["elements"][elf["element"]]["iconUrl"] }">{elf["name"]}</a>'
 
 def render_skill (skill_name, show_elves=False):
     if skill_name not in json_data["skills"]:
@@ -186,7 +186,7 @@ def render_skill (skill_name, show_elves=False):
     elves_copy = ""
     if show_elves:
         elves_copy += f"""<div><b class="green">Elves:</b> {", ".join([
-            f'<a href="/{dir_elves}/{e}.html"><img class="inline-icon" src="{ json_data["elements"][json_data["elves"][e]["element"]]["iconUrl"] }">{json_data["elves"][e]["name"]}</a>' for e in elves_by_skill.get(skill_name, [])
+            f'<a href="/{dir_elves}/{e}.html"><img alt="{json_data["elves"][e]["name"]}" class="inline-icon" src="{ json_data["elements"][json_data["elves"][e]["element"]]["iconUrl"] }">{json_data["elves"][e]["name"]}</a>' for e in elves_by_skill.get(skill_name, [])
         ])}</div>"""
 
     # summon
@@ -195,7 +195,7 @@ def render_skill (skill_name, show_elves=False):
     if len(skill_summon) > 0:
         summon_copy += '<div><b class="green">Summons:</b> '
         summon_copy += ", ".join([
-            f'<a href="/{dir_elves}/{s}.html"><img class="inline-icon" src="{json_data["elves"][s]["imgUrl"]}">{ json_data["elves"][s]["name"] }</a>' for s in skill_summon
+            f'<a href="/{dir_elves}/{s}.html"><img alt="{ json_data["elves"][s]["name"] }" class="inline-icon" src="{json_data["elves"][s]["imgUrl"]}">{ json_data["elves"][s]["name"] }</a>' for s in skill_summon
         ])
         summon_copy += "</div>"
 
@@ -218,7 +218,7 @@ def render_skill (skill_name, show_elves=False):
     return f"""
         <div class="skill-panel">
             <div class="skill-row">
-                <div><img class="icon-small" src="{skill["iconUrl"]}"/></div>
+                <div><img alt="{ skill_title }" class="icon-small" src="{skill["iconUrl"]}"/></div>
                 <div>
                     <h3 id="{get_dom_skill_id(skill)}">{ skill_title }</h3>
                     <div>{ skill_subtitle }</div>
@@ -247,8 +247,8 @@ def render_elf_item(elf, h="h2", show_locations=True):
             )}</ul></div>
         """
     elves_text = '<div>'
-    elves_text += f'<{h}><a href="/{dir_elves}/{elf["key"]}.html"><img class="inline-icon" src="{json_data["elements"][elf["element"]]["iconUrl"]}">{ "[BOSS] " if elf.get("isBoss") else "" }{ elf["name"] }</a></{h}>'
-    elves_text += f'<div class="elf-row"><div><img class="icon-medium" src="{elf["imgUrl"]}"/></div><div>{content}</div></div>'
+    elves_text += f'<{h}><a href="/{dir_elves}/{elf["key"]}.html"><img alt="{json_data["elements"][elf["element"]]["text"]} Element" class="inline-icon" src="{json_data["elements"][elf["element"]]["iconUrl"]}">{ "[BOSS] " if elf.get("isBoss") else "" }{ elf["name"] }</a></{h}>'
+    elves_text += f'<div class="elf-row"><div><img alt="{ elf["name"] }" class="icon-medium" src="{elf["imgUrl"]}"/></div><div>{content}</div></div>'
     elves_text += '</div>'
     return elves_text
 
@@ -286,7 +286,7 @@ page_content = page_content.replace("{{post_title}}", "Home")
 text_content = ""
 text_content += '<div class="card two-column article" style="text-align: center;">'
 text_content += f"""
-    <img src="/img/hero.jpg" style="width: 400px; max-width: 90vw;">
+    <img alt="Island TImes: Elves Library" src="/img/hero.jpg" style="width: 400px; max-width: 90vw;">
     <h1>Island Times: Elves Library</h1>
     <p>The unofficial wiki for elves</p>
     <p>A simple reference for the elves in Island Times: Easy Life.</p>
@@ -295,10 +295,10 @@ text_content += '</div>'
 
 text_content += '<div class="card two-column article container-multicolumns">'
 text_content += f"""
-    <div class="mugshot"><a href="/{dir_elves}/"><img class="icon-medium" src="{json_data["vars"]["icon_menu_elves"]}"/><div>Elves</div></a></div>
-    <div class="mugshot"><a href="/{dir_elements}/"><img class="icon-medium" src="{json_data["vars"]["icon_menu_elements"]}"/><div>Elements</div></a></div>
-    <div class="mugshot"><a href="/{dir_skills}/"><img class="icon-medium" src="{json_data["vars"]["icon_menu_skills"]}"/><div>Skills</div></a></div>
-    <div class="mugshot"><a href="/{dir_continents}/"><img class="icon-medium" src="{json_data["vars"]["icon_menu_continents"]}"/><div>Continents</div></a></div>
+    <div class="mugshot"><a href="/{dir_elves}/"><img alt="Elves" class="icon-medium" src="{json_data["vars"]["icon_menu_elves"]}"/><div>Elves</div></a></div>
+    <div class="mugshot"><a href="/{dir_elements}/"><img alt="Elements" class="icon-medium" src="{json_data["vars"]["icon_menu_elements"]}"/><div>Elements</div></a></div>
+    <div class="mugshot"><a href="/{dir_skills}/"><img alt="Skills" class="icon-medium" src="{json_data["vars"]["icon_menu_skills"]}"/><div>Skills</div></a></div>
+    <div class="mugshot"><a href="/{dir_continents}/"><img alt="Continents" class="icon-medium" src="{json_data["vars"]["icon_menu_continents"]}"/><div>Continents</div></a></div>
 """
 text_content += '</div>'
 page_content = page_content.replace("{{page_content}}", text_content)
@@ -409,7 +409,7 @@ for slug, item in json_data["continents"].items():
             </ol>
         </nav>
         <header class="post-header card two-column">
-            <h1 class="title"><img class="inline-icon" src="{ item.get("iconUrl") }"> { item["text"] }</h1>
+            <h1 class="title"><img alt="{ item["text"] }" class="inline-icon" src="{ item.get("iconUrl") }"> { item["text"] }</h1>
         </header>
     """
     
@@ -447,7 +447,7 @@ continents_text = '<div class="two-column container-multicolumns">'
 for slug, item in json_data["continents"].items():
     continents_text += f"""
         <div class="mugshot">
-            <a href="/{dir_continents}/{item["key"]}.html"><img class="icon-medium" src="{item["iconUrl"]}"/><div>{item["text"]}</div></a>
+            <a href="/{dir_continents}/{item["key"]}.html"><img alt="{item["text"]}" class="icon-medium" src="{item["iconUrl"]}"/><div>{item["text"]}</div></a>
         </div>
     """
 continents_text += '</div>'

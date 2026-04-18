@@ -25,7 +25,7 @@ for slug, elf in json_data["elves"].items():
             </ol>
         </nav>
         <header class="post-header card two-column">
-            <h1 class="title"><img class="inline-icon" src="{ json_data["elements"][elf["element"]]["iconUrl"] }"> { "[BOSS] " if elf.get("isBoss") else "" }{ elf["name"] }</h1>
+            <h1 class="title"><img alt="{ elf["name"] }" class="inline-icon" src="{ json_data["elements"][elf["element"]]["iconUrl"] }"> { "[BOSS] " if elf.get("isBoss") else "" }{ elf["name"] }</h1>
         </header>
     """
     text_content += '<div class="card article">'

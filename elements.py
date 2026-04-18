@@ -18,7 +18,7 @@ for slug, item in json_data["elements"].items():
             </ol>
         </nav>
         <header class="post-header card two-column">
-            <h1 class="title"><img class="inline-icon" src="{ item.get("iconUrl") }"> { item["text"] }</h1>
+            <h1 class="title"><img alt="{ item["text"] } Element" class="inline-icon" src="{ item.get("iconUrl") }"> { item["text"] }</h1>
         </header>
     """
     
@@ -72,7 +72,7 @@ for slug, item in json_data["elements"].items():
 elements_text = ""
 elements_text += '<div class="two-column container-multicolumns">'
 for _, element in json_data["elements"].items():
-    elements_text += f'<div class="mugshot"><a href="/{dir_elements}/{element["key"]}.html"><img class="icon-medium" src="{element["iconUrl"]}"/><div>{element["text"]}</div></a></div>'
+    elements_text += f'<div class="mugshot"><a href="/{dir_elements}/{element["key"]}.html"><img alt="{element["text"]} Element" class="icon-medium" src="{element["iconUrl"]}"/><div>{element["text"]}</div></a></div>'
 elements_text += '</div>'
 
 page_content = page_template
