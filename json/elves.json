@@ -2040,7 +2040,11 @@
                 "note": "Spawns on Floor 8, 9"
             }
         ],
-        "skills": [],
+        "skills": [
+            "double-guards",
+            "feed-back",
+            "power-in-numbers"
+        ],
         "key": "skeleton-mage"
     },
     "sickle-ghost": {
@@ -2073,7 +2077,11 @@
                 "note": "May appear on Floor 23, 25"
             }
         ],
-        "skills": [],
+        "skills": [
+            "reaper",
+            "kill-to-protect",
+            "last-gasp"
+        ],
         "key": "sickle-ghost"
     },
     "zombie": {
@@ -2118,7 +2126,11 @@
                 "note": "Spawns on Floor 8, 9"
             }
         ],
-        "skills": [],
+        "skills": [
+            "bite-poison",
+            "poisonous-blow",
+            "dead-draw"
+        ],
         "key": "zombie"
     },
     "skeleton-archer": {
@@ -2163,7 +2175,10 @@
                 "note": "Spawns on Floor 7"
             }
         ],
-        "skills": [],
+        "skills": [
+            "continuous-fire",
+            "crit-combo"
+        ],
         "key": "skeleton-archer"
     },
     "little-skeleton": {
@@ -2204,7 +2219,10 @@
                 "note": "Spawns on Floor 7"
             }
         ],
-        "skills": [],
+        "skills": [
+            "thump",
+            "reincarnation"
+        ],
         "key": "little-skeleton"
     },
     "claw-beast": {
@@ -2241,7 +2259,11 @@
                 "note": "Spawns on Floor 3, 4"
             }
         ],
-        "skills": [],
+        "skills": [
+            "combo",
+            "cheer-up",
+            "convert-critical"
+        ],
         "key": "claw-beast"
     },
     "spectre": {

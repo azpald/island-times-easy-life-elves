@@ -1160,5 +1160,117 @@
         "levelMax": 1,
         "valuesBase": [0],
         "valuesIncrement": [0]
+    },
+    "convert-critical": {
+        "iconUrl": "/img/icon-skills/convert.png",
+        "name": "Convert",
+        "description": "Each attack steals target's ({{value1}}) Critical",
+        "isTransferable": true,
+        "levelMax": 3,
+        "valuesBase": [1],
+        "valuesIncrement": [1]
+    },
+    "double-guards": {
+        "iconUrl": "/img/icon-skills/double-guards.png",
+        "name": "Double Guards",
+        "description": "Summon a Skeleton Soldier and a Skeleton Archer to assist",
+        "isTransferable": false,
+        "isActive": true,
+        "levelMax": 5,
+        "valuesBase": [0],
+        "valuesIncrement": [0]
+    },
+    "feed-back": {
+        "iconUrl": "/img/icon-skills/feed-back.png",
+        "name": "Feed Back",
+        "description": "Restore ({{value1}})% Health, when Skeleton Soldier and Skeleton Archer die",
+        "isTransferable": true,
+        "levelMax": 3,
+        "valuesBase": [20],
+        "valuesIncrement": [5]
+    },
+    "power-in-numbers": {
+        "iconUrl": "/img/icon-skills/power-in-numbers.png",
+        "name": "Power in Numbers",
+        "description": "For each unit on our side, Attack is increased by ({{value1}})%",
+        "isTransferable": true,
+        "levelMax": 3,
+        "valuesBase": [4],
+        "valuesIncrement": [2]
+    },
+    "reaper": {
+        "iconUrl": "/img/icon-skills/reaper.png",
+        "name": "Reaper",
+        "description": "Deals ({{value1}})% damage to the target, if the target's HP is less than 20%, it will add an Attack damage",
+        "isTransferable": false,
+        "isActive": true,
+        "levelMax": 5,
+        "valuesBase": [170],
+        "valuesIncrement": [40]
+    },
+    "kill-to-protect": {
+        "iconUrl": "/img/icon-skills/kill-to-protect.png",
+        "name": "Kill to Protect",
+        "description": "After killing the target, you will get a shield, which is ({{value1}})% of your Attack",
+        "isTransferable": true,
+        "levelMax": 3,
+        "valuesBase": [150],
+        "valuesIncrement": [30]
+    },
+    "last-gasp": {
+        "iconUrl": "/img/icon-skills/last-gasp.png",
+        "name": "Last Gasp",
+        "description": "At the end of the turn, if your HP is less than 30%, you will steal ({{value1}})% Attack HP from the target",
+        "isTransferable": true,
+        "levelMax": 3,
+        "valuesBase": [40],
+        "valuesIncrement": [10]
+    },
+    "bite-poison": {
+        "iconUrl": "/img/icon-skills/bite-poison.png",
+        "name": "Bite",
+        "description": "Deals ({{value1}})% damage to the target and adds [poison]",
+        "isTransferable": false,
+        "isActive": true,
+        "levelMax": 5,
+        "valuesBase": [170],
+        "valuesIncrement": [40]
+    },
+    "poisonous-blow": {
+        "iconUrl": "/img/icon-skills/poisonous-blow.png",
+        "name": "Poisonous Blow",
+        "description": "Add [poison] on first attack on target",
+        "isTransferable": true,
+        "levelMax": 1,
+        "valuesBase": [0],
+        "valuesIncrement": [0]
+    },
+    "dead-draw": {
+        "iconUrl": "/img/icon-skills/dead-draw.png",
+        "name": "Dead Draw",
+        "description": "Kill the enemy and restore ({{value1}})% of Health",
+        "isTransferable": true,
+        "levelMax": 3,
+        "valuesBase": [20],
+        "valuesIncrement": [5]
+    },
+    "continuous-fire": {
+        "iconUrl": "/img/icon-skills/continuous-fire.png",
+        "name": "Continuous Fire",
+        "description": "Shoot 5 arrows in a row at the same target, dealing ({{value1}})%x5 damage",
+        "isTransferable": false,
+        "isActive": true,
+        "levelMax": 5,
+        "valuesBase": [30],
+        "valuesIncrement": [10]
+    },
+    "reincarnation": {
+        "iconUrl": "/img/icon-skills/reincarnation.png",
+        "name": "Reincarnation",
+        "description": "Come back with ({{value1}})% Health when you die.",
+        "isTransferable": true,
+        "levelMax": 1,
+        "valuesBase": [20],
+        "valuesIncrement": [0]
     }
 }
