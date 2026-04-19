@@ -1066,5 +1066,99 @@
         "levelMax": 3,
         "valuesBase": [10],
         "valuesIncrement": [5]
+    },
+    "phantom-attack": {
+        "iconUrl": "/img/icon-skills/phantom-attack.png",
+        "name": "Phantom Attack",
+        "description": "Deals ({{value1}})%x5 damage to a single target",
+        "isTransferable": false,
+        "isActive": true,
+        "levelMax": 5,
+        "valuesBase": [30],
+        "valuesIncrement": [10]
+    },
+    "storm-attack": {
+        "iconUrl": "/img/icon-skills/storm-attack.png",
+        "name": "Storm Attack",
+        "description": "Increase damage by ({{value1}})% when enemy units are greater than 2",
+        "isTransferable": true,
+        "levelMax": 3,
+        "valuesBase": [15],
+        "valuesIncrement": [5]
+    },
+    "darkness-falls": {
+        "iconUrl": "/img/icon-skills/darkness-falls.png",
+        "name": "Darkness Falls",
+        "description": "Deals ({{value1}})% damage to the target (regardless of defense)",
+        "isTransferable": false,
+        "isActive": true,
+        "levelMax": 5,
+        "valuesBase": [190],
+        "valuesIncrement": [40]
+    },
+    "excessive-damage": {
+        "iconUrl": "/img/icon-skills/excessive-damage.png",
+        "name": "Excessive Damage",
+        "description": "Increases damage by ({{value1}})% to targets with more health than yourself",
+        "isTransferable": true,
+        "levelMax": 3,
+        "valuesBase": [15],
+        "valuesIncrement": [5]
+    },
+    "buff": {
+        "iconUrl": "/img/icon-skills/buff.png",
+        "name": "Buff",
+        "description": "Damage taken is reduced by 2% for each buff owned",
+        "isTransferable": true,
+        "levelMax": 1,
+        "valuesBase": [0],
+        "valuesIncrement": [0]
+    },
+    "ghost-strike": {
+        "iconUrl": "/img/icon-skills/ghost-strike.png",
+        "name": "Ghost Strike",
+        "description": "Deals ({{value1}})% damage to target",
+        "isTransferable": false,
+        "isActive": true,
+        "levelMax": 5,
+        "valuesBase": [190],
+        "valuesIncrement": [40]
+    },
+    "stealing": {
+        "iconUrl": "/img/icon-skills/stealing.png",
+        "name": "Stealing",
+        "description": "When attacking, steal a buff from the enemy",
+        "isTransferable": true,
+        "levelMax": 1,
+        "valuesBase": [0],
+        "valuesIncrement": [0]
+    },
+    "dodging": {
+        "iconUrl": "/img/icon-skills/dodging.png",
+        "name": "Dodging",
+        "description": "Deals ({{value1}})% damage to enemies while Blocking",
+        "isTransferable": true,
+        "levelMax": 3,
+        "valuesBase": [30],
+        "valuesIncrement": [10]
+    },
+    "bad-luck": {
+        "iconUrl": "/img/icon-skills/bad-luck.png",
+        "name": "Bad Luck",
+        "description": "Deals ({{value1}}) damage to all enemies and an additional random abnormal status",
+        "isTransferable": false,
+        "isActive": true,
+        "levelMax": 5,
+        "valuesBase": [90],
+        "valuesIncrement": [15]
+    },
+    "share-suffering": {
+        "iconUrl": "/img/icon-skills/share-suffering.png",
+        "name": "Share Suffering",
+        "description": "When a debuff is applied to itself, an equivalent effect is applied to the target",
+        "isTransferable": true,
+        "levelMax": 1,
+        "valuesBase": [0],
+        "valuesIncrement": [0]
     }
 }
