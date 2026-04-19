@@ -28,7 +28,13 @@
             "smite",
             "rage"
         ],
-        "key": "lich"
+        "key": "lich",
+        "continents": [
+            {
+                "id": "land-of-chaos",
+                "note": "May appear on Floor 32"
+            }
+        ]
     },
     "butcher-zombie": {
         "imgUrl": "/img/elves/butcher-zombie.png",
@@ -57,7 +63,7 @@
         "continents": [
             {
                 "id": "land-of-chaos",
-                "note": "May appear on Floor 37"
+                "note": "May appear on Floor 37, 26, 28"
             },
             {
                 "id": "land-of-forest",
@@ -291,7 +297,7 @@
         "continents": [
             {
                 "id": "land-of-chaos",
-                "note": "May appear on Floor 38, 40"
+                "note": "May appear on Floor 38, 40, 14, 16"
             },
             {
                 "id": "land-of-wind",
@@ -515,7 +521,7 @@
             },
             {
                 "id": "land-of-chaos",
-                "note": "May appear on Floor 2"
+                "note": "May appear on Floor 2, 4"
             }
         ],
         "skills": [
@@ -670,7 +676,12 @@
                 "value": 0
             }
         },
-        "continents": [],
+        "continents": [
+            {
+                "id": "land-of-chaos",
+                "note": "May appear on Floor 5, 7"
+            }
+        ],
         "skills": [
             "ground-cracking",
             "defense-breaking",
@@ -910,7 +921,7 @@
         "continents": [
             {
                 "id": "land-of-chaos",
-                "note": "May appear on Floor 44, 46, 53, 2"
+                "note": "May appear on Floor 44, 46, 53, 2, 4"
             }
         ],
         "skills": [
@@ -952,6 +963,10 @@
             {
                 "id": "land-of-forest",
                 "note": "Spawns on Floor 3, 4"
+            },
+            {
+                "id": "land-of-chaos",
+                "note": "May appear on Floor 10"
             }
         ],
         "skills": [
@@ -988,7 +1003,7 @@
         "continents": [
             {
                 "id": "land-of-chaos",
-                "note": "May appear on Floor 41, 43"
+                "note": "May appear on Floor 41, 43, 17, 19"
             },
             {
                 "id": "land-of-wind",
@@ -1068,7 +1083,7 @@
         "continents": [
             {
                 "id": "land-of-chaos",
-                "note": "Floor 17, 19"
+                "note": "May appear on Floor 17, 19"
             },
             {
                 "id": "land-of-wind",
@@ -1196,7 +1211,12 @@
                 "value": 0
             }
         },
-        "continents": [],
+        "continents": [
+            {
+                "id": "land-of-chaos",
+                "note": "May appear on Floor 7"
+            }
+        ],
         "skills": [
             "stone-pointing",
             "toughness-breaking",
@@ -1288,7 +1308,7 @@
             },
             {
                 "id": "land-of-chaos",
-                "note": "May appear on Floor 40"
+                "note": "May appear on Floor 40, 5"
             }
         ],
         "skills": [
@@ -1403,7 +1423,7 @@
         "continents": [
             {
                 "id": "land-of-chaos",
-                "note": "Floor 14, 16"
+                "note": "May appear on Floor 14, 16"
             }
         ],
         "skills": [
@@ -1503,7 +1523,7 @@
         "continents": [
             {
                 "id": "land-of-chaos",
-                "note": "Floor 10"
+                "note": "May appear on Floor 8"
             },
             {
                 "id": "land-of-summer",
@@ -1549,6 +1569,10 @@
             {
                 "id": "land-of-forest",
                 "note": "Spawns on Floor 3"
+            },
+            {
+                "id": "land-of-chaos",
+                "note": "May appear on Floor 8"
             }
         ],
         "skills": [
@@ -1585,7 +1609,7 @@
         "continents": [
             {
                 "id": "land-of-chaos",
-                "note": "Floor 10"
+                "note": "May appear on Floor 10"
             },
             {
                 "id": "land-of-summer",
@@ -1661,7 +1685,7 @@
         "continents": [
             {
                 "id": "land-of-chaos",
-                "note": "May appear on Floor 43"
+                "note": "May appear on Floor 43, 13"
             },
             {
                 "id": "land-of-wind",
@@ -1672,7 +1696,11 @@
                 "note": "Spawns on Floor 7, 8"
             }
         ],
-        "skills": [],
+        "skills": [
+            "unusual-rain",
+            "self-healing",
+            "resistance"
+        ],
         "key": "deer-spirit"
     },
     "elf-mage": {
@@ -1702,10 +1730,14 @@
         "continents": [
             {
                 "id": "land-of-chaos",
-                "note": "Floor 13"
+                "note": "May appear on Floor 11"
             }
         ],
-        "skills": [],
+        "skills": [
+            "recovery",
+            "position",
+            "demon-hunting"
+        ],
         "key": "elf-mage"
     },
     "flower-elf": {
@@ -1742,7 +1774,11 @@
                 "note": "Spawns on Floor 5"
             }
         ],
-        "skills": [],
+        "skills": [
+            "purification-therapy",
+            "group-dance",
+            "slow-dance"
+        ],
         "key": "flower-elf"
     },
     "light": {
@@ -1777,9 +1813,17 @@
             {
                 "id": "land-of-forest",
                 "note": "Spawns on Floor 5"
+            },
+            {
+                "id": "land-of-chaos",
+                "note": "May appear on Floor 11, 13"
             }
         ],
-        "skills": [],
+        "skills": [
+            "resonance",
+            "shine",
+            "last-words-wind"
+        ],
         "key": "light"
     },
     "sword-ghost": {
@@ -1816,7 +1860,11 @@
                 "note": "Spawns on Floor 5, 6"
             }
         ],
-        "skills": [],
+        "skills": [
+            "phantom-attack",
+            "cold",
+            "storm-attack"
+        ],
         "key": "sword-ghost"
     },
     "dark-knight": {
@@ -1846,14 +1894,18 @@
         "continents": [
             {
                 "id": "land-of-chaos",
-                "note": "May appear on Floor 37"
+                "note": "May appear on Floor 37, 20"
             },
             {
                 "id": "land-of-summer",
                 "note": "Spawns on Floor 5, 6"
             }
         ],
-        "skills": [],
+        "skills": [
+            "darkness-falls",
+            "excessive-damage",
+            "buff"
+        ],
         "key": "dark-knight"
     },
     "ghost": {
@@ -1883,14 +1935,18 @@
         "continents": [
             {
                 "id": "land-of-chaos",
-                "note": "Floor 20"
+                "note": "May appear on Floor 20, 22"
             },
             {
                 "id": "land-of-forest",
                 "note": "Spawns on Floor 6, 8, 9"
             }
         ],
-        "skills": [],
+        "skills": [
+            "ghost-strike",
+            "stealing",
+            "dodging"
+        ],
         "key": "ghost"
     },
     "ghost-mage": {
@@ -1932,10 +1988,14 @@
             },
             {
                 "id": "land-of-chaos",
-                "note": "May appear on Floor 35"
+                "note": "May appear on Floor 35, 22"
             }
         ],
-        "skills": [],
+        "skills": [
+            "bad-luck",
+            "aim",
+            "share-suffering"
+        ],
         "key": "ghost-mage"
     },
     "skeleton-mage": {
@@ -1965,7 +2025,7 @@
         "continents": [
             {
                 "id": "land-of-chaos",
-                "note": "Floor 23"
+                "note": "May appear on Floor 23"
             },
             {
                 "id": "land-of-wind",
@@ -2043,7 +2103,7 @@
         "continents": [
             {
                 "id": "land-of-chaos",
-                "note": "May appear on Floor 28"
+                "note": "May appear on Floor 28, 26"
             },
             {
                 "id": "land-of-wind",
@@ -2137,7 +2197,7 @@
             },
             {
                 "id": "land-of-chaos",
-                "note": "May appear on Floor 28, 35, 47, 50, 52, 1"
+                "note": "May appear on Floor 28, 35, 47, 50, 52, 1, 23, 25"
             },
             {
                 "id": "land-of-forest",

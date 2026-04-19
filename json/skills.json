@@ -980,5 +980,91 @@
         "levelMax": 5,
         "valuesBase": [190],
         "valuesIncrement": [40]
+    },
+    "unusual-rain": {
+        "iconUrl": "/img/icon-skills/unusual-rain.png",
+        "name": "Unusual Rain",
+        "description": "Deals ({{value1}})% damage to all enemies and removes all of its own abnormal status",
+        "isTransferable": false,
+        "isActive": true,
+        "levelMax": 5,
+        "valuesBase": [95],
+        "valuesIncrement": [15]
+    },
+    "self-healing": {
+        "iconUrl": "/img/icon-skills/self-healing.png",
+        "name": "Self Healing",
+        "description": "Heal yourself by ({{value1}})% of your Max Health per action",
+        "isTransferable": true,
+        "levelMax": 3,
+        "valuesBase": [5],
+        "valuesIncrement": [1]
+    },
+    "recovery": {
+        "iconUrl": "/img/icon-skills/recovery.png",
+        "name": "Recovery",
+        "description": "Restores ({{value1}})% of all friendly Attack Health",
+        "isTransferable": false,
+        "isActive": true,
+        "levelMax": 5,
+        "valuesBase": [175],
+        "valuesIncrement": [30]
+    },
+    "demon-hunting": {
+        "iconUrl": "/img/icon-skills/demon-hunting.png",
+        "name": "Demon Hunting",
+        "description": "Gain ({{value1}}) random buffs for each enemy target killed",
+        "isTransferable": true,
+        "levelMax": 3,
+        "valuesBase": [1],
+        "valuesIncrement": [1]
+    },
+    "purification-therapy": {
+        "iconUrl": "/img/icon-skills/purification-therapy.png",
+        "name": "Purification Therapy",
+        "description": "Restores 1% of all friendly Attack Health and removes 1 abnormal status",
+        "notes": ["Idk why it has 5 levels, while nothing is upgradable"],
+        "isTransferable": false,
+        "isActive": true,
+        "levelMax": 5,
+        "valuesBase": [0],
+        "valuesIncrement": [0]
+    },
+    "group-dance": {
+        "iconUrl": "/img/icon-skills/group-dance.png",
+        "name": "Group Dance",
+        "description": "When battle starts, increase all allies ({{value1}}) Accuracy, ({{value2}}) Critical",
+        "isTransferable": true,
+        "levelMax": 3,
+        "valuesBase": [6, 6],
+        "valuesIncrement": [3, 3]
+    },
+    "slow-dance": {
+        "iconUrl": "/img/icon-skills/slow-dance.png",
+        "name": "Slow Dance",
+        "description": "When battle starts, all allies Speed +({{value1}})% for 3 turns",
+        "isTransferable": true,
+        "levelMax": 3,
+        "valuesBase": [8],
+        "valuesIncrement": [3]
+    },
+    "resonance": {
+        "iconUrl": "/img/icon-skills/resonance.png",
+        "name": "Resonance",
+        "description": "Charge all friendly elves",
+        "isTransferable": false,
+        "isActive": true,
+        "levelMax": 1,
+        "valuesBase": [0],
+        "valuesIncrement": [0]
+    },
+    "shine": {
+        "iconUrl": "/img/icon-skills/shine.png",
+        "name": "Shine",
+        "description": "Damage taaken reduced by ({{value1}})%",
+        "isTransferable": true,
+        "levelMax": 3,
+        "valuesBase": [10],
+        "valuesIncrement": [5]
     }
 }
