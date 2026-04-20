@@ -33,6 +33,10 @@
             {
                 "id": "land-of-chaos",
                 "note": "May appear on Floor 32"
+            },
+            {
+                "id": "land-of-ice",
+                "note": "Spawns on Floor 6, 8"
             }
         ]
     },
@@ -68,6 +72,10 @@
             {
                 "id": "land-of-forest",
                 "note": "Spawns on Floor 8, 9"
+            },
+            {
+                "id": "land-of-ice",
+                "note": "Spawns on Floor 9"
             }
         ],
         "skills": [
@@ -143,6 +151,10 @@
             {
                 "id": "land-of-chaos",
                 "note": "May appear on Floor 29, 31"
+            },
+            {
+                "id": "land-of-ice",
+                "note": "Spawns on Floor 7"
             }
         ],
         "skills": [
@@ -224,6 +236,10 @@
             {
                 "id": "land-of-forest",
                 "note": "Spawns on Floor 5, 7"
+            },
+            {
+                "id": "land-of-ice",
+                "note": "Spawns on Floor 2"
             }
         ],
         "skills": [
@@ -310,6 +326,10 @@
             {
                 "id": "land-of-forest",
                 "note": "Spawns on Floor 5"
+            },
+            {
+                "id": "land-of-ice",
+                "note": "Spawns on Floor 5"
             }
         ],
         "skills": [
@@ -343,7 +363,12 @@
                 "value": 0
             }
         },
-        "continents": [],
+        "continents": [
+            {
+                "id": "land-of-ice",
+                "note": "Spawns on Floor 3"
+            }
+        ],
         "skills": [
             "axe-strike",
             "promote",
@@ -477,6 +502,10 @@
             {
                 "id": "land-of-chaos",
                 "note": "May appear on Floor 2"
+            },
+            {
+                "id": "land-of-ice",
+                "note": "Spawns on Floor 2"
             }
         ],
         "skills": [
@@ -522,6 +551,10 @@
             {
                 "id": "land-of-chaos",
                 "note": "May appear on Floor 2, 4"
+            },
+            {
+                "id": "land-of-ice",
+                "note": "Spawns on Floor 2"
             }
         ],
         "skills": [
@@ -612,6 +645,10 @@
             {
                 "id": "land-of-chaos",
                 "note": "May appear on Floor 53, 2"
+            },
+            {
+                "id": "land-of-ice",
+                "note": "Spawns on Floor 3"
             }
         ],
         "skills": [
@@ -680,6 +717,10 @@
             {
                 "id": "land-of-chaos",
                 "note": "May appear on Floor 5, 7"
+            },
+            {
+                "id": "land-of-ice",
+                "note": "Spawns on Floor 3"
             }
         ],
         "skills": [
@@ -840,6 +881,10 @@
             {
                 "id": "land-of-chaos",
                 "note": "May appear on Floor 32, 34"
+            },
+            {
+                "id": "land-of-ice",
+                "note": "Spawns on Floor 3, 4, 5, 8"
             }
         ],
         "skills": [
@@ -1049,7 +1094,12 @@
                 "value": 0
             }
         },
-        "continents": [],
+        "continents": [
+            {
+                "id": "land-of-ice",
+                "note": "Spawns on Floor 5, 8"
+            }
+        ],
         "skills": [
             "self-explosion",
             "enabling"
@@ -1096,6 +1146,10 @@
             {
                 "id": "land-of-forest",
                 "note": "Spawns on Floor 1, 2, 5"
+            },
+            {
+                "id": "land-of-ice",
+                "note": "Spawns on Floor 6"
             }
         ],
         "skills": [
@@ -1133,6 +1187,10 @@
             {
                 "id": "land-of-chaos",
                 "note": "May appear on Floor 32, 34"
+            },
+            {
+                "id": "land-of-ice",
+                "note": "Spawns on Floor 1, 2, 5, 8"
             }
         ],
         "skills": [
@@ -1178,6 +1236,10 @@
             {
                 "id": "land-of-chaos",
                 "note": "May appear on Floor 49, 50, 52, 1"
+            },
+            {
+                "id": "land-of-ice",
+                "note": "Spawns on Floor 1, 6"
             }
         ],
         "skills": [
@@ -1215,6 +1277,10 @@
             {
                 "id": "land-of-chaos",
                 "note": "May appear on Floor 7"
+            },
+            {
+                "id": "land-of-ice",
+                "note": "Spawns on Floor 1"
             }
         ],
         "skills": [
@@ -1260,6 +1326,10 @@
             {
                 "id": "land-of-forest",
                 "note": "Spawns on Floor 7"
+            },
+            {
+                "id": "land-of-ice",
+                "note": "Spawns on Floor 1"
             }
         ],
         "skills": [
@@ -1309,6 +1379,10 @@
             {
                 "id": "land-of-chaos",
                 "note": "May appear on Floor 40, 5"
+            },
+            {
+                "id": "land-of-ice",
+                "note": "Spawns on Floor 6"
             }
         ],
         "skills": [
@@ -1350,6 +1424,10 @@
             {
                 "id": "land-of-chaos",
                 "note": "May appear on Floor 29, 31"
+            },
+            {
+                "id": "land-of-ice",
+                "note": "Spawns on Floor 7"
             }
         ],
         "skills": [
@@ -1858,6 +1936,10 @@
             {
                 "id": "land-of-summer",
                 "note": "Spawns on Floor 5, 6"
+            },
+            {
+                "id": "land-of-ice",
+                "note": "Spawns on Floor 7"
             }
         ],
         "skills": [
@@ -1899,6 +1981,10 @@
             {
                 "id": "land-of-summer",
                 "note": "Spawns on Floor 5, 6"
+            },
+            {
+                "id": "land-of-ice",
+                "note": "Spawns on Floor 4"
             }
         ],
         "skills": [
@@ -1940,6 +2026,10 @@
             {
                 "id": "land-of-forest",
                 "note": "Spawns on Floor 6, 8, 9"
+            },
+            {
+                "id": "land-of-ice",
+                "note": "Spawns on Floor 4"
             }
         ],
         "skills": [
@@ -1989,6 +2079,10 @@
             {
                 "id": "land-of-chaos",
                 "note": "May appear on Floor 35, 22"
+            },
+            {
+                "id": "land-of-ice",
+                "note": "Spawns on Floor 4"
             }
         ],
         "skills": [
@@ -2038,6 +2132,10 @@
             {
                 "id": "land-of-forest",
                 "note": "Spawns on Floor 8, 9"
+            },
+            {
+                "id": "land-of-ice",
+                "note": "Spawns on Floor 7"
             }
         ],
         "skills": [
@@ -2124,6 +2222,10 @@
             {
                 "id": "land-of-forest",
                 "note": "Spawns on Floor 8, 9"
+            },
+            {
+                "id": "land-of-ice",
+                "note": "Spawns on Floor 9"
             }
         ],
         "skills": [
@@ -2173,6 +2275,10 @@
             {
                 "id": "land-of-forest",
                 "note": "Spawns on Floor 7"
+            },
+            {
+                "id": "land-of-ice",
+                "note": "Spawns on Floor 6, 9"
             }
         ],
         "skills": [
@@ -2217,6 +2323,10 @@
             {
                 "id": "land-of-forest",
                 "note": "Spawns on Floor 7"
+            },
+            {
+                "id": "land-of-ice",
+                "note": "Spawns on Floor 2, 4, 8, 9"
             }
         ],
         "skills": [
@@ -2300,5 +2410,42 @@
         "isBoss": true,
         "skills": [],
         "key": "spectre"
+    },
+    "snake": {
+        "imgUrl": "/img/elves/snake.png",
+        "name": "Snake",
+        "element": "wind",
+        "stats": {
+            "speed": {
+                "value": 155
+            },
+            "defense": {
+                "value": 0
+            },
+            "accuracy": {
+                "value": 0
+            },
+            "block": {
+                "value": 0
+            },
+            "critical": {
+                "value": 0
+            },
+            "tenacity": {
+                "value": 0
+            }
+        },
+        "continents": [
+            {
+                "id": "land-of-ice",
+                "note": "Spawns on Floor 1, 3, 5, 7, 9"
+            }
+        ],
+        "skills": [
+            "bite-snake",
+            "poisonous-fang",
+            "toxins"
+        ],
+        "key": "snake"
     }
 }

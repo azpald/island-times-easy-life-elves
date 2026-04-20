@@ -1176,6 +1176,7 @@
         "description": "Summon a Skeleton Soldier and a Skeleton Archer to assist",
         "isTransferable": false,
         "isActive": true,
+        "summon": ["little-skeleton", "skeleton-archer"],
         "levelMax": 5,
         "valuesBase": [0],
         "valuesIncrement": [0]
@@ -1272,5 +1273,24 @@
         "levelMax": 1,
         "valuesBase": [20],
         "valuesIncrement": [0]
+    },
+    "bite-snake": {
+        "iconUrl": "/img/icon-skills/bite-snake.png",
+        "name": "Bite",
+        "description": "Deal ({{value1}})% damage to the target and poison them",
+        "isTransferable": false,
+        "isActive": true,
+        "levelMax": 5,
+        "valuesBase": [180],
+        "valuesIncrement": [40]
+    },
+    "poisonous-fang": {
+        "iconUrl": "/img/icon-skills/poisonous-fang.png",
+        "name": "Poisonous Fang",
+        "description": "({{value1}})% chance to [poison] the target with Attack.",
+        "isTransferable": true,
+        "levelMax": 3,
+        "valuesBase": [30],
+        "valuesIncrement": [10]
     }
 }
