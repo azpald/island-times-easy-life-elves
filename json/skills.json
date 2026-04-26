@@ -579,6 +579,7 @@
         "description": "Deals ({{value1}})% damage to and [curse] all targets. Cursed target take 20% extra damage for 2 turns.",
         "isTransferable": false,
         "isActive": true,
+        "notes": ["This skill and the debuff effect is single target"],
         "levelMax": 5,
         "valuesBase": [180],
         "valuesIncrement": [40]
